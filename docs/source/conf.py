@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'Syncler-Tutorial'
+copyright = '2021, Sellmore'
+author = 'Georg Bergholz'
 
 release = '0.1'
 version = '0.1.0'
