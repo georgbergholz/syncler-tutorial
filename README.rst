@@ -1,9 +1,4 @@
-Template for the Read the Docs tutorial
+Syncler Anwender Dokumentation
 =======================================
 
-This GitHub template includes fictional Python library
-with some basic Sphinx docs.
-
-Read the tutorial here:
-
-https://docs.readthedocs.io/en/stable/tutorial/
+Dieses Projekt realisiert die Online Dokumentation der Cloud-Lösung Syncler.
