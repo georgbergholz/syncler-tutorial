@@ -1,7 +1,7 @@
 Willkommen zur Syncler Dokumentation
 ===================================
 
-In diesem Tutorial wird das Syncler Porjekt dokumentiert.
+In diesem Tutorial wird das Syncler Projekt dokumentiert.
 
 .. note::
 
