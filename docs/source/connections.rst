@@ -1,4 +1,4 @@
-Contents
+Die Verbindungen
 --------
 
 .. toctree::

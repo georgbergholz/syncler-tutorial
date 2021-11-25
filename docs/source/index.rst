@@ -7,9 +7,11 @@ In diesem Tutorial wird das Syncler Porjekt dokumentiert.
 
    Die Dokumentation wird gerade entwickelt.
 
-Contents
+Inhalt
 --------
 
 .. toctree::
+caption: Die Verbindungen
+maxdepth: 2
 
    connections
