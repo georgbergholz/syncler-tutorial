@@ -12,4 +12,4 @@ Contents
 
 .. toctree::
 
-   usage
+   connections
