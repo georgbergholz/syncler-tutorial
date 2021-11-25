@@ -12,8 +12,5 @@ Inhalt
 
 .. toctree::
 
-elements
-:caption: Elemente des Systems
-
-connections/index
-:caption: Verbindungen zu Systemen  
+    elements
+    connections/index
