@@ -5,7 +5,7 @@ In diesem Tutorial wird das Syncler Porjekt dokumentiert.
 
 .. note::
 
-   This project is under active development.
+   Die Dokumentation wird gerade entwickelt.
 
 Contents
 --------
