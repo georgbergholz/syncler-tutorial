@@ -11,7 +11,9 @@ Inhalt
 --------
 
 .. toctree::
-caption: Die Verbindungen
-maxdepth: 2
 
-   connections
+elements
+:caption: Elemente des Systems
+
+connections/index
+:caption: Verbindungen zu Systemen  
