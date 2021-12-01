@@ -3,9 +3,9 @@
     "",
     "\\docs",
     "\\docs\\source",
+    "\\docs\\source\\bestpractises",
     "\\docs\\source\\connections",
     "\\docs\\source\\images"
   ],
-  "SelectedNode": "\\docs\\source\\connections\\zoho-connection.rst",
   "PreviewInSolutionExplorer": false
 }
