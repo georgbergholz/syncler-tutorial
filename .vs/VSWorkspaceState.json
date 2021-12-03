@@ -3,9 +3,9 @@
     "",
     "\\docs",
     "\\docs\\source",
-    "\\docs\\source\\bestpractises",
-    "\\docs\\source\\connections",
-    "\\docs\\source\\images"
+    "\\docs\\source\\onpremise",
+    "\\docs\\source\\processes"
   ],
+  "SelectedNode": "\\docs\\source\\onpremise\\configuration.rst",
   "PreviewInSolutionExplorer": false
 }
