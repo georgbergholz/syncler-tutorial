@@ -1,5 +1,5 @@
 Willkommen zur Syncler Dokumentation
-===================================
+====
 
 In diesem Tutorial wird das Syncler Projekt dokumentiert.
 
@@ -12,7 +12,7 @@ Für einen Überblick können Sie die Projektseite https://www.syncler.de besuchen.
    Die Dokumentation wird gerade entwickelt.
 
 Inhalt
---------
+----
 
 .. toctree::
 
@@ -23,3 +23,4 @@ Inhalt
     processes/index
     bestpractices/index
     onpremise/index
+    api/index

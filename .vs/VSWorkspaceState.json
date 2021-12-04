@@ -2,11 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\docs",
-    "\\docs\\source",
-    "\\docs\\source\\connections",
-    "\\docs\\source\\onpremise",
-    "\\docs\\source\\processes"
+    "\\docs\\source"
   ],
-  "SelectedNode": "\\docs\\source\\connections\\zoho-connection.rst",
+  "SelectedNode": "\\docs\\source\\elements.rst",
   "PreviewInSolutionExplorer": false
 }

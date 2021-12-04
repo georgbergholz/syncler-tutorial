@@ -1,13 +1,20 @@
-Editionsvergleich zwischen Cloud und Onpremise
+Editionen
+====
 
+Syncler kann über die Cloud Plattform oder mit einer On Premise Installation genutzt werden.
 
-Cloud:
-keine Parallelverarbeitung von Datensätzen in einem Prozess
+In der Cloud-Umgebung gibt es einige Einschränkungen, die On Premise nicht vorliegen.
 
-Größe der Datenbank ist beschränkt
+In der Cloud werden Datensätze in einem Prozess seriell verarbeitet.
+Eine lokale Installation kann das Lesen und Verarbeiten parallel ausführen.
 
-Anzahl der Transaktionen ist beschränkt
+Die Größe der Cloud-Datenbank ist beschränkt und richtet sich nach Ihrem Abo.
 
-Die Scriptausführung erfolgt isoliert. Dadurch stehen die Delegaten nicht zur Verfügung und die Ausführung ist weniger performant.
+Die Anzahl der Transaktionen in der Cloud ist beschränkt und richtet sich nach Ihrem Abo.
 
-Die API unterstützt nur einen Teil der Endpunkte in der Cloud.
+SDK-Skripte und Transformationsskripte werden in der Cloud isoliert ausgeführt. Dadurch stehen die Delegaten für Verbindungs- und Prozesszugriffe nicht zur Verfügung.
+Siehe "SDK Referenz".
+Außerdem ist die Leistung für die Skriptausführung beschränkt.
+
+Die Syncler API kann nur im eingeschränkten Modus verwendet werden.
+
