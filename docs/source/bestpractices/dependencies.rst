@@ -1,1 +1,1 @@
-Abh‰ngigkeiten zwischen Objekttypen im Universalprozess.
+Abh√§ngigkeiten zwischen Objekttypen im Universalprozess.

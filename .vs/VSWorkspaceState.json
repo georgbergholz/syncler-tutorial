@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\docs",
-    "\\docs\\source"
+    "\\docs\\source",
+    "\\docs\\source\\api",
+    "\\docs\\source\\onpremise"
   ],
-  "SelectedNode": "\\docs\\source\\elements.rst",
+  "SelectedNode": "\\docs\\source\\processes",
   "PreviewInSolutionExplorer": false
 }

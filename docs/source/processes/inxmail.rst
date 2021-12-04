@@ -2,7 +2,7 @@ Die Inxmail Anbindung
 =====================
 
 
-Übertragung von Listen mit identischem Namen nicht möglich: Ressource bereits vorhanden.
+Ãœbertragung von Listen mit identischem Namen nicht mÃ¶glich: Ressource bereits vorhanden.
 
-Anlage von Empfängern mit identischer Emailadresse überschreibt vorhandenen ohne Vorwarnung.
+Anlage von EmpfÃ¤ngern mit identischer Emailadresse Ã¼berschreibt vorhandenen ohne Vorwarnung.
 Syncler gibt Fehlermeldung und Verweis aus. Weitere Korrektur erfolgt nicht.

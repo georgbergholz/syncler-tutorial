@@ -1,19 +1,19 @@
 Nachfolgeprozesse
 -----------------
 
-Mit Nachfolgeprozessen können Sie einzelne Prozesse in eine Abfolge bringen, um z.B. verschiedene Ziele anzusprechen.
+Mit Nachfolgeprozessen kÃ¶nnen Sie einzelne Prozesse in eine Abfolge bringen, um z.B. verschiedene Ziele anzusprechen.
 
-Der ausgewählte Nachfolgeprozess wird mit einem Warteschlangeneintrag vom Typ "Nachfolger" gestartet und erhält zusätzlich einen Verwis auf den aktuellen Warteschlangeneintrag.
-Im aktuellen Warteschlangeneintrag wird vermerkt, welche Datensätze erfolgreich oder mit einer Warnung verarbeitet wurden.
-Nur diese Datensätze werden vom Nachfolger verarbeitet.
+Der ausgewÃ¤hlte Nachfolgeprozess wird mit einem Warteschlangeneintrag vom Typ "Nachfolger" gestartet und erhÃ¤lt zusÃ¤tzlich einen Verwis auf den aktuellen Warteschlangeneintrag.
+Im aktuellen Warteschlangeneintrag wird vermerkt, welche DatensÃ¤tze erfolgreich oder mit einer Warnung verarbeitet wurden.
+Nur diese DatensÃ¤tze werden vom Nachfolger verarbeitet.
 
-Ein Schema-basierter Prozess kann nur Daten an einen Schema-basierten Prozess übergeben. In den meisten Fällen muss dabei auch das Quellobjekt identisch sein.
+Ein Schema-basierter Prozess kann nur Daten an einen Schema-basierten Prozess Ã¼bergeben. In den meisten FÃ¤llen muss dabei auch das Quellobjekt identisch sein.
 
-Ein Abfrage-basierter Prozess kann nur Daten an einen Abfrage-basierten Prozess übergeben.
-Dabei kann festgelegt werden, ob die Daten selbst oder die ID-Werte per Datenabbildung übergeben werden.
-Ohne ID-Felder in den Quelldaten wird immer der Änderungsspeicher verwendet. 
+Ein Abfrage-basierter Prozess kann nur Daten an einen Abfrage-basierten Prozess Ã¼bergeben.
+Dabei kann festgelegt werden, ob die Daten selbst oder die ID-Werte per Datenabbildung Ã¼bergeben werden.
+Ohne ID-Felder in den Quelldaten wird immer der Ã„nderungsspeicher verwendet. 
 Wenn ID-Felder angegeben wurden...
 
 
-Beim Änderungsspeicher, ohne die Datenabbildung, muss im Nachfolger das ID-Feld angegeben, sonst hält er das für eine ChangedGuid und findet nichts
+Beim Ã„nderungsspeicher, ohne die Datenabbildung, muss im Nachfolger das ID-Feld angegeben, sonst hÃ¤lt er das fÃ¼r eine ChangedGuid und findet nichts
 

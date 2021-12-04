@@ -19,18 +19,18 @@ Transformation
 
 
 
-Änderungsspeicher
+Ã„nderungsspeicher
 -----------------
 
-Da der Prozess eine Abfrage für die Gesamtheit der Daten definiert, ist er nicht in der Lage, gezielt einen einzelnen Datensatz nachzuladen.
-Sollte dies aber in Folge eines Fehlers oder einer notwendigen Wiederholung erforderlich werden, wird der Änderungsspeicher eingesetzt.
-Der Prozess legt dort für diesen Fall den Datensatz ab, damit er in einer späteren Verarbeitung wieder zur Verfügung steht.
+Da der Prozess eine Abfrage fÃ¼r die Gesamtheit der Daten definiert, ist er nicht in der Lage, gezielt einen einzelnen Datensatz nachzuladen.
+Sollte dies aber in Folge eines Fehlers oder einer notwendigen Wiederholung erforderlich werden, wird der Ã„nderungsspeicher eingesetzt.
+Der Prozess legt dort fÃ¼r diesen Fall den Datensatz ab, damit er in einer spÃ¤teren Verarbeitung wieder zur VerfÃ¼gung steht.
 
-Für dieses Verhalten steht ein Parameter zur Verfügung, der das Resultat beeinflusst.
-Wenn "Immer den Änderungsspeicher" aktiviert wird, wird die Kopie direkt nach dem Lesen abgespeichert und steht später unverändert zur Verfügung.
-Das führt allerdings auch zu einem größeren Verbrauch an Datenbankspeicher und kann die Performance beeinflussen.
-Sollte der Parameter nicht aktiv sein, kann der Prozess nur auf eine ggf. transformierte Version des Datensatzes zugreifen und diese wird dann im Änderungsspeicher abgelegt.
-Bei einer späteren Ausführung ist der Prozess nicht mehr in der Lage, dies zu unterscheiden, weshalb die Transformation dieses Datensatzes erneut ausgeführt wird.
-Das muss bei der Planung der Transformation berücksichtigt werden.
-Ggf. sollten Felder vor der irreversiblen Veränderung kopiert werden.
-Es ist auch nicht empfohlen, die Transformation für diese Datensätze zu überspringen, da hier u.a. auch externe Systeme abgefragt werden, was zu einem anderen Resultat führen kann.
+FÃ¼r dieses Verhalten steht ein Parameter zur VerfÃ¼gung, der das Resultat beeinflusst.
+Wenn "Immer den Ã„nderungsspeicher" aktiviert wird, wird die Kopie direkt nach dem Lesen abgespeichert und steht spÃ¤ter unverÃ¤ndert zur VerfÃ¼gung.
+Das fÃ¼hrt allerdings auch zu einem grÃ¶ÃŸeren Verbrauch an Datenbankspeicher und kann die Performance beeinflussen.
+Sollte der Parameter nicht aktiv sein, kann der Prozess nur auf eine ggf. transformierte Version des Datensatzes zugreifen und diese wird dann im Ã„nderungsspeicher abgelegt.
+Bei einer spÃ¤teren AusfÃ¼hrung ist der Prozess nicht mehr in der Lage, dies zu unterscheiden, weshalb die Transformation dieses Datensatzes erneut ausgefÃ¼hrt wird.
+Das muss bei der Planung der Transformation berÃ¼cksichtigt werden.
+Ggf. sollten Felder vor der irreversiblen VerÃ¤nderung kopiert werden.
+Es ist auch nicht empfohlen, die Transformation fÃ¼r diese DatensÃ¤tze zu Ã¼berspringen, da hier u.a. auch externe Systeme abgefragt werden, was zu einem anderen Resultat fÃ¼hren kann.

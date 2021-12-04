@@ -1,20 +1,20 @@
 Editionen
 ====
 
-Syncler kann über die Cloud Plattform oder mit einer On Premise Installation genutzt werden.
+Syncler kann Ã¼ber die Cloud Plattform oder mit einer On Premise Installation genutzt werden.
 
-In der Cloud-Umgebung gibt es einige Einschränkungen, die On Premise nicht vorliegen.
+In der Cloud-Umgebung gibt es einige EinschrÃ¤nkungen, die On Premise nicht vorliegen.
 
-In der Cloud werden Datensätze in einem Prozess seriell verarbeitet.
-Eine lokale Installation kann das Lesen und Verarbeiten parallel ausführen.
+In der Cloud werden DatensÃ¤tze in einem Prozess seriell verarbeitet.
+Eine lokale Installation kann das Lesen und Verarbeiten parallel ausfÃ¼hren.
 
-Die Größe der Cloud-Datenbank ist beschränkt und richtet sich nach Ihrem Abo.
+Die GrÃ¶ÃŸe der Cloud-Datenbank ist beschrÃ¤nkt und richtet sich nach Ihrem Abo.
 
-Die Anzahl der Transaktionen in der Cloud ist beschränkt und richtet sich nach Ihrem Abo.
+Die Anzahl der Transaktionen in der Cloud ist beschrÃ¤nkt und richtet sich nach Ihrem Abo.
 
-SDK-Skripte und Transformationsskripte werden in der Cloud isoliert ausgeführt. Dadurch stehen die Delegaten für Verbindungs- und Prozesszugriffe nicht zur Verfügung.
+SDK-Skripte und Transformationsskripte werden in der Cloud isoliert ausgefÃ¼hrt. Dadurch stehen die Delegaten fÃ¼r Verbindungs- und Prozesszugriffe nicht zur VerfÃ¼gung.
 Siehe "SDK Referenz".
-Außerdem ist die Leistung für die Skriptausführung beschränkt.
+AuÃŸerdem ist die Leistung fÃ¼r die SkriptausfÃ¼hrung beschrÃ¤nkt.
 
-Die Syncler API kann nur im eingeschränkten Modus verwendet werden.
+Die Syncler API kann nur im eingeschrÃ¤nkten Modus verwendet werden.
 

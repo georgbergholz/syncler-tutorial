@@ -1,33 +1,33 @@
 Konfiguration
 ====
 
-Über den Menüpunkt Einstellungen / Servereinstellungen erreichen Sie die Konfiguration Ihrer Syncler-Instanz.
+Ãœber den MenÃ¼punkt Einstellungen / Servereinstellungen erreichen Sie die Konfiguration Ihrer Syncler-Instanz.
 
-Dort können Sie auf diese Einstellungen und Parameter zugreifen.
+Dort kÃ¶nnen Sie auf diese Einstellungen und Parameter zugreifen.
 
 :Administrator E-Mailadressen: 
-Es können mehrere Emailadressen mit Semikolon getrennt hinterlegt werden. 
+Es kÃ¶nnen mehrere Emailadressen mit Semikolon getrennt hinterlegt werden. 
 Sollten keine abweichenden Adressen hier oder am Prozess definiert sein, werden alle Email an diese Adressen versendet.
 
 Automatische Emails umfassen:
 
-- Emails zu Fehlern bei Prozess- oder Datendienstausführung
-- Tägliche Statusemail bei aktiver Prozessausführung
-- Täglicher Warnungsbericht bei aktiver Prozessausführung. Diese wird nur versendet, wenn Fehler oder Warnungen in den vergangenen 24 Stunden protokolliert wurden.
+- Emails zu Fehlern bei Prozess- oder DatendienstausfÃ¼hrung
+- TÃ¤gliche Statusemail bei aktiver ProzessausfÃ¼hrung
+- TÃ¤glicher Warnungsbericht bei aktiver ProzessausfÃ¼hrung. Diese wird nur versendet, wenn Fehler oder Warnungen in den vergangenen 24 Stunden protokolliert wurden.
 
 :Mandant ID:
-Die Mandant ID wird für den Zugriff auf die API für die Authentifizierung benötigt.
+Die Mandant ID wird fÃ¼r den Zugriff auf die API fÃ¼r die Authentifizierung benÃ¶tigt.
 Dort wird sie als Client ID bei der Anforderung eines Tokens angegeben.
 
-### Mandant Schlüssel
+### Mandant SchlÃ¼ssel
 
 
 
-Protokollierungsstufe für Serverereignisse
+Protokollierungsstufe fÃ¼r Serverereignisse
 
-Protokollierungsstufe für Prozessereignisse
+Protokollierungsstufe fÃ¼r Prozessereignisse
 
-Protokollierungsstufe für Datendienstereignisse
+Protokollierungsstufe fÃ¼r Datendienstereignisse
 
 Sicherungsspeicher verwenden
 
@@ -35,15 +35,15 @@ Datensatzkopie in Protokollen speichern
 
 Datensatzkopie in Datenabbildung speichern
 
-Abweichende E-Mailadressen für Fehlermeldungen
+Abweichende E-Mailadressen fÃ¼r Fehlermeldungen
 
-Abweichende E-Mailadressen für Warnungen
+Abweichende E-Mailadressen fÃ¼r Warnungen
 
-Abweichende E-Mailadressen für Statusberichte
+Abweichende E-Mailadressen fÃ¼r Statusberichte
 
-Datenbankgröße
+DatenbankgrÃ¶ÃŸe
 
-Maximale Datenbankgröße in MB
+Maximale DatenbankgrÃ¶ÃŸe in MB
 
 Sprache
 
@@ -53,9 +53,9 @@ Seriendruck Kontingent
 
 
 
-Prozessausführung
+ProzessausfÃ¼hrung
 
 
-Datendienstausführung
+DatendienstausfÃ¼hrung
 
 
