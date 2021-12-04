@@ -5,7 +5,7 @@ Konfiguration
 
 Dort können Sie auf diese Einstellungen und Parameter zugreifen.
 
-### Administrator E-Mailadressen
+:Administrator E-Mailadressen: 
 Es können mehrere Emailadressen mit Semikolon getrennt hinterlegt werden. 
 Sollten keine abweichenden Adressen hier oder am Prozess definiert sein, werden alle Email an diese Adressen versendet.
 
@@ -15,8 +15,7 @@ Automatische Emails umfassen:
 - Tägliche Statusemail bei aktiver Prozessausführung
 - Täglicher Warnungsbericht bei aktiver Prozessausführung. Diese wird nur versendet, wenn Fehler oder Warnungen in den vergangenen 24 Stunden protokolliert wurden.
 
-### Mandant ID
-
+:Mandant ID:
 Die Mandant ID wird für den Zugriff auf die API für die Authentifizierung benötigt.
 Dort wird sie als Client ID bei der Anforderung eines Tokens angegeben.
 
