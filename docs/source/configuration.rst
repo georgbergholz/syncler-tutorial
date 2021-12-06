@@ -42,6 +42,9 @@ Dort wird sie als Client ID bei der Anforderung eines Tokens angegeben.
 
 :Maximale Datenbankgröße in MB:
 
+Details zur Konfiguration des Wartungsprozesses finden Sie hier:
+:doc:'processes/maintenance'
+
 :Sprache:
 
 :Kontingent:
@@ -51,10 +54,10 @@ Dort wird sie als Client ID bei der Anforderung eines Tokens angegeben.
 
 
 Prozessausführung
----
+----
 
 
 Datendienstausführung
----
+----
 
 
