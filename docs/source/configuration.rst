@@ -8,7 +8,6 @@ Dort können Sie auf diese Einstellungen und Parameter zugreifen.
 :Administrator E-Mailadressen: 
 Es können mehrere Emailadressen mit Semikolon getrennt hinterlegt werden. 
 Sollten keine abweichenden Adressen hier oder am Prozess definiert sein, werden alle Email an diese Adressen versendet.
-
 Automatische Emails umfassen:
 
 - Emails zu Fehlern bei Prozess- oder Datendienstausführung
@@ -19,43 +18,43 @@ Automatische Emails umfassen:
 Die Mandant ID wird für den Zugriff auf die API für die Authentifizierung benötigt.
 Dort wird sie als Client ID bei der Anforderung eines Tokens angegeben.
 
-### Mandant Schlüssel
+:Mandant Schlüssel:
 
+:Protokollierungsstufe für Serverereignisse:
 
+:Protokollierungsstufe für Prozessereignisse:
 
-Protokollierungsstufe für Serverereignisse
+:Protokollierungsstufe für Datendienstereignisse:
 
-Protokollierungsstufe für Prozessereignisse
+:Sicherungsspeicher verwenden:
 
-Protokollierungsstufe für Datendienstereignisse
+:Datensatzkopie in Protokollen speichern:
 
-Sicherungsspeicher verwenden
+:Datensatzkopie in Datenabbildung speichern:
 
-Datensatzkopie in Protokollen speichern
+:Abweichende E-Mailadressen für Fehlermeldungen:
 
-Datensatzkopie in Datenabbildung speichern
+:Abweichende E-Mailadressen für Warnungen:
 
-Abweichende E-Mailadressen für Fehlermeldungen
+:Abweichende E-Mailadressen für Statusberichte:
 
-Abweichende E-Mailadressen für Warnungen
+:Datenbankgröße:
 
-Abweichende E-Mailadressen für Statusberichte
+:Maximale Datenbankgröße in MB:
 
-Datenbankgröße
+:Sprache:
 
-Maximale Datenbankgröße in MB
+:Kontingent:
 
-Sprache
-
-Kontingent
-
-Seriendruck Kontingent
+:Seriendruck Kontingent:
 
 
 
 Prozessausführung
+---
 
 
 Datendienstausführung
+---
 
 
