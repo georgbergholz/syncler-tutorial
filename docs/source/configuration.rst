@@ -17,13 +17,13 @@ Automatische Emails umfassen:
 :Mandant ID:
 Die Mandant ID wird für den Zugriff auf die API für die Authentifizierung benötigt.
 Dort wird sie als Client ID bei der Anforderung eines Tokens angegeben.
-Siehe :doc:`api/index`
+Siehe :doc:`/api/index`
 
 :Mandant Schlüssel:
 
 Der Mandanten-Schlüssel wird für den Zugriff auf die API für die Authentifizierung benötigt.
 Dort wird sie als Client Secret bei der Anforderung eines Tokens angegeben.
-Siehe :doc:`api/index`
+Siehe :doc:`/api/index`
 
 :Protokollierungsstufe für Serverereignisse:
 
@@ -47,7 +47,7 @@ Siehe :doc:`api/index`
 
 :Maximale Datenbankgröße in MB:
 
-Details zur Konfiguration des Wartungsprozesses finden Sie hier:
+Details zur Konfiguration des Wartungsprozesses finden Sie hier.
 :doc:`processes/maintenance`
 
 :Sprache:
