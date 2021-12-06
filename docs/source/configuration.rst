@@ -45,10 +45,13 @@ Siehe :doc:`/api/index`
 
 :Datenbankgröße:
 
+Das ist Ihre aktuelle Datenbankgröße.
+Siehe :doc:`/processes/maintenance`
+
 :Maximale Datenbankgröße in MB:
 
-Details zur Konfiguration des Wartungsprozesses finden Sie hier.
-:doc:`processes/maintenance`
+Sobald die maximale Datenbankgröße erreicht wird, kann kein Prozess ausgeführt werden. Es wird beim Versuch einen Prozess zu starten eine Fehlermeldung generiert und ggf. versendet.
+Siehe :doc:`/processes/maintenance`
 
 :Sprache:
 
