@@ -1,0 +1,2 @@
+﻿Abfrage-Prozesse mit Massenverarbeitung
+====

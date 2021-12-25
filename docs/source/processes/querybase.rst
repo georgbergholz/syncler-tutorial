@@ -34,3 +34,13 @@ Bei einer späteren Ausführung ist der Prozess nicht mehr in der Lage, dies zu 
 Das muss bei der Planung der Transformation berücksichtigt werden.
 Ggf. sollten Felder vor der irreversiblen Veränderung kopiert werden.
 Es ist auch nicht empfohlen, die Transformation für diese Datensätze zu überspringen, da hier u.a. auch externe Systeme abgefragt werden, was zu einem anderen Resultat führen kann.
+
+Datenabbildung
+--------------
+
+Falls das Ziel keine ID beim Speichern zurückliefern kann, wird ein Mapping ohne Ziel-ID angelegt.
+Sollte eine Übereinstimmungsregel definiert sein, wird dieser bei einer erneuten Übertragung wieder ausgeführt.
+Sollte keine Übereinstimmungsregel definiert sein, wird der Datensatz übersprungen.
+
+Datenabbildungen werden angelegt, sobald eine Quell-ID festgelegt wurde.
+

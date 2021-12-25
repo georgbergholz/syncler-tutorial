@@ -2,10 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\docs",
-    "\\docs\\source",
-    "\\docs\\source\\api",
-    "\\docs\\source\\onpremise"
+    "\\docs\\source"
   ],
-  "SelectedNode": "\\docs\\source\\conf.py",
+  "SelectedNode": "\\docs\\source\\elements.rst",
   "PreviewInSolutionExplorer": false
 }
