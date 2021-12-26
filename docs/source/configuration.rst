@@ -1,7 +1,7 @@
 Konfiguration
 ====
 
-Über den Menüpunkt Einstellungen / Servereinstellungen erreichen Sie die Konfiguration Ihrer Syncler-Instanz.
+Über den Menüpunkt Einstellungen / Servereinstellungen erreichen Sie die Konfiguration Ihres Syncler-Accounts.
 
 Dort können Sie auf diese Einstellungen und Parameter zugreifen.
 
