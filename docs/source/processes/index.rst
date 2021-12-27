@@ -1,25 +1,62 @@
-Die Prozesse
-====
-
-
-
-Prozesstypen
-----
-Es gibt verschiedene Typen von Prozessen, die sich in Konfiguration und Verwendung unterscheiden.
-
-:Schema-basierter Synchronisationsprozess:
-
-:Abfrage-basierter Synchronisationsprozess:
-
-:Synchronisationsprozesse für geschachtelte Daten:
-
-:Ablauf-basierter Prozess:
-
-:Sonstige Prozesse:
-
-Das Prozesskonzept in der Synchronisation
+Prozesse
 ----
 
+Ein Prozess führt eine Aufgabe aus, z.B. das Übertragen oder Synchronisieren von Daten.
+Dabei können zwei Formen unterschieden werden. Der Schema-basierte und der Abfrage-basierte Prozess.
+Der Prozess speichert alle Einstellungen, Transformationen und Feldzuordnung für eine Richtung zwischen zwei beteiligten Verbindungen.
+Der Syncler sieht auch nicht genau einen Prozess für eine Übertragungsrichtung vor, sondern unterstützt eine beliebige Anzahl von Prozessen. 
+Jeder Prozess wird dabei separat konfiguriert und ausgeführt und kann mit den anderen Prozessen indirekt über die Datenabbildungen interagieren, um z.B. ein Konfliktverhalten zu definieren. 
+Dabei können diese Prozesse den Datenbestand separieren oder die Synchronisation ergänzen. 
+Im Fall des Ergänzens werden zwei verknüpfte Datensätze mit mehreren Prozessen synchronisiert.
+
+Es gibt z.B. Prozessvorlage für die Umsatz-Aktualisierung. 
+In den meisten Systemen ist eine Umsatzänderung keine Änderung der Stammdaten und löst dadurch auch keine änderungsgetriebene Übertragung aus. 
+Damit aktuelle Umsatzzahlen angeboten werden können, überträgt dieser Prozess ausschließlich die Umsatzzahlen für alle Datensätze und ergänzt damit die Änderungssynchronisation. 
+Da das Schreiben der Umsatzzahlen eine Änderung im Zielsystem darstellt, aktualisieren Prozess die Synchronisationsinformationen von Datenabbildungen aus parallelen und komplementären Prozessen. 
+Diese Interaktion führt dazu, dass diese Prozesse ggf. keine (Rück-) Übertragung ausführen oder es nicht zu falschen Konflikterkennungen kommt.
+
+In folgenden Situationen ist eine Verteilung auf mehrere Prozesse sinnvoll.
+
+Die bidirektionale Synchronisation ist asymmetrisch definiert.
+Wenn die Feldzuordnungen zwischen den Übertragungsrichtungen abweichen, kann ein Konflikt zu inkonsistenten Daten führen.
+Konflikte entstehen aus einer zeitgleichen Änderungen in verschiedenen Systemen und enden meist mit der Auswahl einer bestimmten Änderung und dem Verwerfen der anderen Änderung.
+Damit nur einseitig synchronisierte Felder durch einen Konflikt nicht verworfen werden, kann die Übertragung dieser Felder in einen weiteren Prozess mit einer eigenen Konfliktbehandlung ausgelagert werden.
+
+Sie benötigen in bestimmten Situationen unterschiedliche Filter.
+Wenn z.B. der Sage CRM Account-Manager mit dem Vertreter in Sage 100 synchronisiert werden soll, aber keine Kontenanlage durch die Integration gewünscht ist, benötigen Sie einen weiteren Prozess, der nur für Firmen mit bestehenden Kontokorrent dieses Feld zuordnet und überträgt. 
+Hier bietet sich ein Filter auf eine vorhandene Kontonummer an.
+
+Sie benötigen in bestimmten Situationen unterschiedliche Parameter.
+Jeder Prozess definiert eine Vielzahl von Parametern, die auch Datenobjekt-spezifisch sein können. 
+Diese Parameter können während der Synchronisation nicht beeinflusst werden.
+
+
+Schema-basierte Prozesse
+----
+
+
+Abfrage-basierte Prozesse
+----
+
+.. toctree::
+
+    querybase
+    querybulkbase
+
+Synchronisationsprozesse für geschachtelte Daten
+----
+
+
+Ablauf-basierte Prozesse
+----
+
+
+Sonstige Prozesse
+----
+
+.. toctree::
+
+    maintenance
 
 Universalprozess oder spezifischer Prozess
 ----
@@ -29,6 +66,13 @@ Diese Konstellation kann i.d.R. auch über den Universalprozess konfiguriert werd
 Die spezifischen Prozesse führen aber auch zusätzliche Prüfungen aus oder speichern weitere Daten, damit die Konsistenz im Zielsystem sichergestellt ist.
 Sie sollten immer den spezifischen Prozess bevorzugt einrichten, damit es nicht zu inkonsistenten Zuständen kommen kann.
 Eine genaue Beschreibung, was der spezifische Prozess automatisch vorsieht, kann der jeweiligen Dokumentation entnommen werden.
+
+Transformation im Detail
+----
+
+.. toctree::
+
+    conversion/index
 
 Prozesse im Detail
 ----

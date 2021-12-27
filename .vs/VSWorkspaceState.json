@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\docs",
-    "\\docs\\source"
+    "\\docs\\source",
+    "\\docs\\source\\processes"
   ],
-  "SelectedNode": "\\docs\\source\\configuration.rst",
+  "SelectedNode": "\\docs\\source\\connections",
   "PreviewInSolutionExplorer": false
 }

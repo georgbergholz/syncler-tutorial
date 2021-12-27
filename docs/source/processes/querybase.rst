@@ -1,26 +1,26 @@
 Abfrage-Prozesse
-================
+----
 
 Abfrage-Prozesse basieren nicht auf einem global bekannten Datenschema, welche durch Verbindungen bereitsgestellt werden.
 Ein Abfrage-Prozess erzeugt ein lokales Datenschema, das aus einer spezifischen Abfrage generiert wird.
 
 Parameter
----------
+----
 
 
 
 Abfrage und Ziel
-----------------
+----
 
 
 Transformation
---------------
+----
 
 
 
 
 Änderungsspeicher
------------------
+----
 
 Da der Prozess eine Abfrage für die Gesamtheit der Daten definiert, ist er nicht in der Lage, gezielt einen einzelnen Datensatz nachzuladen.
 Sollte dies aber in Folge eines Fehlers oder einer notwendigen Wiederholung erforderlich werden, wird der Änderungsspeicher eingesetzt.
@@ -36,7 +36,7 @@ Ggf. sollten Felder vor der irreversiblen Veränderung kopiert werden.
 Es ist auch nicht empfohlen, die Transformation für diese Datensätze zu überspringen, da hier u.a. auch externe Systeme abgefragt werden, was zu einem anderen Resultat führen kann.
 
 Datenabbildung
---------------
+----
 
 Falls das Ziel keine ID beim Speichern zurückliefern kann, wird ein Mapping ohne Ziel-ID angelegt.
 Sollte eine Übereinstimmungsregel definiert sein, wird dieser bei einer erneuten Übertragung wieder ausgeführt.

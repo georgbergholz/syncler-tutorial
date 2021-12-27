@@ -1,5 +1,5 @@
 Die Inxmail Anbindung
-=====================
+----
 
 
 Übertragung von Listen mit identischem Namen nicht möglich: Ressource bereits vorhanden.
