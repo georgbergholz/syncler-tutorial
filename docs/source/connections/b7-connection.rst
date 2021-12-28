@@ -14,6 +14,7 @@ Für den Syncler müssen folgende Daten bereitgestellt werden.
 :Service Bus Endpunkt:
 
 Die URL des Nachrichtendienstes wird mit der Kundennummer vervollständigt.
+
 .. code-block:: none
 
 sb://sb-#####-b7-crm.servicebus.windows.net/
@@ -22,6 +23,7 @@ sb://sb-#####-b7-crm.servicebus.windows.net/
 :Kundenkennzeichen:
 
 Die Eingabe folgt diesem Schema und beginnt mit der Kundennummer.
+
 .. code-block:: none
 
 #####.xxxxx
@@ -64,7 +66,8 @@ UseCases
 
 Für die Kommunikation sind verschiedene UseCases definiert.
 Neben den verfügbaren Objekten wird damit auch die Art und das System festgelegt.
-::
+
+.. code-block:: none
 
 UC.SageCRM.Schema.REQ
 UC.SageCRM.AllCustomers.REQ
