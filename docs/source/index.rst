@@ -15,7 +15,8 @@ Verbindungen, Prozesse und Datendienste sind die grundlegenden Elemente im Syncl
 Daneben gibt es noch weitere Elemente für die Koordination, Überwachung und Ausführung.
 
 .. toctree::
-
+    :titlesonly:
+    
     connections/index
     processes/index
     dataservices/index
