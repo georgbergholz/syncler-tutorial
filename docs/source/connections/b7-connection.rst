@@ -5,11 +5,12 @@ Bei Sage Bäurer b7 handelt es sich um eine ERP-Software für Produktion und Han
 
 Die Anbindung erfolgt mittels Azure Service Bus.
 Damit dies genutzt werden kann, muss das ERP-System entsprechend konfiguriert werden.
+
 Die Besonderheit bei diesem Verfahren ist die entkoppelte Kommunikation.
 Daten können nicht direkt abgefragt, sondern müssen per Nachricht angefordert werden.
-Als Resultat wird die Antwort als Nachricht abgestellt und muss aktiv abgerufen werden.
+Als Resultat wird die Antwort als Nachricht abgestellt und muss abgerufen werden.
 
-Für den Syncler müssen folgende Daten bereitgestellt werden.
+Für den Syncler müssen folgende Einstellungen bereitgestellt werden.
 
 :Service Bus Endpunkt:
 
@@ -69,13 +70,13 @@ Neben den verfügbaren Objekten wird damit auch die Art und das System festgeleg
 
 .. code-block:: none
 
-    | UC.SageCRM.Schema.REQ
-    | UC.SageCRM.AllCustomers.REQ
-    | UC.Sageb7.AllCustomers.RESP
-    | UC.SageCRM.Selection.REQ
-    | UC.SageCRM.Customer.REQ
-    | UC.Sageb7.Customer.RESP
-    | UC.SageCRM.SqlQuery.REQ
+    UC.SageCRM.Schema.REQ
+    UC.SageCRM.AllCustomers.REQ
+    UC.Sageb7.AllCustomers.RESP
+    UC.SageCRM.Selection.REQ
+    UC.SageCRM.Customer.REQ
+    UC.Sageb7.Customer.RESP
+    UC.SageCRM.SqlQuery.REQ
 
 Folgende Objekte werden unterstützt.
 
