@@ -1,4 +1,4 @@
-Anleitungen und L�sungen
+﻿Anleitungen und Lösungen
 ----
 
 

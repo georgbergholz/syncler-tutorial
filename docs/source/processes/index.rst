@@ -1,81 +1,81 @@
-Prozesse
-----
+ï»¿Prozesse
+========
 
-Ein Prozess führt eine Aufgabe aus, z.B. das Übertragen oder Synchronisieren von Daten.
-Dabei können zwei Formen unterschieden werden. Der Schema-basierte und der Abfrage-basierte Prozess.
-Der Prozess speichert alle Einstellungen, Transformationen und Feldzuordnung für eine Richtung zwischen zwei beteiligten Verbindungen.
-Der Syncler sieht auch nicht genau einen Prozess für eine Übertragungsrichtung vor, sondern unterstützt eine beliebige Anzahl von Prozessen. 
-Jeder Prozess wird dabei separat konfiguriert und ausgeführt und kann mit den anderen Prozessen indirekt über die Datenabbildungen interagieren, um z.B. ein Konfliktverhalten zu definieren. 
-Dabei können diese Prozesse den Datenbestand separieren oder die Synchronisation ergänzen. 
-Im Fall des Ergänzens werden zwei verknüpfte Datensätze mit mehreren Prozessen synchronisiert.
+Ein Prozess fÃ¼hrt eine Aufgabe aus, z.B. das Ãœbertragen oder Synchronisieren von Daten.
+Dabei kÃ¶nnen zwei Formen unterschieden werden. Der Schema-basierte und der Abfrage-basierte Prozess.
+Der Prozess speichert alle Einstellungen, Transformationen und Feldzuordnung fÃ¼r eine Richtung zwischen zwei beteiligten Verbindungen.
+Der Syncler sieht auch nicht genau einen Prozess fÃ¼r eine Ãœbertragungsrichtung vor, sondern unterstÃ¼tzt eine beliebige Anzahl von Prozessen. 
+Jeder Prozess wird dabei separat konfiguriert und ausgefÃ¼hrt und kann mit den anderen Prozessen indirekt Ã¼ber die Datenabbildungen interagieren, um z.B. ein Konfliktverhalten zu definieren. 
+Dabei kÃ¶nnen diese Prozesse den Datenbestand separieren oder die Synchronisation ergÃ¤nzen. 
+Im Fall des ErgÃ¤nzens werden zwei verknÃ¼pfte DatensÃ¤tze mit mehreren Prozessen synchronisiert.
 
-Es gibt z.B. Prozessvorlage für die Umsatz-Aktualisierung. 
-In den meisten Systemen ist eine Umsatzänderung keine Änderung der Stammdaten und löst dadurch auch keine änderungsgetriebene Übertragung aus. 
-Damit aktuelle Umsatzzahlen angeboten werden können, überträgt dieser Prozess ausschließlich die Umsatzzahlen für alle Datensätze und ergänzt damit die Änderungssynchronisation. 
-Da das Schreiben der Umsatzzahlen eine Änderung im Zielsystem darstellt, aktualisieren Prozess die Synchronisationsinformationen von Datenabbildungen aus parallelen und komplementären Prozessen. 
-Diese Interaktion führt dazu, dass diese Prozesse ggf. keine (Rück-) Übertragung ausführen oder es nicht zu falschen Konflikterkennungen kommt.
+Es gibt z.B. Prozessvorlage fÃ¼r die Umsatz-Aktualisierung. 
+In den meisten Systemen ist eine UmsatzÃ¤nderung keine Ã„nderung der Stammdaten und lÃ¶st dadurch auch keine Ã¤nderungsgetriebene Ãœbertragung aus. 
+Damit aktuelle Umsatzzahlen angeboten werden kÃ¶nnen, Ã¼bertrÃ¤gt dieser Prozess ausschlieÃŸlich die Umsatzzahlen fÃ¼r alle DatensÃ¤tze und ergÃ¤nzt damit die Ã„nderungssynchronisation. 
+Da das Schreiben der Umsatzzahlen eine Ã„nderung im Zielsystem darstellt, aktualisieren Prozess die Synchronisationsinformationen von Datenabbildungen aus parallelen und komplementÃ¤ren Prozessen. 
+Diese Interaktion fÃ¼hrt dazu, dass diese Prozesse ggf. keine (RÃ¼ck-) Ãœbertragung ausfÃ¼hren oder es nicht zu falschen Konflikterkennungen kommt.
 
 In folgenden Situationen ist eine Verteilung auf mehrere Prozesse sinnvoll.
 
 Die bidirektionale Synchronisation ist asymmetrisch definiert.
-Wenn die Feldzuordnungen zwischen den Übertragungsrichtungen abweichen, kann ein Konflikt zu inkonsistenten Daten führen.
-Konflikte entstehen aus einer zeitgleichen Änderungen in verschiedenen Systemen und enden meist mit der Auswahl einer bestimmten Änderung und dem Verwerfen der anderen Änderung.
-Damit nur einseitig synchronisierte Felder durch einen Konflikt nicht verworfen werden, kann die Übertragung dieser Felder in einen weiteren Prozess mit einer eigenen Konfliktbehandlung ausgelagert werden.
+Wenn die Feldzuordnungen zwischen den Ãœbertragungsrichtungen abweichen, kann ein Konflikt zu inkonsistenten Daten fÃ¼hren.
+Konflikte entstehen aus einer zeitgleichen Ã„nderungen in verschiedenen Systemen und enden meist mit der Auswahl einer bestimmten Ã„nderung und dem Verwerfen der anderen Ã„nderung.
+Damit nur einseitig synchronisierte Felder durch einen Konflikt nicht verworfen werden, kann die Ãœbertragung dieser Felder in einen weiteren Prozess mit einer eigenen Konfliktbehandlung ausgelagert werden.
 
-Sie benötigen in bestimmten Situationen unterschiedliche Filter.
-Wenn z.B. der Sage CRM Account-Manager mit dem Vertreter in Sage 100 synchronisiert werden soll, aber keine Kontenanlage durch die Integration gewünscht ist, benötigen Sie einen weiteren Prozess, der nur für Firmen mit bestehenden Kontokorrent dieses Feld zuordnet und überträgt. 
+Sie benÃ¶tigen in bestimmten Situationen unterschiedliche Filter.
+Wenn z.B. der Sage CRM Account-Manager mit dem Vertreter in Sage 100 synchronisiert werden soll, aber keine Kontenanlage durch die Integration gewÃ¼nscht ist, benÃ¶tigen Sie einen weiteren Prozess, der nur fÃ¼r Firmen mit bestehenden Kontokorrent dieses Feld zuordnet und Ã¼bertrÃ¤gt. 
 Hier bietet sich ein Filter auf eine vorhandene Kontonummer an.
 
-Sie benötigen in bestimmten Situationen unterschiedliche Parameter.
-Jeder Prozess definiert eine Vielzahl von Parametern, die auch Datenobjekt-spezifisch sein können. 
-Diese Parameter können während der Synchronisation nicht beeinflusst werden.
+Sie benÃ¶tigen in bestimmten Situationen unterschiedliche Parameter.
+Jeder Prozess definiert eine Vielzahl von Parametern, die auch Datenobjekt-spezifisch sein kÃ¶nnen. 
+Diese Parameter kÃ¶nnen wÃ¤hrend der Synchronisation nicht beeinflusst werden.
 
 
 Schema-basierte Prozesse
-----
+------------------------
 
 
 Abfrage-basierte Prozesse
-----
+-------------------------
 
 .. toctree::
 
     querybase
     querybulkbase
 
-Synchronisationsprozesse für geschachtelte Daten
-----
+Synchronisationsprozesse fÃ¼r geschachtelte Daten
+------------------------------------------------
 
 
 Ablauf-basierte Prozesse
-----
+------------------------
 
 
 Sonstige Prozesse
-----
+-----------------
 
 .. toctree::
 
     maintenance
 
 Universalprozess oder spezifischer Prozess
-----
+------------------------------------------
 
 Es gibt spezifische Prozesse unter den Plugins, die die System- und Objekttypen genau festlegen.
-Diese Konstellation kann i.d.R. auch über den Universalprozess konfiguriert werden.
-Die spezifischen Prozesse führen aber auch zusätzliche Prüfungen aus oder speichern weitere Daten, damit die Konsistenz im Zielsystem sichergestellt ist.
-Sie sollten immer den spezifischen Prozess bevorzugt einrichten, damit es nicht zu inkonsistenten Zuständen kommen kann.
+Diese Konstellation kann i.d.R. auch Ã¼ber den Universalprozess konfiguriert werden.
+Die spezifischen Prozesse fÃ¼hren aber auch zusÃ¤tzliche PrÃ¼fungen aus oder speichern weitere Daten, damit die Konsistenz im Zielsystem sichergestellt ist.
+Sie sollten immer den spezifischen Prozess bevorzugt einrichten, damit es nicht zu inkonsistenten ZustÃ¤nden kommen kann.
 Eine genaue Beschreibung, was der spezifische Prozess automatisch vorsieht, kann der jeweiligen Dokumentation entnommen werden.
 
 Transformation im Detail
-----
+------------------------
 
 .. toctree::
 
     conversion/index
 
 Prozesse im Detail
-----
+------------------
 
 .. toctree::
 
