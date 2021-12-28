@@ -17,7 +17,7 @@ Die URL des Nachrichtendienstes wird mit der Kundennummer vervollständigt.
 
 .. code-block:: none
 
-sb://sb-#####-b7-crm.servicebus.windows.net/
+    sb://sb-#####-b7-crm.servicebus.windows.net/
 
 
 :Kundenkennzeichen:
@@ -26,7 +26,7 @@ Die Eingabe folgt diesem Schema und beginnt mit der Kundennummer.
 
 .. code-block:: none
 
-#####.xxxxx
+    #####.xxxxx
 
 
 :Mandant:
@@ -69,14 +69,13 @@ Neben den verfügbaren Objekten wird damit auch die Art und das System festgeleg
 
 .. code-block:: none
 
-UC.SageCRM.Schema.REQ
-UC.SageCRM.AllCustomers.REQ
-UC.Sageb7.AllCustomers.RESP
-UC.SageCRM.Selection.REQ
-UC.SageCRM.Customer.REQ
-UC.Sageb7.Customer.RESP
-UC.SageCRM.SqlQuery.REQ
-
+    | UC.SageCRM.Schema.REQ
+    | UC.SageCRM.AllCustomers.REQ
+    | UC.Sageb7.AllCustomers.RESP
+    | UC.SageCRM.Selection.REQ
+    | UC.SageCRM.Customer.REQ
+    | UC.Sageb7.Customer.RESP
+    | UC.SageCRM.SqlQuery.REQ
 
 Folgende Objekte werden unterstützt.
 
