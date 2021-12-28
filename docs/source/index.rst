@@ -1,5 +1,5 @@
 Willkommen zur Syncler Dokumentation
-====
+====================================
 
 In diesem Tutorial wird das Syncler Projekt dokumentiert.
 

@@ -1,5 +1,5 @@
 ﻿Protokolle
-----
+==========
 
 Verbindungen, Prozesse und Datendienste erzeugen Nachrichten, die in den Protokollen gespeichert werden.
 Jede Nachricht verfügt über eine Einstufung und kann noch zusätzliche Daten enthalten.

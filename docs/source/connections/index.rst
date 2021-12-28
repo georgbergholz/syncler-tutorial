@@ -1,5 +1,5 @@
 Verbindungen
-----
+============
 
 Eine Verbindung stellt die Anbindung eines externen Systems oder Funktion bereit.
 Sie speichert Zugangsdaten und Einstellungen und realisiert eine einheitliche Schnittstelle für andere Elemente des Synclers.
@@ -13,9 +13,13 @@ Auch beim Speichern von Daten können zwei Methoden unterschieden werden, die ebe
 Daten werden Schema-basiert einzeln oder als Bulk gespeichert.
 
 Außerdem stellen manche Verbindungen zusätzliche Funktionen, wie z.B. eine Preisfindung bereit.
+
 Durch das Speichern einer neuen Verbindung oder das Speichern einer bestehenden Verbindung mit aktivierter Checkbox "Schema aktualisieren" ruft der Syncler das Schema des Systems ab und speichert es in ihrer Syncler-Datenbank.
 Dieses Datenschema ist die Arbeitsgrundlage für die Konfiguration von Schema-basierten Prozessen und wird aus Performance-Gründen zwischengespeichert.
-Sollten Sie das Datenschema ändern, z.B. durch das Anlegen neuer Felder, müssen Sie diese Änderung über die Aktualisierung des Verbindungsschemas dem Syncler bekannt machen, damit Sie diese verwenden können.
+
+Sollten sich das Datenschema ändern, z.B. durch das Anlegen neuer Felder, müssen Sie diese Änderung über die Aktualisierung des Verbindungsschemas dem Syncler bekannt machen, damit Sie diese verwenden können.
+
+Diese Verbindungen stehen im Syncler zur Verfügung.
 
 .. toctree::
 

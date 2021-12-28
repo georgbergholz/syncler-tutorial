@@ -1,5 +1,5 @@
 Editionen
-----
+=========
 
 Syncler kann über die Cloud Plattform oder mit einer On Premise Installation genutzt werden.
 

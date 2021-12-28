@@ -1,5 +1,5 @@
 ﻿Datenabbildungen
-----
+================
 
 Für eine kontinuierliche Synchronisation von Datensätzen werden Datenabbildungen je Datensatz und Richtung angelegt.
 Die Abbildungen speichern ID-Werte, Synchronisationsinformationen und können auch Kopien des Quelldatensatzes für eine genaue Änderungsanalyse enthalten.

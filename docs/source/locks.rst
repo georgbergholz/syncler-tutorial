@@ -1,5 +1,5 @@
 ﻿Datensatzsperren
-----
+================
 
 Datensatzsperren werden bei der Verarbeitung erzeugt und dienen der Konfliktbehandlung.
 Außerdem stellen sie die Aktualität von Daten sicher.
