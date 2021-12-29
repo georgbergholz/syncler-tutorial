@@ -3,7 +3,11 @@
     "",
     "\\docs",
     "\\docs\\source",
-    "\\docs\\source\\connections"
+    "\\docs\\source\\api",
+    "\\docs\\source\\bestpractices",
+    "\\docs\\source\\connections",
+    "\\docs\\source\\processes",
+    "\\docs\\source\\processes\\sync"
   ],
   "SelectedNode": "\\docs\\source\\connections\\b7-connection.rst",
   "PreviewInSolutionExplorer": false

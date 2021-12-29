@@ -46,3 +46,4 @@ Diese Verbindungen stehen im Syncler zur Verfügung.
     sql-connection
     x3-connection
     zoho-connection
+    bridgeservice

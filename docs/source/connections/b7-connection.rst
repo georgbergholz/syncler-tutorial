@@ -132,39 +132,8 @@ Hier wird ein Oracle SELECT-Statement erwartet.
 Daten schreiben
 ---------------
 
-
-
-Konventionen
-------------
-
-:Messages mit einer Messagesize > 256 KB:
-
-Da eine Message die maximale Größe von 256KB nicht überschreiten darf, muss sie gesplittet werden. 
-In den Splitts werden die Properties
-
-* SplitNumber (int32) – Nummer des aktuellen Splitts
-* SplitTotalNumber (int32) – Gesamtzahl der Splitts 
-
-zur Kennzeichnung der Teile verwendet.
-Vor der Verarbeitung müssen die Splitts zur Gesamtnachricht zusammengesetzt werden.
-Splitts können bei allen Nachrichten auftreten, auch beim Bereitstellen des Schemas.
-
-:Mehrere Antworten zu einer Anfrage:
-
-Zu einer Anfrage kann es mehrere Antwortnachrichten geben (z.B. n Rechnungen zu einem Auftrag).
-Zur Kennzeichnung werden die Properties
-
-* ResultRecord (int32) – Nummer der aktuellen Antwort
-* ResultTotalRecords (int32) – Gesamtzahl der Antworten
-
-verwendet. 
-Eine Antwort kann ggf. aus mehreren Splitts bestehen. 
-Jede, ggf. aus Splitts zusammengesetzte Antwort, enthält ein gültiges Datenobjekt.
-
-:Zuordnung von Antworten zum System der Anfrage:
-Damit im Falle von Antworten zu Anfragen in der Definition der Subscription auf das anfragende System Bezug genommen werden kann, wird die neue Property
-
-* CorrelationSysID (string) – Name des anfragenden Systems (entspricht SysId aus Anfrage)
- 
-verwendet. 
-Über die Property CorrelationId kann der Bezug zur Nachricht der Anfrage hergestellt werden.
+Wenn Daten in das ERP geschrieben werden sollen, wird eine passende Nachricht generiert und in der Warteschlange abgestellt.
+Da zu diesem Zeitpunkt nicht sicher ist, ob und wann die Aktion ausgeführt wird, wird sie unter Vorbehalt als erfolgreich gewertet.
+Am Ende einer Prozessausführung werden Responses des ERPs aus der Warteschlange abgerufen.
+Die Antworten werden mit den aktuellen Datensätzen abgeglichen.
+Sollte die Antwort zu einer früheren Nachricht gehören, wird das als zusätzliches Resultat in der Prozessausführung behandelt.
