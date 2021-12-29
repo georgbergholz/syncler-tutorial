@@ -38,10 +38,7 @@ Schema-basierte Prozesse
 Abfrage-basierte Prozesse
 -------------------------
 
-.. toctree::
 
-    querybase
-    querybulkbase
 
 Synchronisationsprozesse für geschachtelte Daten
 ------------------------------------------------
@@ -54,9 +51,7 @@ Ablauf-basierte Prozesse
 Sonstige Prozesse
 -----------------
 
-.. toctree::
 
-    maintenance
 
 Universalprozess oder spezifischer Prozess
 ------------------------------------------
@@ -70,15 +65,10 @@ Eine genaue Beschreibung, was der spezifische Prozess automatisch vorsieht, kann
 Transformation im Detail
 ------------------------
 
-.. toctree::
 
-    conversion/index
 
 Prozesse im Detail
 ------------------
 
-.. toctree::
 
-    sync/inxmail
-    sync/cas_bc
 
