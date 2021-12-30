@@ -1,11 +1,13 @@
-Abfrage-Prozesse
-----------------
+Abfrage-basierte Prozesse
+=========================
+
+
 
 Abfrage-Prozesse basieren nicht auf einem global bekannten Datenschema, welche durch Verbindungen bereitsgestellt werden.
 Ein Abfrage-Prozess erzeugt ein lokales Datenschema, das aus einer spezifischen Abfrage generiert wird.
 
 Parameter
-----
+---------
 
 
 
