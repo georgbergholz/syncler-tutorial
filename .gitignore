@@ -6,6 +6,9 @@
 # gitignore template for Jupyter Notebooks
 # website: http://jupyter.org/
 
+# Visual Studio 2015/2017 cache/options directory
+.vs/
+
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
 
