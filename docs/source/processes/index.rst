@@ -18,18 +18,18 @@ Diese Interaktion führt dazu, dass diese Prozesse ggf. keine (Rück-) Übertrag
 
 In folgenden Situationen ist eine Verteilung auf mehrere Prozesse sinnvoll.
 
-:Die bidirektionale Synchronisation ist asymmetrisch definiert.
+:Die bidirektionale Synchronisation ist asymmetrisch definiert:
 
 Wenn die Feldzuordnungen zwischen den Übertragungsrichtungen abweichen, kann ein Konflikt zu inkonsistenten Daten führen.
 Konflikte entstehen aus einer zeitgleichen Änderungen in verschiedenen Systemen und enden meist mit der Auswahl einer bestimmten Änderung und dem Verwerfen der anderen Änderung.
 Damit nur einseitig synchronisierte Felder durch einen Konflikt nicht verworfen werden, kann die Übertragung dieser Felder in einen weiteren Prozess mit einer eigenen Konfliktbehandlung ausgelagert werden.
 
-:Sie benötigen in bestimmten Situationen unterschiedliche Filter.
+:Sie benötigen in bestimmten Situationen unterschiedliche Filter:
 
 Wenn z.B. der Sage CRM Account-Manager mit dem Vertreter in Sage 100 synchronisiert werden soll, aber keine Kontenanlage durch die Integration gewünscht ist, benötigen Sie einen weiteren Prozess, der nur für Firmen mit bestehenden Kontokorrent dieses Feld zuordnet und überträgt. 
 Hier bietet sich ein Filter auf eine vorhandene Kontonummer an.
 
-:Sie benötigen in bestimmten Situationen unterschiedliche Parameter.
+:Sie benötigen in bestimmten Situationen unterschiedliche Parameter:
 
 Jeder Prozess definiert eine Vielzahl von Parametern, die auch Datenobjekt-spezifisch sein können. 
 Diese Parameter können während der Synchronisation nicht beeinflusst werden.
