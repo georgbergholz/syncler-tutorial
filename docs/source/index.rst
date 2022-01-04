@@ -29,5 +29,6 @@ Daneben gibt es noch weitere Elemente für die Koordination, Überwachung und Au
     mailmerge
     bestpractices/index
     editions
+    releasenotes
     onpremise/index
     api/index
