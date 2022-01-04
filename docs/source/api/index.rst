@@ -1,3 +1,3 @@
-﻿Syncler Web API
-===============
+﻿Syncler Web API und SDK
+=======================
 
