@@ -10,57 +10,91 @@ Die Besonderheit bei diesem Verfahren ist die entkoppelte Kommunikation.
 Daten können nicht direkt abgefragt, sondern müssen per Nachricht angefordert werden.
 Als Resultat wird die Antwort als Nachricht abgestellt und muss abgerufen werden.
 
+Funktionen
+----------
+
+:Schema ermitteln:
+
+    Die Ermittlung des Schemas erfolgt mit einer Anfragenachricht.
+    Die Antwort enthält die verfügbaren Objekte und deren Felddefinition.
+    Speziell das Kunden- und Lieferantenobjekt werden noch weiter unterteilt für Personen und Anschriften aufbereitet.
+    Außerdem können vorhandene Auswahllisten (awl) abgefragt werden.
+
+:Laden von Quelldaten:
+
+    Für das
+
+:Laden von Schema-basierten Daten:
+
+    -
+
+:Laden von Abfrage-basierten Daten:
+
+    -
+
+:Schreiben von Daten:
+
+    -
+
+:Schreiben von Bulk-Daten:
+
+    Diese Funktion wird nicht unterstützt.
+
+
+Einstellungen
+-------------
+
 Für den Syncler müssen folgende Einstellungen bereitgestellt werden.
 
 :Service Bus Endpunkt:
 
-Die URL des Nachrichtendienstes wird mit der Kundennummer vervollständigt.
+    Die URL des Nachrichtendienstes wird mit der Kundennummer vervollständigt.
 
-.. code-block:: none
+    .. code-block:: none
 
-    sb://sb-#####-b7-crm.servicebus.windows.net/
+        sb://sb-#####-b7-crm.servicebus.windows.net/
 
 
 :Kundenkennzeichen:
 
-Die Eingabe folgt diesem Schema und beginnt mit der Kundennummer.
+    Die Eingabe folgt diesem Schema und beginnt mit der Kundennummer.
 
-.. code-block:: none
+    .. code-block:: none
 
-    #####.xxxxx
+        #####.xxxxx
 
 
 :Mandant:
 
-Damit wird an der Verbindung gekennzeichnet, welcher ERP-Mandant angesprochen werden soll.
-Für eine Mehrmandanten-Integration wird je Mandant eine Verbindung eingerichtet.
+    Damit wird an der Verbindung gekennzeichnet, welcher ERP-Mandant angesprochen werden soll.
+    Für eine Mehrmandanten-Integration wird je Mandant eine Verbindung eingerichtet.
 
 :SharedAccessKey Name:
 
-Dieser Wert gehört zu den Zugangsdaten.
+    Dieser Wert gehört zu den Zugangsdaten.
 
 :SharedAccessKey Lesen:
 
-Dieser Wert gehört zu den Zugangsdaten.
+    Dieser Wert gehört zu den Zugangsdaten.
 
 :SharedAccessKey Schreiben:
 
-Dieser Wert gehört zu den Zugangsdaten.
+    Dieser Wert gehört zu den Zugangsdaten.
 
 :SharedAccessKey Initialisierung:
 
-Dieser Wert gehört zu den Zugangsdaten.
+    Dieser Wert gehört zu den Zugangsdaten.
 
 :Timeout Verbindung:
 
-Mit dieser Angabe kann das Standardtimeout für die Azure Verbindung angepasst werden. 
-Die Angabe erfolgt in Millisekunden und das Minimum und Standardwert sind 100000. 
-Eine Anpassung des Standardwertes ist nur dann erforderlich, wenn Abfragen mit einem Timeout-Fehler abgebrochen werden.
+    Mit dieser Angabe kann das Standardtimeout für die Azure Verbindung angepasst werden. 
+    Die Angabe erfolgt in Millisekunden und das Minimum und Standardwert sind 100000. 
+    Eine Anpassung des Standardwertes ist nur dann erforderlich, wenn Abfragen mit einem Timeout-Fehler abgebrochen werden.
 
 :Timeout Nachrichten:
 
-Mit dieser Angabe kann das Standardtimeout für die Azure-Abfragen angepasst werden. 
-Die Angabe erfolgt in Millisekunden und das Minimum und Standardwert sind 5000.
+    Mit dieser Angabe kann das Standardtimeout für die Azure-Abfragen angepasst werden. 
+    Die Angabe erfolgt in Millisekunden und das Minimum und Standardwert sind 5000.
 
 UseCases
 --------
@@ -105,8 +139,10 @@ Daten lesen
 -----------
 
 Es gibt verschiedene Möglichkeiten Daten zu lesen.
-Das ERP wird Änderungen direkt abstellen, die von der Verbindung dann nur noch gelesen werden müssen.
-Die Verbindung kann einzelne Datensätze anfordern, welche nach der Verarbeitung durch das ERP abgestellt werden.
+Das ERP wird Änderungen direkt abstellen, die von der Verbindung dann nur noch gelesen 
+werden müssen.
+Die Verbindung kann einzelne Datensätze anfordern, welche nach der Verarbeitung durch 
+das ERP abgestellt werden.
 Mit einem speziellen UseCase kann die initiale Synchronisation angefordert werden.
 Dadurch werden alle Daten des ERP-System für ein bestimmtes Objekt abgestellt.
 Per Prozess-Parameter wird dieser Vorgang eingeleitet.
@@ -114,17 +150,22 @@ Sollte dies mehrmals erfolgen, wird vor jedem Anfordern die Warteschlange geleer
 Dies kann einige Zeit in Anspruch nehmen.
 
 Mit einem weiteren Prozess-Parameter kann ein initiale Anforderung aber auch fortgesetzt werden.
-Möglich ist, dass die erste Anforderung zu einem Timeout geführt hat, die Daten aber dennoch aufbereitet werden.
+Möglich ist, dass die erste Anforderung zu einem Timeout geführt hat, die Daten 
+aber dennoch aufbereitet werden.
 Dann sollte die initiale Übertragung fortgesetzt werden.
 
 Mehrfach gelesene Nachrichten im Service Bus führen zu einer Dead-Letter-Situation.
-Damit dies vermieden wird, werden alle verfügbaren Daten beim Lesen von Nachrichten verarbeitet, unabhängig vom jeweiligen Prozess, der das Lesen ausgelöst hat.
-Gelesene Nachrichten werden deshalb in den Änderungsspeicher übernommen, falls es einen definierten Prozess für dieses Objekt gibt.
+Damit dies vermieden wird, werden alle verfügbaren Daten beim Lesen von Nachrichten verarbeitet, 
+unabhängig vom jeweiligen Prozess, der das Lesen ausgelöst hat.
+Gelesene Nachrichten werden deshalb in den Änderungsspeicher übernommen, falls es einen 
+definierten Prozess für dieses Objekt gibt.
 Sobald der Prozess ausgeführt wird, findet er diese Daten und beginnt mit der Verarbeitung.
 Dies gilt auch für zusammengesetzte Objekte wie den Kunden. 
-Anschriften und Ansprechpartner werden im Änderungsspeicher zwischengespeichert, bis der jeweilige Prozess ausgeführt wird.
+Anschriften und Ansprechpartner werden im Änderungsspeicher zwischengespeichert, bis der 
+jeweilige Prozess ausgeführt wird.
 
-Bei OUT-Nachrichten zu Änderungen kann dem Element s_aktion (Ausprägungen: NONE, INS, UPD, DEL) die Art der Änderung entnommen werden.
+Bei OUT-Nachrichten zu Änderungen kann dem Element s_aktion (Ausprägungen: NONE, INS, UPD, DEL) 
+die Art der Änderung entnommen werden.
 
 Für Abfrage-basierte Verarbeitungen können auch direkte SQL-Anfragen definiert werden.
 Hier wird ein Oracle SELECT-Statement erwartet.
@@ -132,8 +173,11 @@ Hier wird ein Oracle SELECT-Statement erwartet.
 Daten schreiben
 ---------------
 
-Wenn Daten in das ERP geschrieben werden sollen, wird eine passende Nachricht generiert und in der Warteschlange abgestellt.
-Da zu diesem Zeitpunkt nicht sicher ist, ob und wann die Aktion ausgeführt wird, wird sie unter Vorbehalt als erfolgreich gewertet.
+Wenn Daten in das ERP geschrieben werden sollen, wird eine passende Nachricht generiert 
+und in der Warteschlange abgestellt.
+Da zu diesem Zeitpunkt nicht sicher ist, ob und wann die Aktion ausgeführt wird, wird sie unter 
+Vorbehalt als erfolgreich gewertet.
 Am Ende einer Prozessausführung werden Responses des ERPs aus der Warteschlange abgerufen.
 Die Antworten werden mit den aktuellen Datensätzen abgeglichen.
-Sollte die Antwort zu einer früheren Nachricht gehören, wird das als zusätzliches Resultat in der Prozessausführung behandelt.
+Sollte die Antwort zu einer früheren Nachricht gehören, wird das als zusätzliches Resultat 
+in der Prozessausführung behandelt.
