@@ -82,3 +82,10 @@ Die folgenden Verbindungen stehen im Syncler zur Verfügung.
     zoho-connection
     emarsys-connection
     bridgeservice
+
+Besonderheiten
+--------------
+
+Sie können bestehende Verbindungen auch über das Aktionen-Menü kopieren.
+Dabei werden aber aus Sicherheitsgründen keine Passwörter kopiert.
+Sie müssen die Verbindung bearbeiten und ggf. alle Passwörter erneut eingeben.
