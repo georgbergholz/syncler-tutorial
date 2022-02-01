@@ -54,3 +54,19 @@ Sie sollten immer den spezifischen Prozess bevorzugt einrichten, damit es nicht 
 Eine genaue Beschreibung, was der spezifische Prozess automatisch vorsieht, kann der jeweiligen Dokumentation entnommen werden.
 
 
+Integrationsszenarien
+---------------------
+
+Für bestimmte Integrationsszenarien stehen eigene Prozesse oder Vorlagen zur Verfügung.
+Außerdem können noch Sonderfälle darin berücksichtigt werden.
+
+.. toctree::
+    :titlesonly:
+    
+    sync/cas_bc_
+    sync/inxmail
+    sync/sap_sf
+
+_
+
+

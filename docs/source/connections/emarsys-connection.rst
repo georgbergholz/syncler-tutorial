@@ -1,40 +1,40 @@
-Emarsys
+ï»¿Emarsys
 =======
 
 Emarsys ist ein Newsletter- und Online-Marketing-Anbieter.
-Die Verbindung stellt nicht alle Funktionalitäten bereit.
+Die Verbindung stellt nicht alle FunktionalitÃ¤ten bereit.
 
 Funktionen
 ----------
 
 :Schema ermitteln:
 
-    Das Schema für einen Kontakt wird über das Abrufen der Felder erzeugt.
-    Das Schema für External Events ist fest vorgegeben.
+    Das Schema fÃ¼r einen Kontakt wird Ã¼ber das Abrufen der Felder erzeugt.
+    Das Schema fÃ¼r External Events ist fest vorgegeben.
 
 :Laden von Quelldaten:
 
-    Das Laden von Datensätzen als Quelle für die Ausführung eines Prozesses wird nicht unterstützt.
+    Das Laden von DatensÃ¤tzen als Quelle fÃ¼r die AusfÃ¼hrung eines Prozesses wird nicht unterstÃ¼tzt.
 
 :Laden von Schema-basierten Daten:
 
-    Es können Kontakte über den ID-Wert (Emailadresse) oder einer Suchbedingung in Feldnotation abgerufen werden.
-    Damit ist eine Aktualisierung von Kontakten und eine eingeschränkte Übereinstimmungssuche nach Kontakten möglich.
+    Es kÃ¶nnen Kontakte Ã¼ber den ID-Wert (Emailadresse) oder einer Suchbedingung in Feldnotation abgerufen werden.
+    Damit ist eine Aktualisierung von Kontakten und eine eingeschrÃ¤nkte Ãœbereinstimmungssuche nach Kontakten mÃ¶glich.
 
 :Laden von Abfrage-basierten Daten:
 
-    Diese Funktion wird nicht unterstützt.
+    Diese Funktion wird nicht unterstÃ¼tzt.
 
 :Schreiben von Daten:
 
-    Es können Kontakte angelegt oder aktualisiert werden.
-    Das Triggern eines External Events ist mittels Schreibaktion möglich.
+    Es kÃ¶nnen Kontakte angelegt oder aktualisiert werden.
+    Das Triggern eines External Events ist mittels Schreibaktion mÃ¶glich.
 
 
 Einstellungen
 -------------
 
-Für den Syncler müssen folgende Einstellungen bereitgestellt werden.
+FÃ¼r den Syncler mÃ¼ssen folgende Einstellungen bereitgestellt werden.
 
 :Benutzername:
 
@@ -44,11 +44,11 @@ Für den Syncler müssen folgende Einstellungen bereitgestellt werden.
 
     -
 
-Optional können diese Einstellungen bereitgestellt werden.
+Optional kÃ¶nnen diese Einstellungen bereitgestellt werden.
 
 Besonderheiten
 --------------
 
-Es können an der Verbindung External Event IDs definiert werden, die nach der Anlage oder Aktualisierung eines Kontaktes getriggert werden.
+Es kÃ¶nnen an der Verbindung External Event IDs definiert werden, die nach der Anlage oder Aktualisierung eines Kontaktes getriggert werden.
 
 
