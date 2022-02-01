@@ -67,6 +67,7 @@ Die folgenden Verbindungen stehen im Syncler zur Verfügung.
     idoc-connection
     infor-connection
     inxmail-connection
+    mail-connection
     mailchimp-connection
     mailmerge-connection
     odoo-connection
