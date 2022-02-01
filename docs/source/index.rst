@@ -19,6 +19,7 @@ Daneben gibt es noch weitere Elemente für die Koordination, Überwachung und Au
     
     connections/index
     processes/index
+    sync/index
     dataservices/index
     configuration
     queues

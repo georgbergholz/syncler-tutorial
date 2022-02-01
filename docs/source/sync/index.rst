@@ -1,0 +1,14 @@
+﻿Integrationsszenarien
+=====================
+
+Für bestimmte Integrationsszenarien stehen eigene Prozesse oder Vorlagen zur Verfügung.
+Außerdem können noch Sonderfälle darin berücksichtigt sein.
+
+.. toctree::
+    :titlesonly:
+    
+    cas_bc_
+    inxmail
+    sap_sf
+
+_
