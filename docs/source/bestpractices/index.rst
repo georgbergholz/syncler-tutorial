@@ -10,3 +10,4 @@ Für häufige Anwendungsfälle finden Sie hier Anleitungen, die die Einrichtung 
     email_cas
     mailmerge
     postprocess
+    zoho_deleted
