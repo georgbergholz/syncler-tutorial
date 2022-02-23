@@ -7,4 +7,5 @@ Hier finden Sie Informationen zu erfolgten Ver√∂ffentlichungen und enthaltenen √
     :titlesonly:
 
     release435
+    release436
 
