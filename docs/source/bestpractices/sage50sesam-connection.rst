@@ -14,3 +14,6 @@ Zertifikat für 443 im IIS hinzufügen (Self-Signed reicht)
 32-Bit Anwendungen im App-Pool aktivieren (DefaultAppPool -> Adcanced Settings -> Enable 32-Bit Applications)
 
 Wichtig: Für die Vorlagen muss im ZOHO ein Feld Sprache an der Person existieren sowie die Felder sis_refid1, sis_status1
+
+Für die Übertragung der Steuercodes an den Produkten müssen diese im ZOHO zunächst angelegt werden. Dann muss im Prozess dafür gesorgt werden, dass diese in der Transformation im Array mit ausgegeben werden ({ "name": "USt77 - 7.7 %"}). Wichtig ist, dass hier der vollständige DisplayName aus ZOHO reingeschrieben wird.
+Beim Sync der Belege dann muss nur noch der Steuercode "USt77" übergeben werden.
