@@ -43,6 +43,7 @@ Diese Parameter können während der Synchronisation nicht beeinflusst werden.
     querybulkbase
     multichild
     flowbase
+    graphzohosync
 
 Universalprozess oder spezifischer Prozess
 ------------------------------------------
