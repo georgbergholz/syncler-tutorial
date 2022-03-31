@@ -24,3 +24,12 @@ Die Ausführung eines C#-Skripts liefert mir trotz Umwandlung keine UTC-Zeit zur
 
     InputValues["Datum"] = new DateTime(Datum.ToUniversalTime().Ticks, DateTimeKind.Local);
 
+Die Ausführung eines C#-Skriptes liefert mir die Fehlermeldung "Connection refused".
+
+    Für die Ausführung von C#-Skripten sind die Ressourcen für Speichernutzung und Ausführungsdauer beschränkt.
+    Sollten die Grenzwerte durch Ihr Skript überschritten werden, führt das zum Abbruch der Ausführung.
+    In diesem Fall sollte das Skript bzgl. Speichernutzung und Laufzeit kontrolliert und ggf. angepasst werden.
+    Einfache Berechnungen können z.B. auch durch Transformationen wie "Formel ausführen" umgesetzt werden.
+    Sollte dies keine Abhilfe schaffen, wenden Sie sich an unseren Support.
+
+
