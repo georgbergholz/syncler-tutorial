@@ -1,4 +1,4 @@
-Konfiguration
+Konfiguration (Draft)
 =============
 
 Über den Menüpunkt Einstellungen / Servereinstellungen erreichen Sie die Konfiguration Ihres Syncler-Accounts.

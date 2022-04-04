@@ -1,4 +1,4 @@
-﻿Microsoft Business Central
+﻿Microsoft Business Central (Draft)
 ==========================
 
 Die Anbindung von Business Central erfolgt über die REST API.

@@ -1,4 +1,4 @@
-﻿Glossar
+﻿Glossar (Draft)
 =======
 
 :Änderungsspeicher:

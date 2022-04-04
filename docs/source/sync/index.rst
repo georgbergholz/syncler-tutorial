@@ -7,8 +7,8 @@ Außerdem können noch Sonderfälle darin berücksichtigt sein.
 .. toctree::
     :titlesonly:
     
-    cas_bc_
-    inxmail
+    cas_bc
     sap_sf
+    inxmailcassync
 
 _

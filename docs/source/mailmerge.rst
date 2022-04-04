@@ -1,4 +1,4 @@
-﻿Serienbrief Vorlagen
+﻿Serienbrief Vorlagen (Draft)
 ====================
 
 Für die Seriendruckfunktion können Vorlagen in der Datenbank verwaltet werden.

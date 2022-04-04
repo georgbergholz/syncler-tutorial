@@ -1,4 +1,4 @@
-﻿E-Mail
+﻿E-Mail (Draft)
 ======
 
 Diese Verbindung kann Postfächer verarbeiten oder E-Mails versenden.

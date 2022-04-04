@@ -1,4 +1,4 @@
-﻿Termin-Synchronisation zwischen Office 365 und Zoho CRM
+﻿Termin-Synchronisation zwischen Office 365 und Zoho CRM (Draft)
 =======================================================
 
 Die Microsoft Graph Verbindung stellt das Objekt "Event" für den Zugriff auf Kalendereinträge zur Verfügung.

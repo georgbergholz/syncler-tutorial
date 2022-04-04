@@ -1,4 +1,4 @@
-﻿Datenabbildungen
+﻿Datenabbildungen (Draft)
 ================
 
 Für eine kontinuierliche Synchronisation von Datensätzen werden Datenabbildungen je Datensatz und Richtung angelegt.

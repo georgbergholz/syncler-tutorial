@@ -1,4 +1,4 @@
-﻿Änderungsspeicher
+﻿Änderungsspeicher (Draft)
 =================
 
 Der Änderungsspeicher ist ein Zwischenspeicher für Datensätze, die noch verarbeitet oder weiterverarbeitet werden müssen.
