@@ -1,4 +1,4 @@
-﻿Integrationsszenarien
+﻿Integrationsszenarien (Draft)
 =====================
 
 Für bestimmte Integrationsszenarien stehen eigene Prozesse oder Vorlagen zur Verfügung.
@@ -10,5 +10,6 @@ Außerdem können noch Sonderfälle darin berücksichtigt sein.
     cas_bc
     sap_sf
     inxmailcassync
+    graphzohosync
 
-_
+

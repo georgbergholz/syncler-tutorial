@@ -3,7 +3,7 @@ Willkommen zur Syncler Dokumentation
 
 In diesem Tutorial wird das Syncler Projekt dokumentiert.
 
-Syncler ist eine Backend-Software zur Realisierung von verschiedenen Synchronisations- und Businessaufgaben.
+Syncler ist eine Plattform zur Realisierung von verschiedenen Synchronisations- und Businessaufgaben.
 
 Für einen Überblick können Sie die Projektseite https://www.syncler.de besuchen.  
 

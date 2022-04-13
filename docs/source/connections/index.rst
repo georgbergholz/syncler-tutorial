@@ -2,12 +2,11 @@
 ============
 
 Eine Verbindung stellt die Anbindung eines externen Systems oder Funktion bereit.
-Sie speichert Zugangsdaten und Einstellungen und realisiert eine einheitliche Schnittstelle für andere Elemente des Synclers.
+Sie speichert Zugangsdaten und Einstellungen und realisiert eine einheitliche Schnittstelle für andere Elemente im Syncler.
 Neben klassischen System wie CRM oder ERP kann sich hinter einer Verbindung auch der Eingang für Daten, 
-z.B. Push-Nachrichten oder Dateien
-und der Ausgang von Daten, z.B. Serienbriefe verbergen.
+z.B. Push-Nachrichten oder Dateien und der Ausgang von Daten, z.B. Serienbriefe oder Emails verbergen.
 
-Zu den Kernaufgaben zählt das Lesen von Daten, das Schreiben von Daten und das Ermitteln eines Datenschemas.
+Zu den Standardaufgaben zählen die Autorisierung, das Lesen von Daten, das Schreiben von Daten und das Ermitteln eines Datenschemas.
 Beim Lesen von Daten können zwei Methoden unterschieden werden, die aber nicht jede Verbindung auch implementieren muss.
 Daten können auf der Basis eines Schemas oder auf der Basis einer Abfrage gelesen werden.
 Auch beim Speichern von Daten können zwei Methoden unterschieden werden, 
@@ -17,12 +16,12 @@ Daten werden Schema-basiert einzeln oder als Bulk gespeichert.
 Außerdem stellen manche Verbindungen zusätzliche Funktionen, wie z.B. eine Preisfindung bereit.
 
 Durch das Speichern einer neuen Verbindung oder das Speichern einer bestehenden Verbindung mit aktivierter Checkbox 
-"Schema aktualisieren" ruft der Syncler das Schema des Systems ab und speichert es in ihrer Syncler-Datenbank.
+"Schema aktualisieren" ruft Syncler das Schema des Systems ab und speichert es.
 Dieses Datenschema ist die Arbeitsgrundlage für die Konfiguration von Schema-basierten Prozessen und 
 wird für eine bessere Performance zwischengespeichert.
 
 Sollten sich das Datenschema ändern, z.B. durch das Anlegen neuer Felder, müssen Sie diese Änderung über die Aktualisierung 
-des Verbindungsschemas dem Syncler bekannt machen, damit Sie diese verwenden können.
+des Verbindungsschemas bekannt machen, damit Sie diese verwenden können.
 
 In der Detailbeschreibung zu jeder Verbindung finden Sie Angaben zu den folgenden Grundfunktionen.
 
@@ -70,6 +69,7 @@ Die folgenden Verbindungen stehen im Syncler zur Verfügung.
     mail-connection
     mailchimp-connection
     mailmerge-connection
+    msgraph-connection
     odoo-connection
     push-connection
     rest-connection
