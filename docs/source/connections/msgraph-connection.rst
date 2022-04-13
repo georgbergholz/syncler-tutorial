@@ -1,32 +1,32 @@
-Microsoft Graph API
+ï»¿Microsoft Graph API
 ===================
 
-Die Microsoft Graph API ist eine REST-basierte Schnittstelle für den Zugriff auf Microsoft 365.
-Diese Verbindung realisiert die Anmeldung an der API und stellt ein ausgewähltes Datenschema bereit.
-Ein Fokus der Verbindung ist der Zugriff und die Synchronisation von Terminen, wofür spezielle Parameter vorhanden sind.
+Die Microsoft Graph API ist eine REST-basierte Schnittstelle fÃ¼r den Zugriff auf Microsoft 365.
+Diese Verbindung realisiert die Anmeldung an der API und stellt ein ausgewÃ¤hltes Datenschema bereit.
+Ein Fokus der Verbindung ist der Zugriff und die Synchronisation von Terminen, wofÃ¼r spezielle Parameter vorhanden sind.
 
-Für die Einrichtung der Anmeldung ist eine registrierte Anwendung bei Microsoft erforderlich.
+FÃ¼r die Einrichtung der Anmeldung ist eine registrierte Anwendung bei Microsoft erforderlich.
 
-Registrieren Sie die Anwendung über das Registrierungsportal https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade.
+Registrieren Sie die Anwendung Ã¼ber das Registrierungsportal https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade.
 Melden Sie sich mit Ihrem Microsoft Konto an und rufen Sie die Funktion "Neue Registrierung" auf.
 Vergeben Sie einen Anwendungsnamen und klicken Sie auf Registrieren.
 
-Danach wird Ihnen die Übersicht zur Registrierung angezeigt.
-Für die Verbindung benötigen Sie die Anwendungs-ID (Client-ID) und die Verzeichnis-ID (Mandant).
-Übernehmen Sie die Angaben in die Felder Client-ID und Azure AD Mandanten ID.
+Danach wird Ihnen die Ãœbersicht zur Registrierung angezeigt.
+FÃ¼r die Verbindung benÃ¶tigen Sie die Anwendungs-ID (Client-ID) und die Verzeichnis-ID (Mandant).
+Ãœbernehmen Sie die Angaben in die Felder Client-ID und Azure AD Mandanten ID.
 
-Damit die Verbindung auf die Graph API zugreifen kann, müssen Sie unter "Zertifikate & Geheimnisse" einen geheimen Clientschlüssel generieren.
-Wählen Sie dazu die Funktion "Neuer geheimer Clientschlüssel".
-Stellen Sie die gewünschte Gültigkeit ein und klicken Sie auf Hinzufügen.
-Den angezeigte Geheimschlüssel müssen Sie direkt in das Feld "Client Geheimschlüssel" übernehmen.
-Der Schlüssel ist nachträglich nicht mehr einsehbar.
-Sollte der Schlüssel nicht mehr zur Verfügung stehen, müssen Sie einen neuen Geheimschlüssel hinzufügen.
+Damit die Verbindung auf die Graph API zugreifen kann, mÃ¼ssen Sie unter "Zertifikate & Geheimnisse" einen geheimen ClientschlÃ¼ssel generieren.
+WÃ¤hlen Sie dazu die Funktion "Neuer geheimer ClientschlÃ¼ssel".
+Stellen Sie die gewÃ¼nschte GÃ¼ltigkeit ein und klicken Sie auf HinzufÃ¼gen.
+Den angezeigte GeheimschlÃ¼ssel mÃ¼ssen Sie direkt in das Feld "Client GeheimschlÃ¼ssel" Ã¼bernehmen.
+Der SchlÃ¼ssel ist nachtrÃ¤glich nicht mehr einsehbar.
+Sollte der SchlÃ¼ssel nicht mehr zur VerfÃ¼gung stehen, mÃ¼ssen Sie einen neuen GeheimschlÃ¼ssel hinzufÃ¼gen.
 
-Konfigurieren Sie als nächstes die API-Berechtigungen.
-Für die Synchronisation von Termines des Unternehmen brauchen Sie die Berechtigungen "User.Read.All" und "Calendars.ReadWrite".
-Beide Berechtigungen müssen durch den Administrator freigegeben werden.
-Klicken Sie auf "Berechtigung hinzufügen", "Microsoft Graph" und "Anwendungsberechtigung".
-Mittels des Suchfeldes können Sie die Berechtigungen leicht auswählen.
+Konfigurieren Sie als nÃ¤chstes die API-Berechtigungen.
+FÃ¼r die Synchronisation von Termines des Unternehmen brauchen Sie die Berechtigungen "User.Read.All" und "Calendars.ReadWrite".
+Beide Berechtigungen mÃ¼ssen durch den Administrator freigegeben werden.
+Klicken Sie auf "Berechtigung hinzufÃ¼gen", "Microsoft Graph" und "Anwendungsberechtigung".
+Mittels des Suchfeldes kÃ¶nnen Sie die Berechtigungen leicht auswÃ¤hlen.
 
 Funktionen
 ----------
@@ -34,44 +34,44 @@ Funktionen
 :Schema ermitteln:
 
     Das Datenschema wird aus den Metadaten der Graph API (https://graph.microsoft.com/v1.0/$metadata) ermittelt.
-    Dabei werden nicht alle Objekte zur Verfügung gestellt, sondern nur eine aktuell geprüfte Teilmenge.
-    ID-Felder und Felder mit Änderungsinformationen werden gekennzechnet, damit diese in Prozessen genutzt werden können.
+    Dabei werden nicht alle Objekte zur VerfÃ¼gung gestellt, sondern nur eine aktuell geprÃ¼fte Teilmenge.
+    ID-Felder und Felder mit Ã„nderungsinformationen werden gekennzechnet, damit diese in Prozessen genutzt werden kÃ¶nnen.
 
 :Laden von Quelldaten:
 
-    Mit dem Universalplugin können Daten gelesen werden. 
-    Dabei ist auch eine Abfrage per Änderungsdatum möglich.
-    Daneben stehen spezielle Prozesse zur Verfügung, die eine umfassende Synchronisation ermöglichen, 
-    und neben Vorkommen einer Serie auch das Löschen von Ereignissen verarbeiten.
+    Mit dem Universalplugin kÃ¶nnen Daten gelesen werden. 
+    Dabei ist auch eine Abfrage per Ã„nderungsdatum mÃ¶glich.
+    Daneben stehen spezielle Prozesse zur VerfÃ¼gung, die eine umfassende Synchronisation ermÃ¶glichen, 
+    und neben Vorkommen einer Serie auch das LÃ¶schen von Ereignissen verarbeiten.
 
 :Laden von Schema-basierten Daten:
 
-    Speziell bei Ereignissen / Events wird die Abfrage über alle Benutzer einzeln ausgeführt.
-    Die betreffenden Benutzer werden über eine Verbindungseinstellung festgelegt.
+    Speziell bei Ereignissen / Events wird die Abfrage Ã¼ber alle Benutzer einzeln ausgefÃ¼hrt.
+    Die betreffenden Benutzer werden Ã¼ber eine Verbindungseinstellung festgelegt.
     Das genaue Verfahren wird in den Besonderheiten beschrieben.
 
 :Laden von Abfrage-basierten Daten:
 
-    Diese Funktion wird nicht unterstützt.
+    Diese Funktion wird nicht unterstÃ¼tzt.
 
 :Schreiben von Daten:
 
-    Das Schreiben eines Ereignisses erfolgt über den Benutzer, der für das Lesen genutzt wurde.
+    Das Schreiben eines Ereignisses erfolgt Ã¼ber den Benutzer, der fÃ¼r das Lesen genutzt wurde.
     Bei der Neuanlage wird dieser Benutzer aus dem Feld Organisator entnommen.
-    Ungültige Werte führen dabei zu einer Fehlermeldung.
+    UngÃ¼ltige Werte fÃ¼hren dabei zu einer Fehlermeldung.
     Die Anlage einer Serie ruft im Anschluss die Vorkommen des aktuellen Zeitfensters ab und speichert
-    Informationen dazu im Änderungsspeicher.
-    Dies ermöglich speziellen Prozessen die Vorkommen mit den Quelldaten abzugleichen.
+    Informationen dazu im Ã„nderungsspeicher.
+    Dies ermÃ¶glich speziellen Prozessen die Vorkommen mit den Quelldaten abzugleichen.
 
 :Schreiben von Bulk-Daten:
 
-    Diese Funktion wird nicht unterstützt.
+    Diese Funktion wird nicht unterstÃ¼tzt.
 
 
 Einstellungen
 -------------
 
-Folgende Einstellungen müssen bereitgestellt werden.
+Folgende Einstellungen mÃ¼ssen bereitgestellt werden.
 
 :API Url:
 
@@ -81,35 +81,35 @@ Folgende Einstellungen müssen bereitgestellt werden.
 
     Diese ID definiert das Unternehmen und kann bei der Registrierung der Anwendung ausgelesen werden,
 
-:Filter für Benutzer:
+:Filter fÃ¼r Benutzer:
 
-    Dieser Wert in OData-Notation definiert die Menge an Benutzer, für die Termine abgefragt und ggf. synchronisiert werden.
+    Dieser Wert in OData-Notation definiert die Menge an Benutzer, fÃ¼r die Termine abgefragt und ggf. synchronisiert werden.
     Das genaue Vorgehen ist in den Bensonderheiten beschrieben.
-    Folgender Wert wählt alle Mitglieder des Unternehmens aus: userType eq 'Member'
+    Folgender Wert wÃ¤hlt alle Mitglieder des Unternehmens aus: userType eq 'Member'
 
 :Anzahl vergangener Monate:
 
-    Diese Ganzzahl definiert den Anfang des Zeitfensters für Synchronisationsprozesse.
+    Diese Ganzzahl definiert den Anfang des Zeitfensters fÃ¼r Synchronisationsprozesse.
     Die Anzahl an Monaten wird bei kompletten Abfragen dem aktuellem Datum abgezogen.
-    Je größer der Wert ist, umso größer kann das Datenvolumen sein.
+    Je grÃ¶ÃŸer der Wert ist, umso grÃ¶ÃŸer kann das Datenvolumen sein.
 
-:Anzahl zukünftiger Monate:
+:Anzahl zukÃ¼nftiger Monate:
 
-    Diese Ganzzahl definiert das Ende des Zeitfensters für Synchronisationsprozesse.
-    Die Anzahl an Monaten wird bei kompletten Abfragen dem aktuellem Datum hinzugefügt.
-    Je größer der Wert ist, umso größer kann das Datenvolumen sein.
+    Diese Ganzzahl definiert das Ende des Zeitfensters fÃ¼r Synchronisationsprozesse.
+    Die Anzahl an Monaten wird bei kompletten Abfragen dem aktuellem Datum hinzugefÃ¼gt.
+    Je grÃ¶ÃŸer der Wert ist, umso grÃ¶ÃŸer kann das Datenvolumen sein.
 
 :Client-ID:
     
     Die Anwendungs-ID der registrierten Anwendung.
 
-:Client-Geheimschlüssel:
+:Client-GeheimschlÃ¼ssel:
 
-    Ein geheimer Schlüssel der registrierten Anwendung.
+    Ein geheimer SchlÃ¼ssel der registrierten Anwendung.
 
 :Proxy Server:
 
-    Adresse des Proxy-Servers für den Zugriff auf öffentliche Adressen.
+    Adresse des Proxy-Servers fÃ¼r den Zugriff auf Ã¶ffentliche Adressen.
     Dieser Wert kann in einer On premise Installation erforderlich sein.
 
 :Proxy Benutzername:
@@ -124,29 +124,33 @@ Besonderheiten
 --------------
 
 Beim Lesen von Ereignissen gibt es folgendes zu beachten.
-Ereignisse werden über eine Liste von Benutzern ermittelt.
-Da ID eines Ereignisses abhängig vom Benutzer ist, über den die Abfrage ausgeführt wurde, wird die Antwort wie folgt verarbeitet.
-Wenn der aktuelle Benutzer gleich dem Organisator des Ereignisses ist, wird der Datensatz übernommen und die ID z.B. in 
+
+Ereignisse werden Ã¼ber eine Liste von Benutzern ermittelt.
+
+Da ID eines Ereignisses abhÃ¤ngig vom Benutzer ist, Ã¼ber den die Abfrage ausgefÃ¼hrt wurde, wird die Antwort wie folgt verarbeitet.
+Wenn der aktuelle Benutzer gleich dem Organisator des Ereignisses ist, wird der Datensatz Ã¼bernommen und die ID z.B. in 
 Datenabbildungen verwendet.
-Wenn der aktuelle Benutzer nicht gleich dem Organisator ist und der Organisator aber über den Benutzerfilter erfasst wird, 
+Wenn der aktuelle Benutzer nicht gleich dem Organisator ist und der Organisator aber Ã¼ber den Benutzerfilter erfasst wird, 
 wird der Datensatz verworfen.
-Wenn der Organisator nicht durch den Benutzerfilter erfasst wird, wird der Termin übernommen und alle Teilnehmer entfernt, 
+Wenn der Organisator nicht durch den Benutzerfilter erfasst wird, wird der Termin Ã¼bernommen und alle Teilnehmer entfernt, 
 die im Benutzerfilter enthalten sind und nicht dem aktuellen Benutzer entsprechen.
-Dieses Verfahren stellt sich, dass auch geteilte Ereignisse sicher identifiziert werden können und keine Datensätze 
+Dieses Verfahren stellt sich, dass auch geteilte Ereignisse sicher identifiziert werden kÃ¶nnen und keine DatensÃ¤tze 
 doppelt verarbeitet werden.
-Der Abfragen von Ereignissen mit Universalplugins ermöglicht nicht das Abfragen von Vorkommen einer Serie oder gelöschten Datensätzen.
 
-Für die Synchronisation von Ereignissen können Prozesse die Delta-Funktion der CalendarView verwenden.
-Diese Funktion benötigt ein definiertes Zeitfenster (siehe Einstellungen) und einen gespeicherten Änderungstoken.
+Der Abfragen von Ereignissen mit Universalplugins ermÃ¶glicht nicht das Abfragen von Vorkommen einer Serie oder gelÃ¶schten DatensÃ¤tzen.
+
+FÃ¼r die Synchronisation von Ereignissen kÃ¶nnen Prozesse die Delta-Funktion der CalendarView verwenden.
+Diese Funktion benÃ¶tigt ein definiertes Zeitfenster (siehe Einstellungen) und einen gespeicherten Ã„nderungstoken.
 Prozesse, die dies nutzen, speichern das letzte Abfragedatum der kompletten Abfrage.
-Ab da wird über den Änderungstoken abgefragt, der intern gespeichert und bei erfolgreicher Verarbeitung auch aktualisiert wird.
-Da das definierte Zeitfenster keine kontinuierliche Synchronisation ermöglicht, wird mit jedem neuen Tag eine komplette Abfrage ausgelöst 
+Ab da wird Ã¼ber den Ã„nderungstoken abgefragt, der intern gespeichert und bei erfolgreicher Verarbeitung auch aktualisiert wird.
+Da das definierte Zeitfenster keine kontinuierliche Synchronisation ermÃ¶glicht, wird mit jedem neuen Tag eine komplette Abfrage ausgelÃ¶st 
 und das Zeitfenster um einen Tag vorgeschoben.
-Termine außerhalb des Zeitfensters werden dann nicht von der Synchronisation erfasst.
+Termine auÃŸerhalb des Zeitfensters werden dann nicht von der Synchronisation erfasst.
 
-Wenn die Delta-Funktion einen Termin als gelöscht ausgibt, wird dieser gezielt abgefragt.
+Wenn die Delta-Funktion einen Termin als gelÃ¶scht ausgibt, wird dieser gezielt abgefragt.
 Sollte er noch existieren, wurde er aus dem aktuellen Zeitfenster verschoben und wird mit verarbeitet.
-Ohne Resultat wird der Termin als "gelöscht" verarbeitet.
+Ohne Resultat wird der Termin als "gelÃ¶scht" verarbeitet.
+
 
 Synchronisationsprozesse
 ------------------------

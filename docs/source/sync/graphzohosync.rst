@@ -17,6 +17,7 @@ Interessenten verbindet und deren Antwort überträgt.
 Die Vorlage bildet den Organisator auf den Host des Meetings ab. Sollte dies nicht möglich sein, wird der Verbindungsadministrator 
 automatisch von Zoho zugeordnet.
 Die Daten werden von der Graph Verbindung mittels Delta-Funktion gelesen. Siehe :doc:`/connections/msgraph-connection`
+
 Dabei werden alle Benutzer berücksichtigt, die durch den Benutzerfilter in der Verbindung ausgewählt wurden.
 Delta-Datum und Delta-Token werden Prozess-bezogen gespeichert.
 
