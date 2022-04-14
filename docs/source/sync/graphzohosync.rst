@@ -49,34 +49,33 @@ Besonderheiten
 --------------
 
 Abgebrochene Termine werden nicht als neue Termine übertragen.
-Der Prozess verfügt nur über einen sekundären Filter, da die Delta-Funktion nicht mit einem Filter kombiniert werden kann.
-
+Der Prozess verfügt nur über einen sekundären Filter, da die Delta-Funktion nicht mit einem Filter 
+kombiniert werden kann.
 
 Zoho CRM Meeting nach Microsoft Graph Ereignis
 ----------------------------------------------
 
+Dieser Prozess bildet die Richtung Zoho CRM nach Microsoft 365 ab und arbeitet auf der Basis des Änderungsdatums 
+von Meetings. Da bei dieser Art der Abfrage keine gelöschten Datensätze erfasst werden, ist hierfür ein 
+weiterer Prozess erforderlich.
 
+Der Owner des Termins wird in der Vorlage als Organisator zugeordnet. Deshalb ist es erforderlich, dass alle 
+im Prozess berücksichtigten Benutzer auch Mitglied des Unternehmens sind, da sonst die Neuanlage nicht 
+möglich ist.
+Bei Aktualisierungen wird der Graph Benutzer verwendet, über den der Termin abgerufen wurde.
 
-
-
-
-
-
-Dieser Prozess bildet die Richtung Zoho CRM nach Office 365 ab.
-Eine Einschränkung auf einen Benutzer ist nicht erforderlich, da die Änderungserkennung über das Änderungsdatum realisiert wird.
-Für das Löschen von Ereignissen ist ein weiterer Prozess erforderlich.
-
-Der Owner des Termins wird in der Vorlage als Organisator zugeordnet.
-Es muss ein Organisator zugeordnet werden, damit die Anlage und Aktualisierung von Ereignissen möglich ist.
-
-Serientermine in Zoho CRM haben keinen direkt nutzbaren Master, sondern sind über $u_id verbunden.
-Der Serienmaster in Office 365 erhält eine Datenabbildung zu dieser $u_id, damit bekannt ist, dass eine Serie bereits angelegt wurde.
+Serien in Zoho CRM haben keinen direkt nutzbaren Master, sondern sind über $u_id verbunden.
+Der Serienmaster in Microsoft 365 erhält eine Datenabbildung zu dieser $u_id, damit bekannt ist, dass eine Serie bereits angelegt wurde.
+Dies wird auch in umgekehrter Richtung vorgenommen.
 Sollte diese Datenabbildung nicht vorliegen, wird eine neue Serie mit dem Muster aus Zoho angelegt.
 Auch hier werden Änderungsdatensätze mit dem IDs der Serieninstanzen angelegt, damit die Vorkommen in Zoho eine Verbindung
 herstellen können. Dies beschränkt sich auf Instanzen des aktuell über die Verbindung definierten Zeitfensters.
-Bei der Anlage einer Serie wird eine Datenabbildung für den Serienmaster und eine für das aktuelle Vorkommen angelegt.
 
-Folgende Besonderheiten gelten für diesen Prozess.
+Zoho CRM gelöschte Meetings nach Microsoft Graph Ereignis
+---------------------------------------------------------
 
-- Bei Serienterminen wird über die $u_id im Änderungsspeicher nach vorhandenen Instanzen gesucht und diese ggf. zugeordnet.
-- Wenn für die $u_id keine Datenabbildung gefunden wird (zum Serienmaster) wird eine neue Serie angelegt.    
+Diese Vorlage basiert auf einem Standardprozess, der gelöschte Datensätze in Zoho ermittelt und für Aktualisierung oder 
+Löschen nutzen kann.
+Dabei werden die Ereignisse in Mircosoft 365 über vorhandene Datenabbildungen zwischen den eingestellten Verbindungen ermittelt.
+Diese werden gelöscht und auch die Datenabbildungen werden entfernt.
+
