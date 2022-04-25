@@ -11,5 +11,6 @@ Außerdem können noch Sonderfälle darin berücksichtigt sein.
     sap_sf
     inxmailcassync
     graphzohosync
+    b7_belege
 
 

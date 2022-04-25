@@ -42,6 +42,10 @@ Die zeitliche Differenz beträgt dabei immer drei Minuten.
 Ruft die Rollback-Funktion eines Prozesses zu einen Sicherungsdatensatz auf. 
 Diese Funktion steht nicht für alle Prozesse zur Verfügung.
 
+:Ablauf:
+
+Dieser Typ wird durch einen Ablauf erzeugt, wenn der betreffende Prozess nicht selbst Daten abfragt, sondern diese aus dem Ablauf übernimmt.
+
 
 Folgende Typen von Aktionen werden bei Datendiensten unterschieden.
 

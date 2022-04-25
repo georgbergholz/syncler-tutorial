@@ -153,3 +153,7 @@ Folgende Objekte werden unterstützt.
 * Order - auftrag
 * Offer - angebot
 * Selection - awl
+
+
+Speziell zu Belegen gibt es noch weitere Funktionalitäten.
+Siehe :doc:`/sync/b7_belege`
