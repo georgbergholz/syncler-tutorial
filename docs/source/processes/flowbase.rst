@@ -168,8 +168,12 @@ Das Lesen von Quelldaten
 
 Die meisten Prozess sind für die Verarbeitung von Quelldaten und das Schreiben von Zieldaten ausgerichtet.
 In einem Ablauf kann es aber auch die Aufgabe des reinen Lesens von Daten geben, da in den folgenden Schritten
-auf diesen Pool zugegriffen werden soll oder das Schreiben der Quelldaten nicht im ersten Schritt erfolgen soll.
+auf diesen Pool zugegriffen wird oder das Schreiben der Quelldaten nicht im ersten Schritt erfolgen soll.
 Für diesen Zweck kann ein Prozess definiert werden, der keine Feldzuordnungen enthält.
-Oder es wird der Prozess "Universal Ablauf Lesen" dafür eingerichtet.
-Dieser Prozess verfügt über Parameter für das Lesen von Daten und kann dieser auch transformieren.
+Oder es wird der Prozess "Universal Ablauf - Daten lesen" dafür eingerichtet.
+Dieser Prozess verfügt über Parameter für das Lesen von Daten und kann diese auch transformieren.
 Eine weitere Verarbeitung wird nicht ausgeführt.
+
+
+Das könnte Sie interessieren.
+:doc:`/bestpractices/flow_examples`

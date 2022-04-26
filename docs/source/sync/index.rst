@@ -1,4 +1,4 @@
-﻿Integrationsszenarien (Draft)
+﻿Integrationsszenarien
 =====================
 
 Für bestimmte Integrationsszenarien stehen eigene Prozesse oder Vorlagen zur Verfügung.
