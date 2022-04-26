@@ -1,5 +1,5 @@
-﻿Beispiel für den Einsatz von Abläufen
-=====================================
+﻿Beispiele für den Einsatz von Abläufen
+======================================
 
 Hier ein paar Beispiele, wie mit Abläufen komplexere Anforderungen umgesetzt werden können.
 
@@ -84,9 +84,9 @@ Folgende Prozesse müssen eingerichtet werden.
     Per Transformation kann die Referenz aufbereitet und die Firma bzw. die Person ermittelt werden.
     In der Übereinstimmungsregel wird nach einem Ticket gesucht. Falls bereits per Email ein Ticket angelegt wurde,
     kann eine Datenabbildung vorhanden sein.
-    Das besondere an diesem Prozess ist, dass das nicht zum Überspringen führt, sondern die Verabreitung
+    Das besondere an diesem Prozess ist, dass das nicht zum Überspringen führt, sondern die Verarbeitung
     fortgesetzt werden kann.
-    Neue Email können also das Ticket auch aktualisieren, aber zur identischen Email wird kein neues
+    Neue Emails können also das Ticket auch aktualisieren, aber zur identischen Email wird kein neues
     Ticket angelegt, falls dort der Referenz-Ansatz nicht möglich ist.
 
 :3. Email zu Kommunikation:
