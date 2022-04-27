@@ -81,6 +81,8 @@ Da das Zwischenspeichern der transformierten Daten nicht automatisch das Quell-S
 verändert, müssen dort ggf. Parameter mit leeren Werten angelegt werden, damit Nicht-Standard-Felder zur Verfügung stehen.
 Solange der Parameter keinen Wert hat, wird dem Datensatz auch nicht zugewiesen und die vorhandenen Daten 
 können weiterverwendet werden.
+Zu beachten ist außerdem, dass bei geschachtelten Daten nur die Transformationen der Hauptobjektes übernommen werden können.
+Transformationen oder Filter an Positionen werden nicht zwischengespeichert.
 
 "Keine Quelldaten übernehmen" überspringt diese Funktion.
 Da die Daten Prozess-bezogen zwischengespeichert werden, führt eine wiederholte Ausführen des selben Prozesses
