@@ -165,6 +165,180 @@ Dies kann auch der Fall sein, falls die Vebrindungsprüfung bereits fehlschlägt
 Die Optionen sind "Ablauf abbrechen" und "Ablauf fortsetzen".
 
 
+Ausführen eines Datendienstes
+-----------------------------
+
+Datendienste sind ein Werkzeug für die Generierung eines tabellenorientierten Berichts.
+Diese könnten mit dem ERP-Fokus verwendet, zeitgesteuert gespeichert oder zeitgesteuert versendet werden.
+Dieser Ablaufschritt ermöglicht das Versenden des Berichts als Email-Anhang.
+Zusätzlich besteht die Möglichkeit den Emailinhalt festzulegen und zu personalisieren.
+Die Fehlerbehandlung dieses Typs erfolgt über den Änderungsspeicher, auf den im Warteschlangendatensatz des Ablaufs
+verwiesen wird. Je nach Einstellung werden dies Daten ausgelesen und für den Datendienst verwendet.
+
+Folgende Parameter können in diesem Schritt definiert werden.
+
+**Name**
+
+Dieser Name wird den einzelnen Meldungen des ausgeführten Datendienstes vorangestellt.
+Außerdem wird er als Email-Betreff verwendet, wenn keiner definiert wurde.
+
+**Datendienst ausführen**
+
+Hier wird der Datendienst für die Ausführung festgelegt. Dieser wird nicht zum Speichern von Daten ausgeführt,
+sondern ausschließlich für den Versand eines Bericht, unabhängig von den Einstellungen des Datendienstes.
+
+**Daten aus Vorgänger**
+
+Hier wird ein Prozess aus den vorangegangenen Schritten ausgewählt, dessen Quell- oder Zieldaten im aktuellen
+Datendienst verwendet werden sollen.
+Sollte die Ausführungsart "Datendienst manuell ausführen" eingestellt sein, wird dieser Wert nicht benötigt.
+Dann wird der Datendienst einmalig ausgeführt und versendet.
+
+**Ausführungsart**
+
+Dies steuert die Art der Datendienstausführung.
+
+"Datendienst manuell ausführen" entspricht dabei einer normalen Ausführung für den Versand eines Berichts.
+Die Abfrage des Datendienstes wird einmalig ausgeführt und das Resultat wird versendet.
+
+"Datendienst für jeden Quelldatensatz aus Vorgänger und einer ausgewerteten Abfrage ausführen" führt für jeden Quelldatensatz
+eine modifizierte Datenabfrage aus und die gesammelten Daten werden als Anhang versendet.
+Diese Funktion setzt die Definition eines Filters mit Platzhaltern in ##-Schreibweise voraus.
+Der Filter wird über den Platzhalter #FlowFilter# in die Datendienstabfrage eingefügt.
+
+"Datendienst für jeden Zieldatensatz aus Vorgänger und einer ausgewerteten Abfrage ausführen" führt für jeden Zieldatensatz
+eine modifizierte Datenabfrage aus und die gesammelten Daten werden als Anhang versendet.
+Diese Funktion setzt die Definition eines Filters mit Platzhaltern in ##-Schreibweise voraus.
+Der Filter wird über den Platzhalter #FlowFilter# in die Datendienstabfrage eingefügt.
+
+**Bedingung für Ausführung**
+
+Diese logische Bedingung in SQL-Notation wird je zwischengespeicherten Datensatz ausgeführt. Dabei werden ##-Platzhalter
+mit den aktuellen Daten ersetzt.
+Falls die Bedingung nicht erfüllt wird, wird der Datensatz übersprungen.
+
+**Filter für Ausführung**
+
+Dieser Wert wird für jeden Datensatz ausgewertet und über den Platzhalter #FlowFilter# in die Abfrage des Datendienstes
+eingefügt.
+
+**Ablauf beenden, wenn der aktuelle Datendienst keine Daten liefert**
+
+Wenn die Abfrage des aktuellen Datendienstes keine Daten erhält, wird der Ablauf hier gestoppt.
+
+**Empfängeradresse**
+
+Empfänger des generierten Berichts. Mehrfachnennungen werden mit Semikolon getrennt.
+#-Platzhalter werden für jeden Datensatz ersetzt. Dies gilt nicht für die manuelle Ausführung.
+
+**CC Adresse**
+
+Kopie-Empfänger des generierten Berichts. Mehrfachnennungen werden mit Semikolon getrennt.
+#-Platzhalter werden für jeden Datensatz ersetzt. Dies gilt nicht für die manuelle Ausführung.
+
+**BCC Adresse**
+
+Blindkopie-Empfänger des generierten Berichts. Mehrfachnennungen werden mit Semikolon getrennt.
+#-Platzhalter werden für jeden Datensatz ersetzt. Dies gilt nicht für die manuelle Ausführung.
+
+**Betreff**
+
+Betreff der generierten Email. #-Platzhalter werden für jeden Datensatz ausgewertet.
+
+**Vorlage für Nachrichten**
+
+Hier kann eine Html- oder Text-Vorlage aus den Serienbriefvorlagen ausgewählt werden.
+Je nach Format der Vorlage wird dann eine Html- oder Text-Email versendet.
+Bevor Sie diesen Wert auswählen können, muss die Vorlage über den Serienbriefbereich gespeichert werden.
+
+**Email Verbindung**
+
+Der Versand von Datendiensten kann nicht über den Syncler-Smtp erfolgen.
+Es muss eine Email Verbindung mit Smtp-Angaben eingerichtet werden.
+In der Email Verbindung wird auch der Absender für den Versand definiert.
+Mit diesem Wert wählen Sie die gewünschte Verbindung aus.
+
+**Fehlerbehandlung**
+
+Mit dieser Einstellung kann der Ablauf gestoppt werden, falls der Datendienst nicht erfolgreich ausgeführt und versendet wird.
+Die Optionen sind "Ablauf abbrechen" und "Ablauf fortsetzen".
+
+
+Versand von E-Mails
+-------------------
+
+Der Versand von Emails kann bereits mit Prozessen realisiert werden.
+Dieser Schritt vereinfacht das und bietet die Möglichkeit der einfachen Kombination.
+Der Versand setzt immer das Vorhandensein von zwischengespeicherten Daten voraus.
+Per Bedingung können einzelne Datensätze ausgeschlossen werden.
+Für die restlichen Datensätze wird der Versand, ähnlich den Datendiensten, durchgeführt.
+Die Fehlerbehandlung dieses Typs erfolgt über den Änderungsspeicher, auf den im Warteschlangendatensatz des Ablaufs
+verwiesen wird. Je nach Einstellung werden dies Daten ausgelesen und für den Datendienst verwendet.
+
+Folgende Parameter können in diesem Schritt definiert werden.
+
+**Name**
+
+Dieser Name wird den einzelnen Meldungen des Schrittes vorangestellt.
+Außerdem wird er als Email-Betreff verwendet, wenn keiner definiert wurde.
+
+**Daten aus Vorgänger**
+
+Hier wird ein Prozess aus den vorangegangenen Schritten ausgewählt, dessen Quell- oder Zieldaten im aktuellen
+Versand verwendet werden sollen.
+
+**Ausführungsart**
+
+Dies steuert die Art des Versands.
+
+"Versand mit Quelldaten aus Vorgänger ausführen" startet den Versand mit den zwischengespeicherten Daten.
+
+"Versand mit Zieldaten aus Vorgänger ausführen" startet den Versand mit den zwischengespeicherten Daten.
+
+**Bedingung für Ausführung**
+
+Diese logische Bedingung in SQL-Notation wird je zwischengespeicherten Datensatz ausgeführt. Dabei werden ##-Platzhalter
+mit den aktuellen Daten ersetzt.
+Falls die Bedingung nicht erfüllt wird, wird der Datensatz übersprungen.
+
+**Empfängeradresse**
+
+Empfänger der generierten Email. Mehrfachnennungen werden mit Semikolon getrennt.
+#-Platzhalter werden für jeden Datensatz ersetzt.
+
+**CC Adresse**
+
+Kopie-Empfänger der generierten Email. Mehrfachnennungen werden mit Semikolon getrennt.
+#-Platzhalter werden für jeden Datensatz ersetzt.
+
+**BCC Adresse**
+
+Blindkopie-Empfänger der generierten Email. Mehrfachnennungen werden mit Semikolon getrennt.
+#-Platzhalter werden für jeden Datensatz ersetzt.
+
+**Betreff**
+
+Betreff der generierten Email. #-Platzhalter werden für jeden Datensatz ausgewertet.
+
+**Vorlage für Nachrichten**
+
+Hier kann eine Html- oder Text-Vorlage aus den Serienbriefvorlagen ausgewählt werden.
+Je nach Format der Vorlage wird dann eine Html- oder Text-Email versendet.
+Bevor Sie diesen Wert auswählen können, muss die Vorlage über den Serienbriefbereich gespeichert werden.
+
+**Email Verbindung**
+
+Der Versand von Emails kann nicht über den Syncler-Smtp erfolgen.
+Es muss eine Email Verbindung mit Smtp-Angaben eingerichtet werden.
+In der Email Verbindung wird auch der Absender für den Versand definiert.
+Mit diesem Wert wählen Sie die gewünschte Verbindung aus.
+
+**Fehlerbehandlung**
+
+Mit dieser Einstellung kann der Ablauf gestoppt werden, falls der Versand nicht erfolgreich ausgeführt und versendet wird.
+Die Optionen sind "Ablauf abbrechen" und "Ablauf fortsetzen".
+
+
 Das Lesen von Quelldaten
 ------------------------
 
