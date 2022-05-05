@@ -1,9 +1,9 @@
 Editionen (Draft)
 =========
 
-Syncler kann über die Cloud Plattform oder mit einer On Premise Installation genutzt werden.
+Syncler kann über die Cloud Plattform oder mit einer On-premises Installation genutzt werden.
 
-In der Cloud-Umgebung gibt es einige Einschränkungen, die On Premise nicht vorliegen.
+In der Cloud-Umgebung gibt es einige Einschränkungen, die On-premises nicht vorliegen.
 
 In der Cloud werden Datensätze in einem Prozess seriell verarbeitet.
 Eine lokale Installation kann das Lesen und Verarbeiten parallel ausführen.

@@ -110,7 +110,7 @@ Folgende Einstellungen müssen bereitgestellt werden.
 :Proxy Server:
 
     Adresse des Proxy-Servers für den Zugriff auf öffentliche Adressen.
-    Dieser Wert kann in einer On premise Installation erforderlich sein.
+    Dieser Wert kann in einer On-premises Installation erforderlich sein.
 
 :Proxy Benutzername:
 

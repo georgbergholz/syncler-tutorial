@@ -31,7 +31,7 @@ Daneben gibt es noch weitere Elemente für die Koordination, Überwachung und Au
     bestpractices/index
     editions
     releasenotes/index
-    onpremise/index
+    onpremises/index
     api/index
     faq
     glossary

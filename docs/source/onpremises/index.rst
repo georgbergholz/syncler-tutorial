@@ -1,7 +1,7 @@
-﻿On-Premise Version (Draft)
+﻿On-Premises Version (Draft)
 ==================
 
-Die On-Premise Version kann lokal installiert werden.
+Die On-Premises Version kann lokal installiert werden.
 Dies wird mit einer Windows-Installationsroutine unterstützt.
 Die Anwendung kann aber auch in einer Linux-Umgebung eingesetzt werden.
 

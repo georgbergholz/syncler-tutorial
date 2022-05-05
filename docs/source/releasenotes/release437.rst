@@ -50,7 +50,7 @@ Es wird ein Prozess ausgewählt und festgelegt, ob die Suche per Source oder Tar
 Der geparste Suchstring wird dann direkt verglichen und als Resultat werden SourceId, TargetId und TargetIsDeleted bereitgestellt.
 Häufige Abfragen an das Zielsystem nach Datensätzen, die verknüpft werden sollen, können damit reduziert werden.
 
-Die Onpremise-Version beinhaltet eine aktive Benachrichtigung per Email zu neuen Versionen.
+Die On-premises Version beinhaltet eine aktive Benachrichtigung per Email zu neuen Versionen.
 
 Die CAS Verbindung unterscheidet nach Datum und Datum-Uhrzeit Feldern anhand der percision-Angabe.
 Datumsfelder werden nicht in nach lokal beim Lesen oder nach UTC beim Schreiben konvertiert.
