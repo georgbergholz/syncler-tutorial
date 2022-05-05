@@ -68,6 +68,7 @@ Die folgenden Verbindungen stehen im Syncler zur Verfügung.
     inxmail-connection
     mail-connection
     mailchimp-connection
+    maileon-connection
     mailmerge-connection
     msgraph-connection
     odoo-connection
