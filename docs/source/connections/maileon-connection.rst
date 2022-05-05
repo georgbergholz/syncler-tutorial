@@ -60,6 +60,14 @@ Datenobjekte
 
 Folgende Datenobjekte stehen zur Verfügung.
 
+Das einzelne Abrufen von Datensätzen kann, falls unterstützt, und den Standard-Prozessfeldern mit folgender Notation
+erfolgen.
+
+.. code-block:: none
+
+    id|:|1234|;|
+
+
 :Kontakt / contact:
 
 Mit diesem Objekt können Kontakt in Maileon ausgelesen, angelegt, aktualisiert oder gelöscht werden.
@@ -69,12 +77,12 @@ customfield angelegt werden können.
 
 Die folgenden Felder werden als Parameter für das Anlegen oder Aktualisieren verwendet.
 
-- **src** (Insert/Update: Eine Zeichenfolge, die die Quelle des Kontakts beschreiben soll.)
-- **doimailing** (Insert/Update: Dieser Parameter wird ignoriert, wenn triggerdoi nicht angegeben oder falsch ist. Referenziert das zu verwendende doi-Mailing.)
-- **subscription_page** (Insert: Falls diese Methode von einer Abonnementseite aufgerufen wurde, bietet diese Zeichenfolge die Möglichkeit, sie für die Verwendung in Berichten zu verfolgen.)
-- **doi** (Insert: Gibt an, ob für den erstellten Kontakt ein Double-Opt-In-Prozess gestartet werden soll. Beachten Sie, dass der für diese Anfrage zurückgegebene Statuscode nicht bedeutet, dass der doi-Prozess erfolgreich war. Unterstützte Werte sind true und false.)
-- **doiplus** (Insert: Dieser Parameter wird ignoriert, wenn doi nicht angegeben oder falsch ist. Falls der Doi-Prozess erfolgreich ist, darf Maileon Öffnungen und Klicks des Kontakts nachverfolgen.)
-- **triggerdoi** (Update: Wenn bereitgestellt und wahr (unterstützte Werte sind wahr und falsch) und wenn die Berechtigung entweder 1, 2, 3 oder 6 ist, wird die Berechtigung direkt gesetzt und es wird KEINE DOI-Mail gesendet, da sie für diese Berechtigungen nicht erforderlich ist. Wenn die Berechtigung auf 4 (doi) oder 5 (doi+) gesetzt ist, wird ein doi-Prozess für den Kontakt ausgelöst, anstatt die Berechtigung sofort auf 4 oder 5 zu setzen (nochmals: die Berechtigung wird nicht geändert).)
+- **src** Insert/Update: Eine Zeichenfolge, die die Quelle des Kontakts beschreiben soll.
+- **doimailing** Insert/Update: Dieser Parameter wird ignoriert, wenn triggerdoi nicht angegeben oder falsch ist. Referenziert das zu verwendende doi-Mailing.
+- **subscription_page** Insert: Falls diese Methode von einer Abonnementseite aufgerufen wurde, bietet diese Zeichenfolge die Möglichkeit, sie für die Verwendung in Berichten zu verfolgen.
+- **doi** Insert: Gibt an, ob für den erstellten Kontakt ein Double-Opt-In-Prozess gestartet werden soll. Beachten Sie, dass der für diese Anfrage zurückgegebene Statuscode nicht bedeutet, dass der doi-Prozess erfolgreich war. Unterstützte Werte sind true und false.
+- **doiplus** Insert: Dieser Parameter wird ignoriert, wenn doi nicht angegeben oder falsch ist. Falls der Doi-Prozess erfolgreich ist, darf Maileon Öffnungen und Klicks des Kontakts nachverfolgen.
+- **triggerdoi** Update: Wenn bereitgestellt und wahr (unterstützte Werte sind wahr und falsch) und wenn die Berechtigung entweder 1, 2, 3 oder 6 ist, wird die Berechtigung direkt gesetzt und es wird KEINE DOI-Mail gesendet, da sie für diese Berechtigungen nicht erforderlich ist. Wenn die Berechtigung auf 4 (doi) oder 5 (doi+) gesetzt ist, wird ein doi-Prozess für den Kontakt ausgelöst, anstatt die Berechtigung sofort auf 4 oder 5 zu setzen (nochmals: die Berechtigung wird nicht geändert).
 
 Kontakte können als einzelen Datensätze oder Liste abgerufen werden.
 Das Abrufen von geänderten Kontakten per Prozess wird ebenfalls unterstützt.
@@ -98,4 +106,81 @@ Damit können gezielt Inhalte von Kontaktfiltern abgerufen oder einzelne Kontakt
 :Benutzerdefiniertes Feld / customfield:
 
 Dieses Objekt kann nur für die Anlage oder das Umbenennen eines benutzerdefinierten Feldes genutzt werden.
-Eine Abfrage über die Lesen-Funktion der Verbindung ist nicht vorgesehen.
+Eine Abfrage über die Lesen-Funktion der Verbindung ist nicht vorgesehen und wird immer ein leeres Ergebnis liefern.
+
+Folgende Felder stehen zur Verfügung.
+
+- **name** Der Names des Feldes.
+- **oldname** Für den Fall, dass ein vorhandenes Feld umbenannt werden soll, wird hier der aktuelle Name erwartet.
+- **type** Definiert den Datentyp des Feldes. (string / integer / float / date / boolean)
+
+Beim Schreiben dieses Objektes über die Verbindung wird automatisch auch das Schema des Kontakt-Objektes aktualisiert.
+Eine manuelle Aktualisierung ist nicht erforderlich.
+
+
+:Kontaktfilter / contactfilter:
+
+Dieses Objekt kann ausgelesen und aktualisiert werden. Die direkte Anlage wird nicht unterstützt.
+Allerdings kann ein Kontaktfilter über die Verteilerliste automatisiert angelegt werden. Details dazu finden Sie beim Objekt
+Verteilerliste.
+Das Löschen eines Kontaktfilters erfordert die Einrichtung eines speziellen Löschprozesses.
+
+Bei der Aktualisierung kann ausschließlich der Name des Kontaktfilters verändert und ein Refresh der Kontakte ausgelöst werden.
+
+-**refresh_contacts** Wird diesem Feld der Wert true beim Schreiben übergeben, wird die Aktualisierung der Kontakte des Kontaktfilters ausgelöst. Die Verwendung ist nur aller 10 Minuten möglich.
+
+Kontaktfilter können einzeln abgerufen werden. 
+Wird das Filtern oder Suchen mit den Standard-Prozessfeldern ausgelöst, wird der Wert direkt mit dem Names des
+Kontaktfilters verglichen und alle Übereinstimmungen werden zurückgegeben.
+
+
+:Verteilerlisten / targetgroup:
+
+Dieses Objekt kann ausgelesen und aktualisiert werden.
+Das Löschen einer Verteilerliste erfordert die Einrichtung eines speziellen Löschprozesses.
+Für die Anlage einer Verteilerliste stehen zwei Verfahren zur Verfügung.
+
+- **contact_filter_name** Kann bei Anlage zur Suche eines Kontaktfilters verwendet werden.
+- **contact_filter_id** Kann bei Anlage zur Auswahl eines Kontaktfilters verwendet werden.
+- **create_contact_filter** Erzeugt ggf. benutzerdefiniertes Feld und gleichnamigen Kontaktfilter, der der neu angelegten Verteilerliste zugeordnet wird.
+- **contact_filter_fieldname** Definiert den Feldnamen des Kontaktfilters. Das Feld wird ggf. als Wahrheitsfeld für Kontakte angelegt. Sollte das Feld bereits vorhanden sein und einen anderen Typ haben, resultiert daraus eine Fehlermeldung.
+
+Verteilerlisten können einzeln abgerufen werden.
+Wird das Filtern oder Suchen mit den Standard-Prozessfeldern ausgelöst, wird der Wert direkt mit dem Names der
+Verteilerlisten verglichen und alle Übereinstimmungen werden zurückgegeben.
+
+Beim Erzeugen einer Verteilerliste mit dem Setzen der Felder contact_filter_name oder contact_filter_id muss
+der Kontaktfilter bereits vorhanden sein, da es sonst zu einer Fehlermeldung kommt.
+Werden für die Anlage die Felder create_contact_filter und contact_filter_fieldname verwendet, wird der gleichnamige Kontaktfilter
+automatisch angelegt.
+
+Der Name einer Verteilerliste muss eindeutig sein. Identische Namen führen bei Anlage oder Aktualisierung zu einer
+Fehlermeldung.
+
+
+:Berichte / reports:
+
+Dies ist eine Oberbegriff für folgende Typen, die identisch verwendet werden können.
+
+- open
+- unique_open
+- bounce
+- unique_bounce
+- click
+- unique_click
+- block
+- unsubscription
+- subscriber
+- recipient
+
+Abhängig vom Typ des Berichts steht der betreffende Kontakt als untergeordnetes Objekt im Schema zur Verfügung.
+Außerdem werden die Einträge zu den Berichten mit dem Namen des Mailings **mailing_name** angereichert.
+
+Bei Berichten können keine einzelnen Datensätze, sondern nur Listen abgerufen werden.
+Das Schreiben und Löschen wird nicht unterstützt.
+Sollte es bei der Verarbeitung im Prozess zu Fehlern oder Wiederholungen kommen, werden diese über den Änderungsspeicher
+realisiert.
+
+Für die Änderungsabfrage wird automatisch der Parameter **from_date** verwendet.
+Alle Eingaben in Filter- und Suchfeldern eines Prozesses werden der verwendeten Url angehängt.
+Damit können weitere Filter, wie z.B. mailing_id, to_date oder standard_field, realisiert werden.
