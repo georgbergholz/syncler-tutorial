@@ -76,3 +76,26 @@ Die folgenden Felder werden als Parameter für das Anlegen oder Aktualisieren ve
 - **doiplus** (Insert: Dieser Parameter wird ignoriert, wenn doi nicht angegeben oder falsch ist. Falls der Doi-Prozess erfolgreich ist, darf Maileon Öffnungen und Klicks des Kontakts nachverfolgen.)
 - **triggerdoi** (Update: Wenn bereitgestellt und wahr (unterstützte Werte sind wahr und falsch) und wenn die Berechtigung entweder 1, 2, 3 oder 6 ist, wird die Berechtigung direkt gesetzt und es wird KEINE DOI-Mail gesendet, da sie für diese Berechtigungen nicht erforderlich ist. Wenn die Berechtigung auf 4 (doi) oder 5 (doi+) gesetzt ist, wird ein doi-Prozess für den Kontakt ausgelöst, anstatt die Berechtigung sofort auf 4 oder 5 zu setzen (nochmals: die Berechtigung wird nicht geändert).)
 
+Kontakte können als einzelen Datensätze oder Liste abgerufen werden.
+Das Abrufen von geänderten Kontakten per Prozess wird ebenfalls unterstützt.
+Checksummen werden beim Lesen nicht verwendet.
+
+Das Filtern oder Suchen von Kontakten kann in den Standard-Prozessfeldern mit folgender Notation erfolgen.
+Damit können gezielt Inhalte von Kontaktfiltern abgerufen oder einzelne Kontakte per Email oder externer ID gesucht werden.
+
+.. code-block:: none
+    
+    Suche nach Kontakten:
+        emails|:|gesuchte@email.de|;|
+        externalid|:|gesuchte_externe_id|;|
+
+.. code-block:: none
+
+    Abrufen eines Kontaktfilters:
+        contactfilterid|:|kontaktfilter_id|;|
+
+
+:Benutzerdefiniertes Feld / customfield:
+
+Dieses Objekt kann nur für die Anlage oder das Umbenennen eines benutzerdefinierten Feldes genutzt werden.
+Eine Abfrage über die Lesen-Funktion der Verbindung ist nicht vorgesehen.
