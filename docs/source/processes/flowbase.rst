@@ -84,7 +84,7 @@ können weiterverwendet werden.
 Zu beachten ist außerdem, dass bei geschachtelten Daten nur die Transformationen der Hauptobjektes übernommen werden können.
 Transformationen oder Filter an Positionen werden nicht zwischengespeichert.
 
-"Keine Quelldaten übernehmen" überspringt diese Funktion.
+"Keine Daten übernehmen" überspringt diese Funktion.
 Da die Daten Prozess-bezogen zwischengespeichert werden, führt eine wiederholte Ausführen des selben Prozesses
 zum Überschreiben des vorangegangenen Ergebnisses. Mit dieser Option kann dies verhindert werden.
 
