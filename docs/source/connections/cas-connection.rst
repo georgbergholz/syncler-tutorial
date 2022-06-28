@@ -30,7 +30,7 @@ Funktionen
 :Laden von Quelldaten:
 
     Mit Ausnahme von Einzeldaten werden alle Abfragen per query ausgeführt und ergänzt.
-    Für genesisWorld wird das Statement um TEAMFILTER(Objektname;CASLOGGEDINUSER,CASPUBLICRECORDS,CASEXTERNALACCESS) 
+    Für genesisWorld wird das Statement um TEAMFILTER(Objektname; CASLOGGEDINUSER, CASPUBLICRECORDS, CASEXTERNALACCESS) 
     erweitert.
     Bei der Verwendung von Abfrage-Prozessen muss dies manuell erfolgen, da das Ergebnis ansonsten eine
     Vervielfälltigung der Daten sein kann.
