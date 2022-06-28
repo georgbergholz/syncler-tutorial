@@ -10,6 +10,13 @@ Die Besonderheit bei diesem Verfahren ist die entkoppelte Kommunikation.
 Daten können nicht direkt abgefragt, sondern müssen per Nachricht angefordert werden.
 Als Resultat wird die Antwort als Nachricht abgestellt und muss abgerufen werden.
 
+Es stehen spezifische Prozesse für die Synchronisation mit Sage CRM und Zoho CRM inklusive Vorlagen zur Verfügung.
+Weitere Systeme können per Universalprozesse angebunden werden, wobei nicht alle Parameter durch die Verbindung 
+ausgewertet werden können. z.B. Filterangaben
+Auch kann mit einem Universalprozess kein begonnener Initialsync fortgesetzt werden. Dieser muss dann immer komplett
+neugestartet werden. 
+
+
 Funktionen
 ----------
 
@@ -64,6 +71,7 @@ Funktionen
     in der Prozessausführung behandelt.
     Speziell bei der Neuanlage wird über die CorrelationID der Nachricht eine Beziehung zum Quelldatensatz hergestellt, 
     da die Kommunikation mit dem ERP nicht direkt erfolgt.
+    Das Löschen wird nicht unterstützt.
 
 :Schreiben von Bulk-Daten:
 
@@ -154,6 +162,8 @@ Folgende Objekte werden unterstützt.
 * Offer - angebot
 * Selection - awl
 
+Das Objekt Rechnung wird wegen seiner zusätzlichen Vorgangsunterteilung in mehrere Objekt je Vorgang durch die
+Verbindung aufgetrennt.
 
 Speziell zu Belegen gibt es noch weitere Funktionalitäten.
 Siehe :doc:`/sync/b7_belege`
