@@ -70,6 +70,7 @@ Die folgenden Verbindungen stehen im Syncler zur Verfügung.
     mailchimp-connection
     maileon-connection
     mailmerge-connection
+    spreadsheet-connection
     msgraph-connection
     odoo-connection
     push-connection
