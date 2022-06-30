@@ -64,7 +64,7 @@ Die Parameter wurden umstrukturiert, damit eine logische und ablauforientierte �
 Der Hotfolder-Prozess ermöglicht ein Upload für Sage CRM.
 Dafür wird die SData-Schnittstelle verwendet. Die zugehörige Url muss in der Verbindung eingestellt werden.
 
-Die neue Eigenschaft "Kategorie" an Prozessen und Datendiensten ermöglicht eine individuelle Strukturierung in der Administration (aktuell nur On-Premises).
+Die neue Eigenschaft "Kategorie" an Prozessen und Datendiensten ermöglicht eine individuelle Strukturierung in der Administration (aktuell nur On-premises).
 
 Ein globaler Fehler hat bisher immer die Fehlerbehandlung mit einer kompletten Wiederholung übersteuert.
 Dies wird jetzt nur noch ausgeführt, wenn die Fehlerbehandlung nicht auf "Ignorieren" eingestellt ist.

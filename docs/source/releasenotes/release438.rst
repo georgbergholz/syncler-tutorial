@@ -89,7 +89,7 @@ Alle Sync-Prozesse haben einen neuen Parameter für das Abschalten einer Datensa
 Datenabbildungen. Damit kann Speicherplatz gespart werden, wenn z.B. Prozesse nur unidirektional übertragen.
 Das Abschalten per Servereinstellungen kann damit nicht umgangen werden. Dies hat Priorität.
 
-Der Onpremises-Setup konfiguriert den Dienst für Neustarten im Fehlerfall.
+Der On-premises-Setup konfiguriert den Dienst für Neustarten im Fehlerfall.
 
 Zur Syncler Bridge kann in den Verbindungen ein Timeout definiert werden.
 

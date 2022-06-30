@@ -6,29 +6,41 @@ Diese Verbindung realisiert die Anmeldung und Kommunikation mit der API und stel
 mit zusätzlichen Funktionen bereit.
 Für die Integration mit anderen Verbindungen können die Universal Prozesse verwendet werden.
 
+
 Funktionen
 ----------
 
 :Schema ermitteln:
 
-    Das Datenschema wird fest von der Verbindung erstellt.
-    Benutzerdefinierte Kontaktfelder werden dynamisch beim Erstellen des Schemas eingelesen.
-    Die Funktion zum Anlegen von Kontaktfeldern erweitert das interne Datenschema automatisch.
-    Das Datenschema ist eine Kombination aus lesbaren Feldern, angereicherten Feldern, 
-    übergebbaren Parametern, z.B. beim Speichern von Daten und zusätzlichen Parametern, 
-    die Funktionen direkt ansteuern können.
-    Unter Datenobjekte steht eine Detailbeschreibung zur Verfügung.
+Das Datenschema wird fest von der Verbindung erstellt.
+Benutzerdefinierte Kontaktfelder werden dynamisch beim Erstellen des Schemas eingelesen.
+Die Funktion zum Anlegen von Kontaktfeldern erweitert das interne Datenschema automatisch.
+Das Datenschema ist eine Kombination aus lesbaren Feldern, angereicherten Feldern, 
+übergebbaren Parametern, z.B. beim Speichern von Daten und zusätzlichen Parametern, 
+die Funktionen direkt ansteuern können.
+Unter Datenobjekte steht eine Detailbeschreibung zur Verfügung.
 
-:Laden von Quelldaten:
 
-    Abhängig vom Datentyp können Listen, einzelne Datensätze oder Änderungen abgerufen werden.
-    Unter Datenobjekte steht eine Detailbeschreibung zur Verfügung.
+:Lesen von Schema-basierten Daten:
+
+Abhängig vom Datentyp können Listen, einzelne Datensätze oder Änderungen abgerufen werden.
+Unter Datenobjekte steht eine Detailbeschreibung zur Verfügung.
+
+
+:Lesen von Abfrage-basierten Daten:
+
+Diese Funktion wird nicht unterstützt.
+
 
 :Schreiben von Daten:
 
-    Mittels dem Schreiben von Daten werden Datensätze angelegt, geändert oder auch Funktionen
-    aufgerufen.
-    Unter Datenobjekte steht eine Detailbeschreibung zur Verfügung.
+Mittels dem Schreiben von Daten werden Datensätze angelegt, geändert oder auch Funktionen
+aufgerufen. Unter Datenobjekte steht eine Detailbeschreibung zur Verfügung.
+
+
+:Schreiben von Bulk-Daten:
+
+Diese Funktion wird nicht unterstützt.
 
 
 Einstellungen
@@ -38,22 +50,10 @@ Folgende Einstellungen müssen bereitgestellt werden.
 
 :API Key:
 
-    Der API Key kann über die Benutzeroberfläche von Maileon ermittelt werden.
-    Melden Sie sich dazu bei Maileon an und wechseln Sie in den Bereich Einstellungen.
-    Unter Konto / API-Keys können vorhandene API Keys ausgelesen oder neue angelegt werden.    
+Der API Key kann über die Benutzeroberfläche von Maileon ermittelt werden.
+Melden Sie sich dazu bei Maileon an und wechseln Sie in den Bereich Einstellungen.
+Unter Konto / API-Keys können vorhandene API Keys ausgelesen oder neue angelegt werden.
 
-:Proxy Server:
-
-    Adresse des Proxy-Servers für den Zugriff auf öffentliche Adressen.
-    Dieser Wert kann in einer On-premises Installation erforderlich sein.
-
-:Proxy Benutzername:
-
-    Zugangsdaten zum Proxy Server.
-
-:Proxy Passwort:
-
-    Zugangsdaten zum Proxy Server.
 
 Datenobjekte
 ------------
