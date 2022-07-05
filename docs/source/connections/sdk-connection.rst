@@ -137,3 +137,53 @@ Platzhalter für einen Benutzernamen.
 
 Platzhalter für ein Passwort, welches besonders geschützt wird.
 Das externe Auslesen oder Kopieren des Wertes wird nicht unterstützt.
+
+
+Beispiele
+---------
+
+:Schema erzeugen:
+
+.. code-block:: csscript
+
+	using System;
+	using System.Collections.Generic;
+	using SIS;
+	using SIS.PublicTypes;
+	using Newtonsoft.Json.Linq;
+
+	public class SalesViewerSchema
+	{
+		// SDK helper
+		public SisHelper Helper { get; set; }
+
+		// Your operation to return json data
+		public string Execute()
+		{
+			JArray Response = new JArray();
+
+			//Company
+			JObject Company = new JObject();
+			Company.Add("title", "company");
+			Company.Add("properties", new JObject());
+			Company.Add("uniqueidentifier", new JArray() { "id" });
+			(Company["properties"] as JObject).Add("id", new JObject() { { "type", "string" }, { "title", "ID of company" } });
+			(Company["properties"] as JObject).Add("name1", new JObject() { { "type", "string" }, { "title", "Name of company" } });
+			(Company["properties"] as JObject).Add("email", new JObject() { { "type", "string" }, { "title", "E-Mail address of company" } });
+			(Company["properties"] as JObject).Add("city", new JObject() { { "type", "string" }, { "title", "City of company" } });
+
+			//Visit
+			JObject Visit = new JObject();
+			Visit.Add("title", "visit");
+			Visit.Add("properties", new JObject());
+			Visit.Add("updated", "lastActivityAt");
+			Visit.Add("uniqueidentifier", new JArray() { "id" });
+			(Visit["properties"] as JObject).Add("id", new JObject() { { "type", "integer" }, { "title", "ID of Session visit" } });
+			(Visit["properties"] as JObject).Add("lastActivityAt", new JObject() { { "type", "string" }, { "format", "date-time" }, { "title", "Session visit last activity at" } });
+			(Visit["properties"] as JObject).Add("url", new JObject() { { "type", "string" }, { "title", "URL of the session visit" } });
+
+			Response.Add(Company);
+			Response.Add(Visit);
+			return Response.ToString();
+		}
+	}
