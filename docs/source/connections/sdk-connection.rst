@@ -144,7 +144,7 @@ Beispiele
 
 :Schema erzeugen:
 
-.. code-block:: csscript
+.. code-block:: C#
 
 	using System;
 	using System.Collections.Generic;
@@ -187,3 +187,7 @@ Beispiele
 			return Response.ToString();
 		}
 	}
+
+:Daten lesen:
+
+.. code-block:: csscript
