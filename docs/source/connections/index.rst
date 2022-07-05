@@ -68,6 +68,7 @@ Die folgenden Verbindungen stehen im Syncler zur Verfügung.
     maileon-connection
     salesforce-connection
     spreadsheet-connection
+    sdk-connection
     cleverreach-connection
     csv-connection
     fano-connection
@@ -84,7 +85,6 @@ Die folgenden Verbindungen stehen im Syncler zur Verfügung.
     s100-connection
     s200-connection
     scrm-connection
-    sdk-connection
     sql-connection
     x3-connection
     zoho-connection

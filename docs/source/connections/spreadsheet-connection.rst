@@ -102,11 +102,11 @@ Analyse möglich ist.
 Besonderheiten
 --------------
 
-Als Eingabeformat stehen die Dateitypen XLSX, CSV, HTML und ODS zur Verfügung.
+Als Eingabeformat stehen die Dateitypen XLS, XLSX, CSV, HTML und ODS zur Verfügung.
 Auf diese Vorlagen kann per lokalem PFad (nur On-premises), Base64-Daten, Vorlagendatenbank, URL 
 oder FTP zugegriffen werden.
 
-Als Ausgabeformat stehen die Dateitypen XLSX, CSV, HTML, Image, ODS, XPS und PDF zur Verfügung.
+Als Ausgabeformat stehen die Dateitypen XLS, XLSX, CSV, HTML, Image, ODS, XPS und PDF zur Verfügung.
 Das Resultat kann lokal (nur On-premises) und auf einem FTP abgelegt werden.
 Außerdem kann das Resultat als Base64 direkt zurückgegeben oder im Änderungsspeicher abgelegt werden.
 

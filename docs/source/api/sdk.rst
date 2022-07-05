@@ -1,2 +1,2 @@
-﻿Das Syncler SDK (Draft)
-===============
+﻿Der SDK Helper
+==============
