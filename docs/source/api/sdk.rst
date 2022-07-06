@@ -10,59 +10,71 @@ Verfügung, die vorallem das Lesen und Erzeugen von Json-Daten stark vereinfacht
 
 Alle Eigenschaften und Funktion des Helper beziehen sich immer auf die aktuelle Instanz.
 
+Eigenschaften
+-------------
 
+:Helper.ClientID (string): 
 
-:Helper.ClientID:
+    Die Client ID des Account, welche z.B. für die Anmeldung an der API erforderlich ist.
+    Wird z.B. von der Methode ServiceCall verwendet.
 
-Your client id (string)
+:Helper.ClientSecret (string):
 
-:Helper.ClientSecret:
+    Der Geheimschlüssel des Account, welche z.B. für die Anmeldung an der API erforderlich ist.
+    Wird z.B. von der Methode ServiceCall verwendet.
 
-Your client secret (string)
+:Helper.Database (SQL Client):
 
-:Helper.Database:
+    Ein Datenbank-Client für die Datenbank des Accounts. Ein direkter Zugriff sollte vermieden werden.
+    Alle notwendigen Operationen stehen mit eigenen Methoden zur Verfügung.
 
-Your database
+:Helper.ServiceUrl (string):
 
-:Helper.ServiceUrl:
+    Die Url der Syncler API, mit der das Skript diese Aufrufen kann.
+    Wird z.B. von der Methode ServiceCall verwendet.
 
-Syncler service url (string)
+:Helper.ServiceToken (string):
 
-:Helper.ServiceToken:
+    Der Access-Token der Syncler API.
+    Wird z.B. von der Methode ServiceCall verwendet.
 
-Your Syncler service token (string)
+:Helper.ServiceExpireDate (DateTime):
 
-:Helper.ServiceExpireDate:
+    Das Gültigkeitsdatum des Access-Token der Syncler API.
+    Wird z.B. von der Methode ServiceCall verwendet.
 
-Your Syncler service expire date (DateTime)
+:Helper.Params (List<SisParam>):
 
-:Helper.Proxy:
+    Liste von generischen Parametern aus Name und Wert.
+    Die Methoden GetParam und SetParam bieten einen einfachen Zugriff auf diese Liste, 
+    ohne Duplikate zu erzeugen.
+    Initial wird diese Liste mit Parametern aus dem Prozess, der Anforderung und der Verbindung gefüllt.
 
-This connection proxy (WebProxy)
+:Helper.IsCancelled (bool):
 
-:Helper.Params:
+    Die Wert zeigt an, dass das Skript einen Abbruch angefordert hat.
+    Der Wert wird auch mit der Methode Cancel gesetzt.
+    In der Folge wird der Prozess abgebrochen.
 
-Parameter list (List<SisParam>)
+:Helper.ConnectionId (int):
 
-:Helper.IsCancelled:
+    Die ID der aktuellen Verbindung.
+    Dieser Wert kann für API-Aufrufe verwendet werden.
 
-Your cancel request (bool)
+:Helper.ProcessId (int):
 
-:Helper.ConnectionId:
+    Die ID des aktuellen Prozesses.
+    Dieser Wert kann für API-Aufrufe verwendet werden.
 
-This connection id (int)
+:Helper.ClientNumber (int):
 
-:Helper.ProcessId:
+    Die Client-Number des aktuellen Prozesses.
+    Dies ist ein Prozessparameter, der für die Datenstrukturierung genutzt werden kann.
 
-This process id (int)
+:Helper.WhereClause (int):
 
-:Helper.ClientNumber:
-
-Client number of process (int)
-
-:Helper.WhereClause:
-
-Where clause of process (string)
+    Dies ist der Prozess-Filter für die Abfrage von Quelldaten.
+    Innerhalb von Prozess-Skripten kann damit ein individueller Filter generiert werden.
 
 :Helper.ForceQueryAll:
 

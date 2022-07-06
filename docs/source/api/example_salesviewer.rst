@@ -118,7 +118,12 @@ Objekte kopiert. Damit ist auch hier eine Abfrage nach Änderungen indirekt mög
 Dieses Skript liest Daten aus der SalesViewer API.
 Dabei findet eine Unterscheidung nach dem angeforderten Objekttyp statt.
 Außerdem wird die API in Pages abgefragt und bei Bedarf mit einem Änderungsdatum weiter eingeschränkt.
-
+Das Besondere bei diesem Skript ist die Prüfung auf Duplikate in den Firmendaten.
+Technisch ist die Company der Session untergeordnet und kann deshalb mehrfach auftreten.
+Um dies in einer Anforderung zu unterbinden, wird eine Liste von bereits erhaltenen Firmen-IDs geführt.
+Durch das Paging wird dieses Skript mehrfach je Seite aufgerufen und jede lokale Variable würde ihren
+Wert verlieren. Um Daten über Pages hinweg verfügbar zu haben, wird die Liste als Parameter im Helper-Objekt
+speichert. Diese bleibt bei jedem Aufruf innerhalb einer Anforderung durch einen Prozess identisch.
 
 .. code-block:: C#
 
