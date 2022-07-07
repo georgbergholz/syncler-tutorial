@@ -16,22 +16,22 @@ Eigenschaften
 :Helper.ClientID (string): 
 
     Die Client ID des Account, welche z.B. für die Anmeldung an der API erforderlich ist.
-    Wird z.B. von der Methode ServiceCall verwendet.
+    Wird von der Methode ServiceCall verwendet.
 
 :Helper.ClientSecret (string):
 
     Der Geheimschlüssel des Account, welche z.B. für die Anmeldung an der API erforderlich ist.
-    Wird z.B. von der Methode ServiceCall verwendet.
+    Wird von der Methode ServiceCall verwendet.
 
 :Helper.Database (SQL Client):
 
-    Ein Datenbank-Client für die Datenbank des Accounts. Ein direkter Zugriff sollte vermieden werden.
-    Alle notwendigen Operationen stehen mit eigenen Methoden zur Verfügung.
+    Ein Datenbank-Client für die Datenbank des Accounts. Ein direkter Zugriff ist nicht erforderlich.
+    Wird von den Funktionen des Helpers verwendet.
 
 :Helper.ServiceUrl (string):
 
     Die Url der Syncler API, mit der das Skript diese Aufrufen kann.
-    Wird z.B. von der Methode ServiceCall verwendet.
+    Wird von den Methoden ServiceCall, InvokeGetData und InvokeSetData verwendet.
 
 :Helper.ServiceToken (string):
 
@@ -41,20 +41,19 @@ Eigenschaften
 :Helper.ServiceExpireDate (DateTime):
 
     Das Gültigkeitsdatum des Access-Token der Syncler API.
-    Wird z.B. von der Methode ServiceCall verwendet.
+    Wird von der Methode ServiceCall verwendet.
 
-:Helper.Params (List<SisParam>):
+:Helper.Params (List SisParam):
 
     Liste von generischen Parametern aus Name und Wert.
-    Die Methoden GetParam und SetParam bieten einen einfachen Zugriff auf diese Liste, 
-    ohne Duplikate zu erzeugen.
+    Wird von den Die Methoden GetParam und SetParam verwendet.
     Initial wird diese Liste mit Parametern aus dem Prozess, der Anforderung und der Verbindung gefüllt.
 
 :Helper.IsCancelled (bool):
 
     Die Wert zeigt an, dass das Skript einen Abbruch angefordert hat.
     Der Wert wird auch mit der Methode Cancel gesetzt.
-    In der Folge wird der Prozess abgebrochen.
+    Der Wert wird in den SDK Prozessen, der SDK Verbindung und der Transformation ausgewertet.
 
 :Helper.ConnectionId (int):
 
@@ -65,28 +64,36 @@ Eigenschaften
 
     Die ID des aktuellen Prozesses.
     Dieser Wert kann für API-Aufrufe verwendet werden.
+    Wird von den Methoden IncreaseComplementaryMappings, IncreaseParallelMappings und InsertLog verwendet.
 
 :Helper.ClientNumber (int):
 
     Die Client-Number des aktuellen Prozesses.
     Dies ist ein Prozessparameter, der für die Datenstrukturierung genutzt werden kann.
+    Die Methoden GetDataMappingComplementaryBySourceId und GetDataMappingParallelByTargetId schränken
+    das Ergebnis mit diesem Wert ein, realisieren das aber mittels Abfrage direkt.
 
 :Helper.WhereClause (int):
 
     Dies ist der Prozess-Filter für die Abfrage von Quelldaten.
-    Innerhalb von Prozess-Skripten kann damit ein individueller Filter generiert werden.
+    In den SDK Prozessen wird der Wert zurück an den Prozess gegeben und kann damit die
+    Prozessausführung direkt beeinflussen.
 
-:Helper.ForceQueryAll:
+:Helper.ForceQueryAll (bool):
 
-Query all source records (bool)
+    Dies ist der Prozessparameter für die Aktivierung des kompletten Lesens ohne Änderungseinschränkung.    
+    In den SDK Prozessen wird der Wert zurück an den Prozess gegeben und kann damit die
+    Prozessausführung direkt beeinflussen.
 
-:Helper.ConflictAction:
+:Helper.ConflictAction (string):
 
-Conflict action from properties (string)
+    Dies ist der Prozessparameter für die Behandlung von Konflikten.
+    Die möglichen Werte sind USE_SOURCE, USE_TARGET, SKIP, IGNORE und SOURCE_CHANGES.
 
-:Helper.ErrorAction:
+:Helper.ErrorAction (string):
 
-Error action from properties (bool)
+    Dies ist der Prozessparameter für die Behandlung von Fehlern.
+    Die möglichen Werte sind REPEAT_ALL, REPEAT_DIFFERENCES, QUERY_NEXT, IGNORE und STOP.
 
 :Helper.ClientWhereClause:
 
