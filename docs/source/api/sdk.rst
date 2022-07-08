@@ -8,10 +8,13 @@ Parameter aus Verbindung und Prozessen können damit ausgetauscht werden.
 Neben dem Helper und einigen .Net Basisfunktionen steht auch noch die Bibliothek Newtonsoft.Json zur
 Verfügung, die vorallem das Lesen und Erzeugen von Json-Daten stark vereinfacht.
 
-Alle Eigenschaften und Funktion des Helper beziehen sich immer auf die aktuelle Instanz.
+Alle Eigenschaften und Funktion des Helper beziehen sich immer auf den aktuellen Account.
 
 Eigenschaften
 -------------
+
+Folgende Eigenschaften stehen am Helper zur Verfügung.
+Einige werden nur intern vom Helper genutzt oder indirekt über Methoden gesetzt.
 
 :Helper.ClientID (string): 
 
@@ -199,17 +202,38 @@ Eigenschaften
 Methoden
 --------
 
-:Helper.Database.Select(string SourceObject, string WhereClause, string OrderBy):
+:Helper.Database.Select:
 
-Your database select (DataTable)
+Parameter:
+- string SourceObject
+- string WhereClause
+- string OrderBy
 
-:Helper.Database.ExecuteReader(string Statement):
+Rückgabewert: DataTable
 
-Your database select (DataTable)
+Für eine Select-Anweisung auf der Datenbank des aktuellen Accounts aus.
 
-:Helper.Database.Insert(DataTable Data):
 
-Your database insert (DataTable)
+:Helper.Database.ExecuteReader:
+
+Parameter:
+- string Statement
+
+Rückgabewert: DataTable
+
+Für ein Select-Statement auf der Datenbank des aktuellen Accounts aus.
+
+
+:Helper.Database.Insert:
+
+Parameter:
+- DataTable Data
+
+Rückgabewert: DataTable
+
+Speichert die Daten in der Datenbank des aktuellen Accounts.
+Die Antwort enthält auch generierte ID-Werte.
+
 
 :Helper.Database.Delete(string TableName, string WhereClause):
 
