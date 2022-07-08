@@ -208,6 +208,7 @@ Folgende Methoden stehen im Helper direkt oder über Eigenschaften zur Verfügun
 :Helper.Database.Select:
 
 Parameter:
+
 * string SourceObject
 * string WhereClause
 * string OrderBy
@@ -220,6 +221,7 @@ Für eine Select-Anweisung auf der Datenbank des aktuellen Accounts aus.
 :Helper.Database.ExecuteReader:
 
 Parameter:
+
 * string Statement
 
 Rückgabewert: DataTable
@@ -230,6 +232,7 @@ Für ein Select-Statement auf der Datenbank des aktuellen Accounts aus.
 :Helper.Database.Insert:
 
 Parameter:
+
 * DataTable Data
 
 Rückgabewert: DataTable
@@ -241,6 +244,7 @@ Die Antwort enthält auch generierte ID-Werte.
 :Helper.Database.Delete:
 
 Parameter:
+
 * string TableName 
 * string WhereClause
 
@@ -252,6 +256,7 @@ Löscht Datensätz aus einer Tabelle des aktuellen Accounts und liefert die Anza
 :Helper.Database.Update:
 
 Parameter:
+
 * DataTable Data
 * string WhereClause
 
@@ -273,6 +278,7 @@ Die Anforderung wird in SDK Prozessen ausgewertet und überspringt das Lesen der
 :Helper.GetParam:
 
 Parameter:
+
 * string Name
 
 Rückgabewert: string
@@ -284,6 +290,7 @@ Wenn der Parameter nicht vorhanden ist, wird eine leere Zeichenkette zurückgeli
 :Helper.GetParam\<T\>:
 
 Parameter:
+
 * string Name
 * T DefaultValue = default
 
@@ -298,6 +305,7 @@ Abhängig vom Typ des Parameters wird der Wert oder Verweis geliefert.
 :Helper.GetParamOrNull\<T\>:
 
 Parameter:
+
 * string Name
 
 Rückgabewert: T
@@ -310,6 +318,7 @@ Diese Notation kann für explizites Nullable verwendet werden. z.B. DateTime?
 :Helper.SetParam\<T\>:
 
 Parameter:
+
 * string Name
 * T Value
 
@@ -321,6 +330,7 @@ Die Typangabe kann bei typisierten Value auch weggelassen werden.
 :Helper.GetDataMappingBySourceId:
 
 Parameter:
+
 * int ProcessId
 * string SourceId
 
@@ -328,6 +338,11 @@ Rückgabewert: SisDataMapping
 
 Ruft eine Datenabbildung aus der Datenbank des aktuellen Accounts ab.
 Datenabbildungen sind Prozess-bezogen und enthalten eine Quell- und Ziel-Identifikation.
+
+
+
+
+
 
 
 :Helper.GetDataMappingByTargetId(int ProcessId, string TargetId):
