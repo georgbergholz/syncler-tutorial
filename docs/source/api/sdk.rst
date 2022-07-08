@@ -202,12 +202,15 @@ Einige werden nur intern vom Helper genutzt oder indirekt über Methoden gesetzt
 Methoden
 --------
 
+Folgende Methoden stehen im Helper direkt oder über Eigenschaften zur Verfügung.
+
+
 :Helper.Database.Select:
 
 Parameter:
-- string SourceObject
-- string WhereClause
-- string OrderBy
+* string SourceObject
+* string WhereClause
+* string OrderBy
 
 Rückgabewert: DataTable
 
@@ -217,7 +220,7 @@ Für eine Select-Anweisung auf der Datenbank des aktuellen Accounts aus.
 :Helper.Database.ExecuteReader:
 
 Parameter:
-- string Statement
+* string Statement
 
 Rückgabewert: DataTable
 
@@ -227,7 +230,7 @@ Für ein Select-Statement auf der Datenbank des aktuellen Accounts aus.
 :Helper.Database.Insert:
 
 Parameter:
-- DataTable Data
+* DataTable Data
 
 Rückgabewert: DataTable
 
@@ -235,46 +238,97 @@ Speichert die Daten in der Datenbank des aktuellen Accounts.
 Die Antwort enthält auch generierte ID-Werte.
 
 
-:Helper.Database.Delete(string TableName, string WhereClause):
+:Helper.Database.Delete:
 
-Your database delete (int)
+Parameter:
+* string TableName 
+* string WhereClause
 
-:Helper.Database.Update(DataTable Data, string WhereClause):
+Rückgabewert: int
 
-Your database update
+Löscht Datensätz aus einer Tabelle des aktuellen Accounts und liefert die Anzahl der betroffenen Zeilen zurück.
+
+
+:Helper.Database.Update:
+
+Parameter:
+* DataTable Data
+* string WhereClause
+
+Aktualisiert Daten in der Datenbank des aktuellen Accounts.
+
 
 :Helper.Cancel():
 
-Cancel after execute
+Fordert einen Abbruch der aktuellen Ausführung an.
+Die Anforderung wird in SDK Prozessen, der SDK Verbindung und in Transformationen ausgewertet.
+
 
 :Helper.SkipLoad():
 
-Skip process default load methods
+Fordert das Überspringen der Lese-Operation an.
+Die Anforderung wird in SDK Prozessen ausgewertet und überspringt das Lesen der Quelldaten.
 
-:Helper.GetParam(string Name):
 
-Get parameter value as string by name from list
+:Helper.GetParam:
 
-:Helper.GetParam<T>(string Name, T DefaultValue = default):
+Parameter:
+* string Name
 
-Get parameter value as type T or default by name from list
+Rückgabewert: string
 
-:Helper.GetParamOrNull<T>(string Name):
+Liefert einen Parameterwert aus der Parameterliste über den Namen des Parameters.
+Wenn der Parameter nicht vorhanden ist, wird eine leere Zeichenkette zurückgeliefert.
 
-Get parameter value as type T or null by name from list
 
+:Helper.GetParam\<T\>:
+
+Parameter:
+* string Name
+* T DefaultValue = default
+
+Rückgabewert: T
+
+Liefert einen Parameterwert aus der Parameterliste über den Namen des Parameter in einem bestimmten Typ.
+Wenn der Parameter nicht vorhanden ist, wird der DefaultValue verwendet.
+Die Typangabe kann bei einem typisierten Defaultvalue auch weggelassen werden.
+Abhängig vom Typ des Parameters wird der Wert oder Verweis geliefert.
+
+
+:Helper.GetParamOrNull\<T\>:
+
+Parameter:
+* string Name
+
+Rückgabewert: T
+
+Liefert einen Parameterwert aus der Parameterliste über den Namen des Parameter in einem bestimmten Typ.
+Wenn der Parameter nicht vorhanden ist, wird Null verwendet.
+Diese Notation kann für explizites Nullable verwendet werden. z.B. DateTime?
                 
-:Helper.SetParam(string Name, string Value):
 
-Update or insert parameter to list
+:Helper.SetParam\<T\>:
 
-:Helper.SetParam<T>(string Name, T Value):
+Parameter:
+* string Name
+* T Value
 
-Update or insert parameter with value type T to list
+Speichert einen Parameter in der Parameterliste. Sollte der Parameter bereits vorhanden sein, wird der Wert
+aktualisiert.
+Die Typangabe kann bei typisierten Value auch weggelassen werden.
 
-:Helper.GetDataMappingBySourceId(int ProcessId, string SourceId):
 
-Get data mapping by process and source id (SisDataMapping)
+:Helper.GetDataMappingBySourceId:
+
+Parameter:
+* int ProcessId
+* string SourceId
+
+Rückgabewert: SisDataMapping
+
+Ruft eine Datenabbildung aus der Datenbank des aktuellen Accounts ab.
+Datenabbildungen sind Prozess-bezogen und enthalten eine Quell- und Ziel-Identifikation.
+
 
 :Helper.GetDataMappingByTargetId(int ProcessId, string TargetId):
 

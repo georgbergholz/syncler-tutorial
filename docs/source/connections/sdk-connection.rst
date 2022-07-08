@@ -107,7 +107,7 @@ Die Methode Execute muss ein Array von Objekten gemäß Datenschema in JSON zur�
 Das Lesen von Schema-basierten Daten wird von dem JSON Abfrage Skript implementiert.
 Das Verfahren ist weitestgehend identisch zum Lesen von Schema-basierten Daten.
 Das Skript wird sowohl für die Erzeugung des Abfrage-Schema, als auch für die Abfrage selbst verwendet.
-Eine Unterscheidung ist mittels Helper.GetParam<bool>("GetQuerySchema") möglich.
+Eine Unterscheidung ist mittels Helper.GetParam\<bool\>("GetQuerySchema") möglich.
 
 
 :Schreiben von Daten:
