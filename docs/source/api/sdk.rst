@@ -16,42 +16,6 @@ Eigenschaften
 Folgende Eigenschaften stehen am Helper zur Verfügung.
 Einige werden nur intern vom Helper genutzt oder indirekt über Methoden gesetzt.
 
-:Helper.ClientID (string): 
-
-    Die Client ID des Account, welche z.B. für die Anmeldung an der API erforderlich ist.
-    Wird von der Methode ServiceCall verwendet.
-
-:Helper.ClientSecret (string):
-
-    Der Geheimschlüssel des Account, welche z.B. für die Anmeldung an der API erforderlich ist.
-    Wird von der Methode ServiceCall verwendet.
-
-:Helper.Database (SQL Client):
-
-    Ein Datenbank-Client für die Datenbank des Accounts. Ein direkter Zugriff ist nicht erforderlich.
-    Wird von den Funktionen des Helpers verwendet.
-
-:Helper.ServiceUrl (string):
-
-    Die Url der Syncler API, mit der das Skript diese Aufrufen kann.
-    Wird von den Methoden ServiceCall, InvokeGetData und InvokeSetData verwendet.
-
-:Helper.ServiceToken (string):
-
-    Der Access-Token der Syncler API.
-    Wird z.B. von der Methode ServiceCall verwendet.
-
-:Helper.ServiceExpireDate (DateTime):
-
-    Das Gültigkeitsdatum des Access-Token der Syncler API.
-    Wird von der Methode ServiceCall verwendet.
-
-:Helper.Params (List SisParam):
-
-    Liste von generischen Parametern aus Name und Wert.
-    Wird von den Die Methoden GetParam und SetParam verwendet.
-    Initial wird diese Liste mit Parametern aus dem Prozess, der Anforderung und der Verbindung gefüllt.
-
 :Helper.IsCancelled (bool):
 
     Die Wert zeigt an, dass das Skript einen Abbruch angefordert hat.
@@ -205,64 +169,6 @@ Methoden
 Folgende Methoden stehen im Helper direkt oder über Eigenschaften zur Verfügung.
 
 
-:Helper.Database.Select:
-
-Parameter:
-
-* string SourceObject
-* string WhereClause
-* string OrderBy
-
-Rückgabewert: DataTable
-
-Für eine Select-Anweisung auf der Datenbank des aktuellen Accounts aus.
-
-
-:Helper.Database.ExecuteReader:
-
-Parameter:
-
-* string Statement
-
-Rückgabewert: DataTable
-
-Für ein Select-Statement auf der Datenbank des aktuellen Accounts aus.
-
-
-:Helper.Database.Insert:
-
-Parameter:
-
-* DataTable Data
-
-Rückgabewert: DataTable
-
-Speichert die Daten in der Datenbank des aktuellen Accounts.
-Die Antwort enthält auch generierte ID-Werte.
-
-
-:Helper.Database.Delete:
-
-Parameter:
-
-* string TableName 
-* string WhereClause
-
-Rückgabewert: int
-
-Löscht Datensätz aus einer Tabelle des aktuellen Accounts und liefert die Anzahl der betroffenen Zeilen zurück.
-
-
-:Helper.Database.Update:
-
-Parameter:
-
-* DataTable Data
-* string WhereClause
-
-Aktualisiert Daten in der Datenbank des aktuellen Accounts.
-
-
 :Helper.Cancel():
 
 Fordert einen Abbruch der aktuellen Ausführung an.
@@ -365,7 +271,7 @@ Parameter:
 Rückgabewert: List\<SisDataMapping\>
 
 Ruft eine Liste von Datenabbildungen aus der Datenbank des aktuellen Accounts über eine
-Select-Anweisung ab. Die Abfrage kann auch mit Paging-Parametern ausgeführt werden.
+Where-Bedingung ab. Die Abfrage kann auch mit Paging-Parametern ausgeführt werden.
 
 
 :Helper.GetDataMappingComplementaryBySourceId:
@@ -468,7 +374,7 @@ Liefert eine Liste von Informationsobjekten zu den Prozessen des aktuellen Accou
 Die Abfrage kann auf bestimmte Verbindungen eingeschränkt werden.
 
 
-:Helper.GetProcessInfoComplementary
+:Helper.GetProcessInfoComplementary:
 
 Parameter:
 
@@ -479,7 +385,7 @@ Rückgabewert: List\<SisProcessInfo\>
 Liefert eine Liste von Informationsobjekten zu den komplementären Prozessen einen Prozesses.
 
 
-:Helper.GetProcessInfoParallel
+:Helper.GetProcessInfoParallel:
 
 Parameter:
 
@@ -557,9 +463,6 @@ Invoke get data (JArray)
 
 Invoke set data (JObject)
 
-:Helper.ServiceLogin():
-
-Syncler service login (bool)
 
 :Helper.ServiceCall(string Method, string Url, string Data):
 
