@@ -336,70 +336,202 @@ Parameter:
 
 Rückgabewert: SisDataMapping
 
-Ruft eine Datenabbildung aus der Datenbank des aktuellen Accounts ab.
+Ruft eine Datenabbildung aus der Datenbank des aktuellen Accounts über die Quell-ID ab.
 Datenabbildungen sind Prozess-bezogen und enthalten eine Quell- und Ziel-Identifikation.
 
 
+:Helper.GetDataMappingByTargetId:
+
+Parameter:
+
+* int ProcessId
+* string TargetId
+
+Rückgabewert: SisDataMapping
+
+Ruft eine Datenabbildung aus der Datenbank des aktuellen Accounts über die Ziel-ID ab.
+Datenabbildungen sind Prozess-bezogen und enthalten eine Quell- und Ziel-Identifikation.
+
+
+:Helper.GetDataMappingList:
+
+Parameter:
+
+* string WhereClause
+* string OrderBy
+* int? MaxCount
+* int? StartIndex
+
+Rückgabewert: List\<SisDataMapping\>
+
+Ruft eine Liste von Datenabbildungen aus der Datenbank des aktuellen Accounts über eine
+Select-Anweisung ab. Die Abfrage kann auch mit Paging-Parametern ausgeführt werden.
+
+
+:Helper.GetDataMappingComplementaryBySourceId:
+
+Parameter:
+
+* int ProcessId
+* string SourceId
+* string TargetObject = null
+
+Rückgabewert: List\<SisDataMapping\>
+
+Ruft eine Liste von Datenabbildungen entgegengerichteter Prozesse zum aktuellen Prozess aus der Datenbank 
+des aktuellen Accounts über eine Quell-ID ab. Zusätzlich kann das Target-Objekt eingeschränkt werden. 
+Dies kann erforderlich sein, wenn zwei unterschiedliche Objekte das gleiche Zielobjekt haben.
+Die Arbeit mit komplementären Datenabbildungen ist für das Konfliktmanagement und die Zielerkennung bei
+bidirektionalen Synchronisationen relevant.
+
+
+:Helper.GetDataMappingParallelByTargetId:
+
+Parameter:
+
+* int ProcessId
+* string TargetId
+
+Rückgabewert: List\<SisDataMapping\>
+
+Ruft eine Liste von Datenabbildungen paralleler Prozesse zum aktuellen Prozess aus der Datenbank 
+des aktuellen Accounts über eine Ziel-ID ab. 
+An diesen muss die Änderungsinformation des Ziels angepasst werden, da dort ansonsten ein Konflikt
+erkannt wird.
+
+
+:Helper.SaveDataMapping:
+
+Parameter:
+
+* SisDataMapping Mapping
+
+Rückgabewert: SisDataMapping
+
+Speichert eine neue oder aktualisiert eine bestehende Datenabbildung.
+
+
+:Helper.IncreaseOwnDataMapping:
+
+Parameter:
+
+* SisDataMapping DataMapping
+* object NewUpdatedInfoA
+* object NewUpdatedInfoB
+* bool OnlyA = false
+* bool OnlyB = false
+
+Diese Methode aktualisiert die Änderungsinformation von Quelle und Ziel für die aktuelle Datenabbildung.
+Zum Auflösen eines Konflikts können die einzelnen Informationen gezielt per Parameter aktualisiert werden.
+
+
+:Helper.IncreaseComplementaryMappings:
+
+Parameter:
+
+* string CurrentSourceId
+* string CurrentTargetId
+* object NewUpdatedInfoA
+* object NewUpdatedInfoB
+* bool OnlyA = false
+* bool OnlyB = false
+
+Diese Methode sucht und aktualisiert oder legt komplementäre Datenabbildungen an.
+Bei Neuanlagen oder in Konfliktsituationen kann dies auch nur partiell erfolgen.
+
+
+:Helper.IncreaseParallelMappings:
+
+Parameter:
+
+* string CurrentSourceId
+* string CurrentTargetId
+* object NewUpdatedInfoA
+* object NewUpdatedInfoB
+* bool OnlyA = false
+* bool OnlyB = false
+
+Diese Methode sucht und aktualisiert oder legt parallele Datenabbildungen an.
+Bei Konfliktsituationen kann dies auch nur partiell erfolgen.
+
+
+:Helper.GetProcessInfoList:
+
+Parameter:
+
+* int? SourceConnectionId = null
+* int? TargetConnectionId = null
+
+Rückgabewert: List\<SisProcessInfo\>
+
+Liefert eine Liste von Informationsobjekten zu den Prozessen des aktuellen Accounts.
+Die Abfrage kann auf bestimmte Verbindungen eingeschränkt werden.
+
+
+:Helper.GetProcessInfoComplementary
+
+Parameter:
+
+* int ProcessId
+
+Rückgabewert: List\<SisProcessInfo\>
+
+Liefert eine Liste von Informationsobjekten zu den komplementären Prozessen einen Prozesses.
+
+
+:Helper.GetProcessInfoParallel
+
+Parameter:
+
+* int ProcessId
+
+Rückgabewert: List\<SisProcessInfo\>
+
+Liefert eine Liste von Informationsobjekten zu den parallelen Prozessen einen Prozesses.
+
+
+:Helper.InsertLog:
+
+Parameter:
+
+* SisLog Log
+
+Speichert einen Protokolleintrag in der Datenbank des aktuellen Accounts.
+
+
+:Helper.InsertLog:
+
+Parameter:
+
+* string Message
+* int Level
+
+Speichert einen Protokolleintrag in der Datenbank des aktuellen Accounts.
+Mit dem Level wird der Typ des Eintrags festgelegt. 
+0 = Meldung, 1 = Fehler, 2 = Warnung, 3 = Nachricht, 4 = Rückmeldung, 5 = Debug
+
+
+:Helper.InvokeUrl:
+
+Parameter:
+
+* string Url
+* string Method
+* JObject Header
+* string Data
+
+Rückgabewert: string
+
+Diese Methode für einen HTTP-Request aus und liefert die Antwort als Zeichenkette zurück.
+Zusätzliche Header können als JObject übergeben werden. 
+Einzelne Properties werden als einzelner Header-Parameter übernommen.
 
 
 
 
 
-:Helper.GetDataMappingByTargetId(int ProcessId, string TargetId):
 
-Get data mapping by process and target id (SisDataMapping)
 
-:Helper.GetDataMappingList(string WhereClause, string OrderBy, int? MaxCount, int? StartIndex):
-
-Get data mapping list by query (List<SisDataMapping>)
-
-:Helper.GetDataMappingComplementaryBySourceId(int ProcessId, string SourceId, string TargetObject = null):
-
-Get data mapping for complementary process by this process and this source id (List<SisDataMapping>)
-
-:Helper.GetDataMappingParallelByTargetId(int ProcessId, string TargetId):
-
-Get data mapping for parallel process by this process and this source id (List<SisDataMapping>)
-
-:Helper.SaveDataMapping(SisDataMapping Mapping):
-
-Insert or update data mapping (SisDataMapping)
-
-:Helper.IncreaseOwnDataMapping(SisDataMapping DataMapping, object NewUpdatedInfoA, object NewUpdatedInfoB, bool OnlyA = false, bool OnlyB = false):
-
-Increase own updated info
-
-:Helper.IncreaseComplementaryMappings(string CurrentSourceId, string CurrentTargetId, object NewUpdatedInfoA, object NewUpdatedInfoB, bool OnlyA = false, bool OnlyB = false):
-
-Increase complementary updated info
-
-:Helper.IncreaseParallelMappings(string CurrentSourceId, string CurrentTargetId, object NewUpdatedInfoA, object NewUpdatedInfoB, bool OnlyA = false, bool OnlyB = false):
-
-Increase parallel updated info
-
-:Helper.GetProcessInfoList(int? SourceConnectionId = null, int? TargetConnectionId = null):
-
-Your processes (List<SisProcessInfo>)
-
-:Helper.GetProcessInfoComplementary(int ProcessId):
-
-Your complemtary processes (List<SisProcessInfo>)
-
-:Helper.GetProcessInfoParallel(int ProcessId):
-
-Your parallel processes (List<SisProcessInfo>)
-
-:Helper.InsertLog(SisLog Log):
-
-Save log to your database
-
-:Helper.InsertLog(string Message, int Level):
-
-Save simple log to your database
-
-:Helper.InvokeUrl(string Url, string Method, JObject Header, string Data)):
-
-Invoke url (string)
 
 :Helper.GetParameterList(string WhereClause = null):
 
