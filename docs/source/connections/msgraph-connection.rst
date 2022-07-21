@@ -8,12 +8,12 @@ vorhanden sind.
 
 Für die Einrichtung der Anmeldung ist eine registrierte Anwendung bei Microsoft erforderlich.
 
-Registrieren Sie die Anwendung über das Registrierungsportal https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade.
+Registrieren Sie die Anwendung über das Registrierungsportal https://go.microsoft.com/fwlink/?linkid=2083908.
 Melden Sie sich mit Ihrem Microsoft Konto an und rufen Sie die Funktion "Neue Registrierung" auf.
 Vergeben Sie einen Anwendungsnamen und klicken Sie auf Registrieren.
 
 Danach wird Ihnen die Übersicht zur Registrierung angezeigt.
-Für die Verbindung benötigen Sie die Anwendungs-ID (Client-ID) und die Verzeichnis-ID (Mandant).
+Für die Verbindung benötigen Sie die Anwendungs-ID (Client) und die Verzeichnis-ID (Mandant).
 Übernehmen Sie die Angaben in die Felder Client-ID und Azure AD Mandanten ID.
 
 Damit die Verbindung auf die Graph API zugreifen kann, müssen Sie unter "Zertifikate & Geheimnisse" einen 
@@ -83,7 +83,7 @@ Folgende Einstellungen müssen bereitgestellt werden.
 
 Definiert die Basis-Url aller Abfragen. Der Wert ist aktuell immer https://graph.microsoft.com
 
-:Azure AD Mandanten ID:
+:Verzeichnis-ID (Mandant):
 
 Diese ID definiert das Unternehmen und kann bei der Registrierung der Anwendung ausgelesen werden,
 
@@ -105,7 +105,7 @@ Diese Ganzzahl definiert das Ende des Zeitfensters für Synchronisationsprozesse
 Die Anzahl an Monaten wird bei kompletten Abfragen dem aktuellem Datum hinzugefügt.
 Je größer der Wert ist, umso größer kann das Datenvolumen sein.
 
-:Client-ID:
+:Anwendungs-ID (Client):
     
 Die Anwendungs-ID der registrierten Anwendung.
 

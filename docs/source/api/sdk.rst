@@ -259,21 +259,6 @@ Ruft eine Datenabbildung aus der Datenbank des aktuellen Accounts über die Ziel
 Datenabbildungen sind Prozess-bezogen und enthalten eine Quell- und Ziel-Identifikation.
 
 
-:Helper.GetDataMappingList:
-
-Parameter:
-
-* string WhereClause
-* string OrderBy
-* int? MaxCount
-* int? StartIndex
-
-Rückgabewert: List\<SisDataMapping\>
-
-Ruft eine Liste von Datenabbildungen aus der Datenbank des aktuellen Accounts über eine
-Where-Bedingung ab. Die Abfrage kann auch mit Paging-Parametern ausgeführt werden.
-
-
 :Helper.GetDataMappingComplementaryBySourceId:
 
 Parameter:
@@ -438,8 +423,8 @@ Einzelne Properties werden als einzelner Header-Parameter übernommen.
 
 
 
+ public List<SisParam> GetParameterList(string Name, string ConnectionId = null, string ProcessId = null)
 
-:Helper.GetParameterList(string WhereClause = null):
 
 Get parameters from your database (List<SisParam>)
 
@@ -447,13 +432,11 @@ Get parameters from your database (List<SisParam>)
 
 Save parameter to your database
 
-:Helper.DeleteParameter(int? ParameterId = null, string WhereClause):
+  :Helper.DeleteParameter(int ParameterId)
 
 Delete parameter from your database
 
-:Helper.GetConnectionList(bool WithSchemaObjects = true, string WhereClause = null):
 
-Get your connections (JArray)
 
 :Helper.InvokeGetData(string ConnectionId, string TargetObject, List<SisParam> GetParams):
 
