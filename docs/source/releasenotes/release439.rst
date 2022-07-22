@@ -65,7 +65,7 @@ Etag vorliegt und ggf. wird diese angefordert. Durch die Konstellation unveränd
 konnte diese Fehlersituation eintreten.
 
 Die Transformation "Typ konvertieren" erzeugt Ergebnisfelder vom Typ Zeichenkette. Dies entspricht auch dem tatsächlichem
-Ergbnis dieser Funktion.
+Ergebnis dieser Funktion.
 
 Die EmarSys-Verbindung hat keine ID zu angelegten Kontakten zurückgeliefert, wodurch dieser Datensatz fälschlich als 
 "übersprungen" interpretiert wurde.
