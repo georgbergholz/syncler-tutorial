@@ -1,5 +1,5 @@
 ﻿Termin-Synchronisation zwischen Microsoft 365 und Zoho CRM
-=======================================================
+==========================================================
 
 Die Microsoft Graph Verbindung stellt das Objekt "Event" für den Zugriff auf Kalendereinträge zur Verfügung.
 Dabei handelt sich um ein geschachteltes Objekt, das die Teilnehmer des Termins als Positionsliste anbietet.
@@ -24,6 +24,7 @@ Delta-Datum und Delta-Token werden Prozess-bezogen gespeichert.
 Serien werden mittels Seriendefinition in Zoho angelegt.
 Eine nachträgliche Änderung der Serie lässt Zoho nicht zu.
 Sollten neue Vorkommen hinzukommen, werden diese als Einzeltermine in Zoho ohne direkten Bezug zur Serie angelegt.
+Sollte die Serie selbst geändert werden, wird die komplette Serie in Zoho gelöscht und neu erzeugt.
 
 Die Delta-Funktion synchronisiert nur ein definiertes Zeitfenster.
 Durch die Serien-Anlage können auch Meetings in Zoho vorhanden sein, die sich außerhalb des Zeitfensters befinden.
