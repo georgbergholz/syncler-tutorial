@@ -67,7 +67,7 @@ und neben Vorkommen einer Serie auch das Löschen von Ereignissen, Aufgaben oder
 Die Abfrage von Ereignissen, Aufgaben und Kontakten wird über alle Benutzer einzeln ausgeführt.
 Die betreffenden Benutzer werden über eine Verbindungseinstellung festgelegt.
 Das genaue Verfahren wird in den Besonderheiten beschrieben.
-
+Für das Lesen von Aufgaben wird nur die Standardliste des jeweiligen Benutzers verwendet.
 
 :Lesen von Abfrage-basierten Daten:
 
@@ -79,8 +79,9 @@ Diese Funktion wird nicht unterstützt.
 Das Schreiben eines Ereignisses erfolgt über den Benutzer, der für das Lesen genutzt wurde.
 Bei der Neuanlage wird dieser Benutzer aus dem Feld "Organisator" oder dem Feld "user" entnommen.
 Ungültige Werte führen dabei zu einer Fehlermeldung.
-Die Anlage einer Ereignis-Serie ruft im Anschluss die Vorkommen des aktuellen Zeitfensters ab und 
-speichert Informationen dazu im Änderungsspeicher.
+Die Anlage einer Ereignis-Serie ruft im Anschluss die Vorkommen mit dem Startzeitpunkt und ggf.
+dem Ende der Serie ab und speichert Informationen dazu im Änderungsspeicher.
+Sollte die Serie kein Endzeitpunkt haben, wird das aktuelle Zeitfenster verwendet.
 Dies ermöglich spezialisierten Prozessen die Vorkommen mit den Quelldaten abzugleichen.
 
 
