@@ -117,20 +117,35 @@ Benutzer.
 Sage CRM Kontakte nach Microsoft Graph Kontakt
 ----------------------------------------------
 
+Mit diesem Prozess und der vorhandenen Vorlage können Kontakte aus Sage CRM in die Outlook Kontakte synchronisiert werden.
+Dabei ist die Basis-Datenquelle die Kontaktzuordnung zwischen Benutzer und Person. Die Details werden dann per 
+Transformation nachgeladen und reichern den Kontakt an.
+Die CRM Verbindung unterstützt die Änderungsabfrage zu Kontakten mit einer zusätzlichen Prüfung des Aktualisierungsdatum
+von Person, Adresse und Firma aus der Sicht vSearchListPerson.
+Damit die Übertragung dann nicht an der Synchron-Prüfung stoppt, werden diese Aktualisierungsdaten im Quellobjekt gesucht
+und das Maximum wird verwendet.
+Damit kann dieser Prozess den Kontakt aktualisieren, wenn sich eine der vier Datenobjekte ändert.
+
 
 Sage CRM gelöschte Kommunikation nach Microsoft Graph Ereignis
 --------------------------------------------------------------
+
+Da über die Schnittstellen von Sage CRM nicht gezielt auf gelöschte Daten geprüft werden kann, sind diese Prozesse erforderlich.
+Sie führen eine Abfrage über die eingestellte SQL Verbindung aus und übertragen die Löschung und bereinigen die
+Datenabbildungen.
 
 
 Sage CRM gelöschte Kontakte nach Microsoft Graph Kontakt
 --------------------------------------------------------
 
-
+Da über die Schnittstellen von Sage CRM nicht gezielt auf gelöschte Daten geprüft werden kann, sind diese Prozesse erforderlich.
+Sie führen eine Abfrage über die eingestellte SQL Verbindung aus und übertragen die Löschung und bereinigen die
+Datenabbildungen.
 
 
 Sage CRM gelöschte Kommunikation nach Microsoft Graph Aufgabe
 -------------------------------------------------------------
 
-
-
-
+Da über die Schnittstellen von Sage CRM nicht gezielt auf gelöschte Daten geprüft werden kann, sind diese Prozesse erforderlich.
+Sie führen eine Abfrage über die eingestellte SQL Verbindung aus und übertragen die Löschung und bereinigen die
+Datenabbildungen.
