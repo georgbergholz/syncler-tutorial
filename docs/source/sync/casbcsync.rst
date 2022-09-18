@@ -27,3 +27,10 @@ Eine gefundene Geschäftsbeziehung wird direkt für die Zuordnung verwendet.
 Ansonsten wird von einer Neuanlage ausgegangen.
 
 Die Kundennummer wird nach erfolgreicher Übertragung in das Feld SIS_ACCOUNT# zurückgeschrieben und steht damit unmittelbar zur Verfügung.
+
+
+
+CAS Ansprechpartner nach Dynamics BC Kontakt
+--------------------------------------------
+
+
