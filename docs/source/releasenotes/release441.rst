@@ -20,7 +20,7 @@ Der neue Prozesstyp "SQL Abfrage nach Auswahllisten" kann interne Auswahllisten 
 auf der Basis von SQL-Abfragen erzeugen.
 
 Bei der Erzeugung einer Terminserie in Zoho werden die Termine direkt über die $u_id abgefragt.
-Die erzeugten Einträge im Änderungsspeicher werdem um das Anfangsdatum ergänzt, damit die
+Die erzeugten Einträge im Änderungsspeicher werden um das Anfangsdatum ergänzt, damit die
 Zuordnung von Terminvorkommen das Ziel nicht erneut in Zoho abfragen muss. 
 Dies hatte zu wiederholten Abfragen bei historischen Serien geführt, die das API-Limit unnötig belasten.
 
