@@ -413,209 +413,253 @@ Parameter:
 
 Rückgabewert: string
 
-Diese Methode für einen HTTP-Request aus und liefert die Antwort als Zeichenkette zurück.
+Diese Methode führt einen HTTP-Request aus und liefert die Antwort als Zeichenkette zurück.
 Zusätzliche Header können als JObject übergeben werden. 
 Einzelne Properties werden als einzelner Header-Parameter übernommen.
 
 
+:Helper.GetParameterList:
+
+Parameter:
+
+* string Name
+* string ConnectionId = null
+* string ProcessId = null
+
+Rückgabewert: List\<SisParam\>
+
+Ruft eine Parameterliste aus der internen Datenbank ab.
+Jeder Parameter hat einen Namen, einen Wert und eine ID.
+Zusätzlich können Parameter noch einer Verbindung oder einem Prozess zugeordnet werden.
+Das ist für die Strukturierung und Bereinigung sinnvoll.
 
 
+:Helper.SaveParameter:
+
+Parameter:
+
+* SisParam Parameter
+* string ConnectionId = null
+* string ProcessId = null
+
+Speichert einen Parameter in der internen Datenbank.
 
 
+:Helper.DeleteParameter:
 
- public List<SisParam> GetParameterList(string Name, string ConnectionId = null, string ProcessId = null)
+Parameter:
 
+* int ParameterId
 
-Get parameters from your database (List<SisParam>)
-
-:Helper.SaveParameter(SisParam Parameter, string ConnectionId = null, string ProcessId = null):
-
-Save parameter to your database
-
-  :Helper.DeleteParameter(int ParameterId)
-
-Delete parameter from your database
+Löscht einen Parameter aus der internen Datenbank.
 
 
+:Helper.InvokeGetData:
 
-:Helper.InvokeGetData(string ConnectionId, string TargetObject, List<SisParam> GetParams):
+Parameter:
 
-Invoke get data (JArray)
+* string ConnectionId
+* string TargetObject
+* List\<SisParam\> GetParams
 
-:Helper.InvokeSetData(string ConnectionId, string TargetObject, JObject JsonObject):
+Rückgabewert: JArray
 
-Invoke set data (JObject)
+Ruft Daten aus einer Verbindung ab.
+Das Schemaobjekt wird über TargetObject festgelegt.
+Die Liste der Parameter steuert die Abfrage. Dabei unterstützen nicht alle Verbindungen den gleichen Umfang an Optionen.
+Übliche Namen von Parametern sind: GETDATA_ID, GETDATA_RELATED_ID, GETDATA_RELATED, GETDATA_WHERE, GETDATA_MODIFIED, GETDATA_ORDER, LAST_SYNC_DATE, LAST_SYNC_VERSION
+Die Ausführung erfolgt über die Syncler API.
 
 
-:Helper.ServiceCall(string Method, string Url, string Data):
+:Helper.InvokeSetData:
 
-Invoke Syncler service (string)
+Parameter:
 
-:Helper.InsertAction(int ProcessId, DateTime ExecuteDate, bool IsAdhoc, List<SisParam> ActionParams):
+* string ConnectionId
+* string TargetObject
+* JObject JsonObject
 
-Save new process action to your database
+Rückgabewert: JObject
 
-:Helper.GetDataFromSource(string SchemaObjectName, List<SisParam> GetParams):
+Speichert Daten über eine Verbindung.
+Das Schemaobjekt wird über TargetObject festgelegt.
+Zusätzliche Parameter, wie "DELETE" (bool) können über die Eigenschaft "Params" am JsonObjekt mitgegeben werden.
 
-Get data from source connection (JArray)
 
-:Helper.GetDataFromTarget(string SchemaObjectName, List<SisParam> GetParams):
+:Helper.ServiceCall:
 
-Get data from target connection (JArray)
+Parameter:
 
-:Helper.GetDataFromConnection(string SchemaObjectName, List<SisParam> GetParams, int ConnectionId):
+* string Method
+* string Url
+* string Data
 
-Get data from connection (JArray)
+Rückgabewert: string
 
-:Helper.SetDataToSource(string SchemaObjectName, JObject DataObject, List<SisParam> SetParams):
+Führt einen Aufruf der Syncler API aus.
+Als Url muss nur der Endpunkt übergeben werden.
 
-Set data to source connection (JObject)
 
-:Helper.SetDataToTarget(string SchemaObjectName, JObject DataObject, List<SisParam> SetParams):
+:Helper.InsertAction:
 
-Set data to target connection (JObject)
+Parameter:
 
-:Helper.SetDataToConnection(string SchemaObjectName, JObject DataObject, List<SisParam> SetParams, int ConnectionId):
+* int ProcessId
+* DateTime ExecuteDate
+* bool IsAdhoc
+* List\<SisParam\> ActionParams
 
-Set data to connection (JObject)
+Speichert einen neuen Warteschlangeneintrag für einen Prozess.
 
-:Helper.FillByMappings(JObject SourceObject, JObject TargetObject, JArray Mappings (JObject):
 
-Fill target object by source object and mappings (JObject)
-
+Parameter
+---------
 
 :SisParam.Name:
 
-Parameter name (string)
+Parameter Name (string)
 
 :SisParam.Value:
 
-Parameter value (object)
+Parameter Wert (object)
 
 :SisParam.ID:
 
-Parameter ID (int). If taken from database.
+Parameter ID (int)
+Wird beim Speichern in der Datenbank gesetzt.
 
 :SisParam.GetValue():
 
-Parameter value as string
+Parameter Wert als String
 
-:SisParam.GetValue<T>(DefaultValue):
+:SisParam.GetValue\<T\>(DefaultValue):
 
-Parameter value as type T or default
+Parameter Wert als Typ T oder Default
 
-:SisParam.GetValueOrNull<T>():
+:SisParam.GetValueOrNull\<T\>():
 
-Parameter value as type T or null
+Parameter Wert als Typ T oder Null
 
 :SisParam.HasValue():
 
-Parameter has value (bool)
+Parameter hat einen Wert (bool)
+
+
+Datenabbildung
+--------------
 
 :SisDataMapping.ID:
 
-Database ID of data mapping (int)
+Interne Datenbank ID (int)
 
 :SisDataMapping.ProcessId:
 
-Assigned process (int)
+Zugeordneter Prozess (int)
 
 :SisDataMapping.Description:
 
-Readable description (string)
+Datensatzbeschreibung (string)
 
 :SisDataMapping.SourceRecordId:
 
-ID or IDs of source record (string)
+ID des Quelldatensatzes (string)
 
 :SisDataMapping.TargetRecordId:
 
-ID or IDs of target record (string)
+ID des Zieldatensatzes (string)
 
 :SisDataMapping.LastSyncDate:
 
-Last access by sync (DateTime)
+Letztes Datum der Synchronisation (DateTime)
 
 :SisDataMapping.TargetIsDeleted:
 
-Target is missing or deleted (bool)
+Zieldatensatz wurde gelöscht (bool)
 
 :SisDataMapping.LastSyncInfo:
 
-List of parameters to store updated info (List<SisParam>)
+Parameterliste mit Änderungs- und Zusatzinformationen (List\<SisParam\>)
+
+
+Prozessbeschreibung
+-------------------
 
 :SisProcessInfo.ID:
 
-Process id (int)
+Prozess ID (int)
 
 :SisProcessInfo.Name:
 
-Process name (string)
+Prozessname (string)
 
 :SisProcessInfo.DisplayName:
 
-Full process name (string)
+Voller Prozessname (string)
 
 :SisProcessInfo.SourceObject:
 
-Source object name (string)
+Names des Quelldatensatzes (string)
 
 :SisProcessInfo.TargetObject:
 
-Target object name (string)
+Name des Zieldatensatzes (string)
 
 :SisProcessInfo.SourceConnectionId:
 
-Source connection id (int)
+Quellverbindung ID (int)
 
 :SisProcessInfo.TargetConnectionId:
 
-Target connection id (int)
+Zielverbindung ID (int)
 
 :SisProcessInfo.ClientNumber:
 
-Client number (int)
+Mandantennummer (int)
 
 :SisProcessInfo.IsScheduled:
 
-Scheduling is active (bool)
+Zeitsteuerung ist aktiv (bool)
 
 :SisProcessInfo.SourceType:
 
-Type of source connection (string)
+Typ der Quellverbindung (string)
 
 :SisProcessInfo.TargetType:
 
-Type of target connection (string)
+Typ der Zielverbindung (string)
 
 :SisProcessInfo.ProcessType:
 
-Type of process (string)
+Typ des Prozesses (string)
+
+
+Protokoll
+---------
 
 :SisLog.CreatedDate:
 
-Created date (DateTime)
+Erstelldatum (DateTime)
 
 :SisLog.Level:
 
-Level of message 0 (message) - 5 (debug) (int)
+Level der Nachricht 0 (message) - 5 (debug) (int)
 
 :SisLog.ProcessId:
 
-Related process id (int)
+Zugeordneter Prozess (int)
 
 :SisLog.ActionId:
 
-Related queued action id (int)
+Zugeordneter Warteschlangeneintrag (int)
 
 :SisLog.RecordType:
 
-Related record type (string)
+Names des Datensatzes (string)
 
 :SisLog.RecordId:
 
-Related record id (string)
+ID des Datensatzes (string)
 
 :SisLog.LogMessage:
 
-Message (string)
+Meldung (string)
