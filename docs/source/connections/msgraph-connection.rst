@@ -201,6 +201,16 @@ Sollte er noch existieren, wurde er aus dem aktuellen Zeitfenster verschoben und
 Ohne Resultat wird der Termin als "gelöscht" verarbeitet.
 Dabei wird das Feld "isDeleted" mit "true" zurückgeliefert.
 
+Eine Datenabfrage aus der Transformation "Daten abfragen" kann in Feldnotation einen einzelnen Datensatz abfragen.
+Dies kann auch mit einer Benutzereinschränkung ergänzt werden, da sonst alle Benutzer geprüft werden müssen.
+
+Beispiel:
+    .. code-block:: none
+
+        id|:|ABC|;|
+        oder
+        id|:|ABC|;|user|:|benutzer@domain.de|;|
+
 
 Synchronisationsprozesse
 ------------------------

@@ -31,6 +31,8 @@ Eine nachträgliche Änderung der Serie lässt Zoho nicht zu.
 Sollten neue Vorkommen hinzukommen, werden diese als Einzeltermine in Zoho ohne direkten Bezug zur Serie angelegt.
 Dies kann bei unbegrenzten Serien der Fall sein, da Zoho nicht unbegrenzt viele Termine anlegt.
 Sollte die Serie selbst geändert werden, wird die komplette Serie in Zoho gelöscht und neu erzeugt.
+Eine Serie mit einer definierten Anzahl wird auf das Maximum von Zoho von 99 begrenzt, da die Serie sonst nicht 
+angelegt werden kann.
 
 Die Delta-Funktion synchronisiert nur ein definiertes Zeitfenster.
 Durch die Serien-Anlage können auch Meetings in Zoho vorhanden sein, die sich außerhalb des Zeitfensters befinden.
