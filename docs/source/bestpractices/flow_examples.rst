@@ -119,7 +119,21 @@ Die Prozesse 2 bis 4 verwenden die transformierten Quelldaten von Prozess 1 und 
 zwischenspeichern.
 
 
+Verarbeitung von CSV-Dateien
+----------------------------
 
-    
+In diesem Beispiel gehen wir von einer CSV-Datei aus, die Daten für unterschiedliche Zielobjekte enthält.
+Die CSV-Datei könnte z.B. aus einer Lead-Quelle oder Messe-Erfassung stammen.
+Die Daten sollen eine Firma, einen Ansprechpartner und eine Verkaufschance erzeugen.
+Diese Aufgabe kann auch mit Nachfolgeprozessen realisiert werden, wodurch sich aber einige Nachteile ergeben.
+Sollte z.B. ein Prozess in der Kette nicht erfolgreich ausgeführt werden, wird der Nachfolgeprozess nicht gestartet, um einen Datenverlust vorzubeugen.
+Dies würde also die komplette Kette stoppen und die Verarbeitung von erfolgreichen Datensätzen kann nicht fortgeführt werden.
+Außerdem liest jeder Prozess die Daten aus der Datei oder dem Änderungsspeicher erneut ein und 
+je nachdem muss auch der richtige Prozess für die Archivierung bzw. das Löschen der Quelldatei ausgewählt werden.
+
+Um diese Schritte zu vereinfachen, definieren wir in diesem Beispiel einen Ablauf.
+Dieser kann dann z.B. eine gesamthafte Fehlerbehandlung durchführen und verarbeitet erfolgreiche Datensätze bis zum Schluss.
+
+
 
 

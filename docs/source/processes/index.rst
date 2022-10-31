@@ -8,6 +8,7 @@ Diese Typen lassen sich grundlegend unterscheiden.
 .. toctree::
     :titlesonly:
     
+    properties
     schemabase
     querybase
     querybulkbase

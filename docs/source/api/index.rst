@@ -10,4 +10,5 @@ Damit können eigene Lösung außerhalb der bereitgestellten Szenarien entwickel
     sdk
     serviceapi
     /connections/sdk-connection
+    /processes/sdk
 
