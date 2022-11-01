@@ -15,6 +15,7 @@ Hier finden Sie verschiedene Szenarien im Detail beschrieben.
     graphcrmsync
     b7_belege
     other
+    csv
 
 
 
