@@ -7,7 +7,7 @@ F체r CSV-Prozesse stehen Prozess-Parameter zur Konfiguration der Datei zur Verf�
 
 	Definiert das Trennzeichen der Felder.
 
-:Datei Kopfdaten.
+:Datei Kopfdaten:
 
 	Dieser mehrzeilige Text wird als Pr채fix den CSV-Daten vorangestellt.
 	Er kann z.B. f체r Steuerinformation f체r das endg체ltige Zielsystem genutzt werden.
