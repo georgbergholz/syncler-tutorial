@@ -9,6 +9,11 @@ Ein Abfrage-Prozess erzeugt ein lokales Datenschema, das aus einer spezifischen 
 Parameter
 ---------
 
+:Prozess:
+
+	Dieser Parameter kann einen Synchronisationsprozess mit Datenabbildungen auswählen.
+	Sobald ein Prozess festgelegt wurde, wird die Abfrage nicht global einmalig, sonder je Datenabbildung ausgeführt.
+	Dabei können die Platzhalter SourceId und TargetId verwendet werden, um die Abfrage für die Datenabbildung anzupassen.
 
 
 Abfrage und Ziel
