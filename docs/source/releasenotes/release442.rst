@@ -8,7 +8,7 @@ Die Graph-Verbindung:
 
 * Die Filter-Abfragen in Feldnotation kann um "user" ergänzt werden, damit die Abfrage bei vielen Benutzern beschleunigt wird.
 * Benutzer mit leerer Emailadresse werden bei der Verarbeitung übersprungen, da diese zu fehlerhaften Abfragen führen.
-* Die Warnungen bei Abfragen wurden in Debug-Meldungen umgewandelt.
+* Die Warnungen bei Abfragen wurden in Debug-Meldungen umgewandelt. (ErrorItemNotFound, ResourceNotFound, MailboxNotEnabledForRESTAPI)
 * Per Parameter kann der Client als Public-Client definiert werden. Dies ist für das Zustimmungsverfahren relevant.
 * Es wurden zusätzliche Fehlermeldungen für Hintergrundabfragen eingefügt, damit Fehlerquellen leichter gefunden werden.
 * Die Benutzerauswahl kann durch die Angabe eines Gruppennamens getroffen werden. Benutzer, die zur Gruppe hinzugefügt werden, werden dann automatisch synchronisiert. Diese Funktion setzt zusätzliche Berechtigungen voraus.
