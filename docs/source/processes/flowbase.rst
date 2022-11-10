@@ -164,6 +164,10 @@ Dies kann auch der Fall sein, falls die Vebrindungsprüfung bereits fehlschlägt
 
 Die Optionen sind "Ablauf abbrechen" und "Ablauf fortsetzen".
 
+**Felder kopieren**
+
+Mittels Feldnotation können hiermit Daten aus dem Zielobjekt in das zwischengespeicherte Quellobjekt übertragen werden.
+Diese stehen dann in den folgenden Prozessen zur Verfügung und können z.B. mittels leerem Parameter nutzbar gemacht werden.
 
 Ausführen eines Datendienstes
 -----------------------------
