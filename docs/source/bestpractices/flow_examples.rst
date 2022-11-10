@@ -134,6 +134,17 @@ je nachdem muss auch der richtige Prozess für die Archivierung bzw. das Lösche
 Um diese Schritte zu vereinfachen, definieren wir in diesem Beispiel einen Ablauf.
 Dieser kann dann z.B. eine gesamthafte Fehlerbehandlung durchführen und verarbeitet erfolgreiche Datensätze bis zum Schluss.
 
+Es wird ein Prozess "Universal Ablauf - Daten aus CSV lesen" für das Lesen der CSV angelegt.
+Als nächstes werden einzelne Prozesse für CSV nach Firma, nach Person und nach Verkaufschance angelegt.
+Im Prozess für die Person definieren wir einen leeren Parameter "CompanyID".
+Im Prozess für die Verkaufschance definieren wir die leeren Parameter "CompanyID" und "PersonID".
+Jetzt legen wir den Ablauf an und fügen alle Prozesse der Reihenfolge nach ein.
+Die Prozesse für Firma, Person und Verkaufschance verwendet die Quelldaten des CSV-Lesen Prozesses.
+Für den Prozess Firma wird eine Kopierregel für Felder hinzugefügt: CompanyID|:|#Ziel-ID#|;|
+Für den Prozess Person wird eine Kopierregel für Felder hinzugefügt: PersonID|:|#Ziel-ID#|;|
+
+Durch die Kopierregeln stehen die ggf. erzeugten oder gefundenen IDs aus den einzelnen Prozessen im Folgeschritt zur Verfügung.
+Die Person kann damit der Firma und die Verkaufschance der Firma und Person zugeordnet werden.
 
 
 

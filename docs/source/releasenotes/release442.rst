@@ -21,6 +21,7 @@ Die Abläufe unterstützen Abfrage-Prozesse und es stehen auch Prozesse für das
 Dafür müssen Abfragen eine Identität für jeden Datensatzes erzeugen. 
 Dies geschieht abgestuft. Sollte eine ID bekannt sein, wird diese verwendet. 
 Sollte ein Änderungsdatensatz zugeordnet sein, wird dessen GUID verwendet. Ansonsten wird eine temporäre GUID erzeugt.
+Siehe :doc:`/bestpractices/flow_examples`
 
 Die globale Konfiguration für On-premises hat einen neuen Parameter "Erweiterte Fehlermeldung" erhalten, der einen StackTrace in Fehlermeldungen aktivieren kann.
 
