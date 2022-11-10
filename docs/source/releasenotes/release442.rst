@@ -4,14 +4,14 @@
 Änderungen
 ----------
 
-Die Graph Verbindung:
+Die Graph-Verbindung:
 
 * Die Filter-Abfragen in Feldnotation kann um "user" ergänzt werden, damit die Abfrage bei vielen Benutzern beschleunigt wird.
 * Benutzer mit leerer Emailadresse werden bei der Verarbeitung übersprungen, da diese zu fehlerhaften Abfragen führen.
 * Die Warnungen bei Abfragen wurden in Debug-Meldungen umgewandelt.
 * Per Parameter kann der Client als Public-Client definiert werden. Dies ist für das Zustimmungsverfahren relevant.
 * Es wurden zusätzliche Fehlermeldungen für Hintergrundabfragen eingefügt, damit Fehlerquellen leichter gefunden werden.
-* Die Benutzerauswahl kann durch die Angabe eines Gruppennames getroffen werden. Benutzer, die zur Gruppe hinzugefügt werden, werden dann automatisch synchronisiert. Diese Funktion setzt zusätzliche Berechtigungen voraus.
+* Die Benutzerauswahl kann durch die Angabe eines Gruppennamens getroffen werden. Benutzer, die zur Gruppe hinzugefügt werden, werden dann automatisch synchronisiert. Diese Funktion setzt zusätzliche Berechtigungen voraus.
 
 Prozess "SQL nach interne Auswahlliste":
 
@@ -30,13 +30,13 @@ Quelldatensatz übernommen werden. Diese stehen dann in folgenden Schritten zur 
 
 Die Fehlermeldungen von Zoho CRM werden interpretiert und übersetzt zurückgemeldet.
 
-Die REST Verbindung:
+Die REST-Verbindung:
 
 * Mit einem Parameter kann das Datumsformat für Json-Daten definiert werden, welches für Lesen und Schreiben genutzt wird.
 * Das Abfragen von Änderungen ersetzt auch die Platzhalter "LastDatetime" und "LastVersion". Bisher wurden nur "LAST_SYNC_DATE" und "LAST_SYNC_VERSION" ersetzt.
 * Einzelabfragen ohne ID-Platzhalter werden nicht ausgeführt.
 
-Der SMTP-Versand in On-premises Installationen und die Email Verbindung unterstützen das OAuth 2.0 Verfahren für Microsoft 365.
+Der SMTP-Versand in On-premises Installationen und die Email-Verbindung unterstützen das OAuth 2.0 Verfahren für Microsoft 365.
 Die Unterscheidung erfolgt durch die Angabe einer Client-ID.
 
 Die generische Aktualisierung des Quellobjektes:
@@ -54,12 +54,12 @@ Bei folgenden Prozessen wurde die Funktion ergänzt.
 * Prozesse zur Kombination aus Sage CRM und Sage 100
 * Prozesse zur Kombination aus Zoho CRM und Sage 100
 
-Die HotFolder-Prozesse können einen Unterordner zum Basisorder aus der HotFolder Verbindung definieren.
+Die HotFolder-Prozesse können einen Unterordner zum Basisorder aus der HotFolder-Verbindung definieren.
 
-Die Seriendruck Verbindung hat im Schema 4 neue Parameter für die Ausführungssteuerung erhalten.
+Die Seriendruck-Verbindung hat im Schema 4 neue Parameter für die Ausführungssteuerung erhalten.
 Durch "RemoveEmptyRange" (Bool) werden Bereiche ohne gefüllte Felder komplett entfernt.
 Diese Option führt bei Dokumenten ohne Seriendruckfelder zum Leeren des Dokuments.
-Um das zuverhindern kann ein "BaseRangeName" definiert werden, der dann mittels RangeStart und RangeEnd das Dokument umschließt.
+Um das zu verhindern kann ein "BaseRangeName" definiert werden, der dann mittels RangeStart und RangeEnd das Dokument umschließt.
 Mit "RemoveEmptyTableRows" werden Zeilen mit Feldern ohne Quelldaten komplett entfernt, unabhängig von sonstigen Inhalten. 
 Diese Funktion ist jetzt nicht länger standardmäßig aktiviert.
 Mit "RemoveEmptyTables" werden Tabellen mit Feldern ohne Quelldaten komplett entfernt, unabhängig von sonstigen Inhalten. 
@@ -69,7 +69,7 @@ Die Grafik wird dann entsprechend skaliert. Die unterstützen Eigenschaften im J
 
 Im Syncler Administrator kann eine Adhoc-Ausführung ausgehend vom Änderungsspeicher gestartet werden.
 
-Es gibt neue Vorlagen für die Synchronisation zwischen SpiceCRM und Sage 100. Das SpiceCRM wird dabei über die REST Verbindung angebunden.
+Es gibt neue Vorlagen für die Synchronisation zwischen SpiceCRM und Sage 100. Das SpiceCRM wird dabei über die REST-Verbindung angebunden.
 
 Korrekturen
 -----------
@@ -98,25 +98,25 @@ Die Fehlerbehandlung in Abläufen wurde korrigiert.
 
 Die Nachrichtenausgabe durch eine Verbindung wurde in der Transformation "Abfrage ausführen" ergänzt.
 
-Die Sage 100 Verbindung:
+Die Sage 100-Verbindung:
 
 * Die Antwort zu neu angelegten Kontokorrenten in Kombination mit einer Adresse hat nur die Versionsnummer der Adresse zurückgemeldet. Das hatte Einfluss auf die Änderungsprüfung mittels Datenabbildung.
 
 In Prozessen, die das Quellobjekt verändert haben, wurde die neue Änderungsinformation für die Datenabbildung verwendet.
 Dadurch bestand die Möglichkeit, dass Änderungen zwischen dem Lesen und dem Aktualisieren nicht erkannt werden.
 
-Die Sage CRM Verbindung:
+Die Sage CRM-Verbindung:
 
-* Wenn die SQL-Bridge und die SQL Zugangsdaten definiert wurden, hat die Validierung nicht die SQL-Bridge verwendet.
+* Wenn die SQL-Bridge und die SQL-Zugangsdaten definiert wurden, hat die Validierung nicht die SQL-Bridge verwendet.
 
 Bei schreibenden Datenbankzugriffen werden leere Zeichenketten zu Datums- und numerischen Felder nicht übergeben, da dies zu einem Convert-Fehler führt.
 Der Parameter verwendet dann den NULL-Wert.
 
 Die Seriendruck-Prozesse haben bei der Grenzwertbehandlung nicht zwischen Datum und Version unterschieden, was zu einem Typ-Fehler führen konnte.
 
-Die Seriendruck Verbindung:
+Die Seriendruck-Verbindung:
 
 * Die Behandlung von Bildern wurde korrigiert. Der Präfix "Picture:" wird nur in der Vorlage verwendet.
 
 Der Prozess für den Emailversand von Serienbriefen wurde korrigiert. 
-Die Quelldaten wurden nicht an die Email Verbindung übergeben, wodurch Platzhalter in der Nachricht nicht ersetzt wurden.
+Die Quelldaten wurden nicht an die Email-Verbindung übergeben, wodurch Platzhalter in der Nachricht nicht ersetzt wurden.
