@@ -5,6 +5,7 @@
 ----------
 
 Die Graph Verbindung:
+
 * Die Filter-Abfragen in Feldnotation kann um "user" ergänzt werden, damit die Abfrage bei vielen Benutzern beschleunigt wird.
 * Benutzer mit leerer Emailadresse werden bei der Verarbeitung übersprungen, da diese zu fehlerhaften Abfragen führen.
 * Die Warnungen bei Abfragen wurden in Debug-Meldungen umgewandelt.
@@ -13,6 +14,7 @@ Die Graph Verbindung:
 * Die Benutzerauswahl kann durch die Angabe eines Gruppennames getroffen werden. Benutzer, die zur Gruppe hinzugefügt werden, werden dann automatisch synchronisiert. Diese Funktion setzt zusätzliche Berechtigungen voraus.
 
 Prozess "SQL nach interne Auswahlliste":
+
 * Es kann eine beliebige Zielverbindung ausgewählt werden. Diese wird dann der Auswahlliste zugeordnet und in deren Prozessen kann die Auswahlliste dann verwendet werden.
 
 Die Abläufe unterstützen Abfrage-Prozesse und es stehen auch Prozesse für das Lesen von Abfragen zur Verfügung.
@@ -28,6 +30,7 @@ Quelldatensatz übernommen werden. Diese stehen dann in folgenden Schritten zur 
 Die Fehlermeldungen von Zoho CRM werden interpretiert und übersetzt zurückgemeldet.
 
 Die REST Verbindung:
+
 * Mit einem Parameter kann das Datumsformat für Json-Daten definiert werden, welches für Lesen und Schreiben genutzt wird.
 * Das Abfragen von Änderungen ersetzt auch die Platzhalter "LastDatetime" und "LastVersion". Bisher wurden nur "LAST_SYNC_DATE" und "LAST_SYNC_VERSION" ersetzt.
 * Einzelabfragen ohne ID-Platzhalter werden nicht ausgeführt.
@@ -41,6 +44,7 @@ Es werden zwei Verfahren unterschieden, für reproduzierbare und für nicht repr
 Außerdem können für die Fälle Erfolgreich, Fehlerhaft und Übersprungen individuelle Daten aktualisiert werden.
 Bei dem Verfahren für nicht reproduzierbare Datensätze wird ein Schema und eine Suchbedingung für die Aktualisierung definiert.
 Bei folgenden Prozessen wurde die Funktion ergänzt.
+
 * Alle Abfrage-Prozesse mit beschreibbarer Quelle
 * Prozesse zur Kombination aus CAS und Sage 100
 * Prozesse zur Kombination aus CAS und Business Central
@@ -70,17 +74,22 @@ Korrekturen
 -----------
 
 Synchronisation von Microsoft 365 nach Zoho CRM:
+
 * Der Prozess prüft auf ganztägige Termine und passt die Endzeit für Zoho CRM an, da dort 23:59 Uhr erwartet wird.
+
 Die Vorlage wurde ebenfalls angepasst. 
+
 * Die Organizer-ID wird mit dem zweiten Filter auf ungleich leer geprüft.
 * Das Setzen der Benachrichtigungsfunktion wurde entfernt.
 * Die Positionsübereinstimmung sucht nach Email, Id oder Participant.
 
 Syncler Administrator:
+
 * In der Transformation "Datenabbildung abfragen" wurde das Ändern des Prozesses nicht als Änderung erkannt.
 * In der Transformation "Werte abbilden" wurde an den Abbildungen eine Aktualisierungsfunktion ergänzt.
 
 Die Fehlerbehandlung in Abläufen wurde korrigiert.
+
 * Der ursprüngliche Parameter im Warteschlangendatensatz wurde umbenannt, wodurch nur eine einmalige Wiederholung möglich war.
 * Wiederholte Datensätze wurden nicht in die zwischengespeicherten Listen aufgenommen, wodurch diese für Folgeschritte nicht zur Verfügung standen.
 * Ein Prozess mit zwischengespeicherten Daten wurde nur ausgeführt, wenn der Zwischenspeicher Einträge enthielt. Die Fehlerbehandlung wurde ohne Einträge nicht ausgeführt.
@@ -89,12 +98,14 @@ Die Fehlerbehandlung in Abläufen wurde korrigiert.
 Die Nachrichtenausgabe durch eine Verbindung wurde in der Transformation "Abfrage ausführen" ergänzt.
 
 Die Sage 100 Verbindung:
+
 * Die Antwort zu neu angelegten Kontokorrenten in Kombination mit einer Adresse hat nur die Versionsnummer der Adresse zurückgemeldet. Das hatte Einfluss auf die Änderungsprüfung mittels Datenabbildung.
 
 In Prozessen, die das Quellobjekt verändert haben, wurde die neue Änderungsinformation für die Datenabbildung verwendet.
 Dadurch bestand die Möglichkeit, dass Änderungen zwischen dem Lesen und dem Aktualisieren nicht erkannt werden.
 
 Die Sage CRM Verbindung:
+
 * Wenn die SQL-Bridge und die SQL Zugangsdaten definiert wurden, hat die Validierung nicht die SQL-Bridge verwendet.
 
 Bei schreibenden Datenbankzugriffen werden leere Zeichenketten zu Datums- und numerischen Felder nicht übergeben, da dies zu einem Convert-Fehler führt.
@@ -103,6 +114,7 @@ Der Parameter verwendet dann den NULL-Wert.
 Die Seriendruck-Prozesse haben bei der Grenzwertbehandlung nicht zwischen Datum und Version unterschieden, was zu einem Typ-Fehler führen konnte.
 
 Die Seriendruck Verbindung:
+
 * Die Behandlung von Bildern wurde korrigiert. Der Präfix "Picture:" wird nur in der Vorlage verwendet.
 
 Der Prozess für den Emailversand von Serienbriefen wurde korrigiert. 
