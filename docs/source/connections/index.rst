@@ -90,6 +90,7 @@ Die folgenden Verbindungen stehen im Syncler zur Verfügung.
     zoho-connection
     emarsys-connection
     bridgeservice
+    oauth2
 
 Besonderheiten
 --------------

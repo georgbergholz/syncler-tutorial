@@ -13,7 +13,7 @@ Die Graph-Verbindung:
 * Es wurden zusätzliche Fehlermeldungen für Hintergrundabfragen eingefügt, damit Fehlerquellen leichter gefunden werden.
 * Die Benutzerauswahl kann durch die Angabe eines Gruppennamens getroffen werden. Benutzer, die zur Gruppe hinzugefügt werden, werden dann automatisch synchronisiert. Diese Funktion setzt zusätzliche Berechtigungen voraus.
 
-Prozess "SQL nach interne Auswahlliste":
+Prozess "SQL Abfrage nach Auswahllisten":
 
 * Es kann eine beliebige Zielverbindung ausgewählt werden. Diese wird dann der Auswahlliste zugeordnet und in deren Prozessen kann die Auswahlliste dann verwendet werden.
 
@@ -21,11 +21,12 @@ Die Abläufe unterstützen Abfrage-Prozesse und es stehen auch Prozesse für das
 Dafür müssen Abfragen eine Identität für jeden Datensatzes erzeugen. 
 Dies geschieht abgestuft. Sollte eine ID bekannt sein, wird diese verwendet. 
 Sollte ein Änderungsdatensatz zugeordnet sein, wird dessen GUID verwendet. Ansonsten wird eine temporäre GUID erzeugt.
+
 Siehe :doc:`/bestpractices/flow_examples`
 
 Die globale Konfiguration für On-premises hat einen neuen Parameter "Erweiterte Fehlermeldung" erhalten, der einen StackTrace in Fehlermeldungen aktivieren kann.
 
-In Abläufen können in der Prozessausführung über eine Feldnotation mit Platzhaltern (z.B. GUID|:|#GGUID#|;|) Daten aus dem Zieldatensatz in den zwischengespeicherten
+In Abläufen können in der Prozessausführung mit "Felder kopieren" über eine Feldnotation mit Platzhaltern (z.B. GUID|:|#GGUID#|;|) Daten aus dem Zieldatensatz in den zwischengespeicherten
 Quelldatensatz übernommen werden. Diese stehen dann in folgenden Schritten zur Verfügung, wenn diese ebenfalls die zwischengespeicherten Quelldaten verwenden.
 
 Die Fehlermeldungen von Zoho CRM werden interpretiert und übersetzt zurückgemeldet.
@@ -38,6 +39,8 @@ Die REST-Verbindung:
 
 Der SMTP-Versand in On-premises Installationen und die Email-Verbindung unterstützen das OAuth 2.0 Verfahren für Microsoft 365.
 Die Unterscheidung erfolgt durch die Angabe einer Client-ID.
+
+Siehe :doc:`/connections/oauth2`
 
 Die generische Aktualisierung des Quellobjektes:
 Dieses Verfahren wurde vereinheitlicht und in verschiedenen Prozessen ergänzt.
