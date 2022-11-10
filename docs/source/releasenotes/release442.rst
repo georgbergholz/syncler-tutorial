@@ -43,6 +43,7 @@ Die Unterscheidung erfolgt durch die Angabe einer Client-ID.
 Siehe :doc:`/connections/oauth2`
 
 Die generische Aktualisierung des Quellobjektes:
+
 Dieses Verfahren wurde vereinheitlicht und in verschiedenen Prozessen ergänzt.
 Es werden zwei Verfahren unterschieden, für reproduzierbare und für nicht reproduzierbare Datensätze.
 Außerdem können für die Fälle Erfolgreich, Fehlerhaft und Übersprungen individuelle Daten aktualisiert werden.
@@ -57,20 +58,20 @@ Bei folgenden Prozessen wurde die Funktion ergänzt.
 * Prozesse zur Kombination aus Sage CRM und Sage 100
 * Prozesse zur Kombination aus Zoho CRM und Sage 100
 
-Die HotFolder-Prozesse können einen Unterordner zum Basisorder aus der HotFolder-Verbindung definieren.
+Die HotFolder-Prozesse können einen Unterordner zum Basisordner aus der HotFolder-Verbindung definieren.
 
 Die Seriendruck-Verbindung hat im Schema 4 neue Parameter für die Ausführungssteuerung erhalten.
-Durch "RemoveEmptyRange" (Bool) werden Bereiche ohne gefüllte Felder komplett entfernt.
-Diese Option führt bei Dokumenten ohne Seriendruckfelder zum Leeren des Dokuments.
-Um das zu verhindern kann ein "BaseRangeName" definiert werden, der dann mittels RangeStart und RangeEnd das Dokument umschließt.
-Mit "RemoveEmptyTableRows" werden Zeilen mit Feldern ohne Quelldaten komplett entfernt, unabhängig von sonstigen Inhalten. 
-Diese Funktion ist jetzt nicht länger standardmäßig aktiviert.
-Mit "RemoveEmptyTables" werden Tabellen mit Feldern ohne Quelldaten komplett entfernt, unabhängig von sonstigen Inhalten. 
-Diese Funktion ist jetzt nicht länger standardmäßig aktiviert.
+
+* Durch "RemoveEmptyRange" (Bool) werden Bereiche ohne gefüllte Felder komplett entfernt. Diese Option führt bei Dokumenten ohne Seriendruckfelder zum Leeren des Dokuments.
+* Um das zu verhindern kann ein "BaseRangeName" definiert werden, der dann mittels RangeStart und RangeEnd das Dokument umschließt.
+* Mit "RemoveEmptyTableRows" werden Zeilen mit Feldern ohne Quelldaten komplett entfernt, unabhängig von sonstigen Inhalten. Diese Funktion ist jetzt nicht länger standardmäßig aktiviert.
+* Mit "RemoveEmptyTables" werden Tabellen mit Feldern ohne Quelldaten komplett entfernt, unabhängig von sonstigen Inhalten. Diese Funktion ist jetzt nicht länger standardmäßig aktiviert.
+
 Bei der Verarbeitung von Bildern mit dem Präfix "Picture:" kann im Json auch die Breite in Bildpunkten angegeben werden.
 Die Grafik wird dann entsprechend skaliert. Die unterstützen Eigenschaften im Json sind "FileMethod", "File" und "Width".
 
 Im Syncler Administrator kann eine Adhoc-Ausführung ausgehend vom Änderungsspeicher gestartet werden.
+In der Transformation "Werte abbilden" wurde an den Abbildungen eine Aktualisierungsfunktion ergänzt.
 
 Es gibt neue Vorlagen für die Synchronisation zwischen SpiceCRM und Sage 100. Das SpiceCRM wird dabei über die REST-Verbindung angebunden.
 
@@ -90,14 +91,13 @@ Die Vorlage wurde ebenfalls angepasst.
 Syncler Administrator:
 
 * In der Transformation "Datenabbildung abfragen" wurde das Ändern des Prozesses nicht als Änderung erkannt.
-* In der Transformation "Werte abbilden" wurde an den Abbildungen eine Aktualisierungsfunktion ergänzt.
 
 Die Fehlerbehandlung in Abläufen wurde korrigiert.
 
 * Der ursprüngliche Parameter im Warteschlangendatensatz wurde umbenannt, wodurch nur eine einmalige Wiederholung möglich war.
 * Wiederholte Datensätze wurden nicht in die zwischengespeicherten Listen aufgenommen, wodurch diese für Folgeschritte nicht zur Verfügung standen.
 * Ein Prozess mit zwischengespeicherten Daten wurde nur ausgeführt, wenn der Zwischenspeicher Einträge enthielt. Die Fehlerbehandlung wurde ohne Einträge nicht ausgeführt.
-* Nur manuell ausgeführte Prozesse werden bei erfolgreichem Resultat übersprungen.
+* Nur manuell ausgeführte Prozesse werden bei erfolgreichem Resultat in der direkten Fehlerwiederholung übersprungen.
 
 Die Nachrichtenausgabe durch eine Verbindung wurde in der Transformation "Abfrage ausführen" ergänzt.
 
