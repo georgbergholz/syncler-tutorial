@@ -24,7 +24,7 @@ Objekte kopiert. Damit ist auch hier eine Abfrage nach Änderungen indirekt mög
 
     public class SalesViewerSchema
     {
-        // SDK helper
+        // SDK-Helper
         public SisHelper Helper { get; set; }
 
         // Your operation to return json data
@@ -134,7 +134,7 @@ speichert. Diese bleibt bei jedem Aufruf innerhalb einer Anforderung durch einen
 
     public class SalesViewerGetData
     {
-        // SDK helper
+        // SDK-Helper
         public SisHelper Helper { get; set; }
 
         // Your operation to return json data

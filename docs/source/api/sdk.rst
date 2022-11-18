@@ -1,4 +1,4 @@
-﻿Der SDK Helper
+﻿Der SDK-Helper
 ==============
 
 Der Helper ist in Skripten der Kommunikationsweg zur Anwendung und stellt darüberhinaus

@@ -36,18 +36,18 @@ SDK Skripte
 
 Für die Prozess-Plugins "Universal Prozess (SDK)" und "Universal Sync Prozess für geschachtelte Daten (SDK)" können
 zusätzliche Skripte definierte werden, die an bestimmten Punkten der Verarbeitung ausgeführt werden.
-In allen Skripten steht der SDK Helper zur Verfügung, der die Schnittstelle zwischen Prozess, Daten und Skript realisiert.
+In allen Skripten steht der SDK-Helper zur Verfügung, der die Schnittstelle zwischen Prozess, Daten und Skript realisiert.
 
-Das "Prozess ausführen" Skript wird zu Beginn der Prozessausführung gestartet und läuft noch vor dem Lesen von Daten.
+Das "Prozess ausführen"-Skript wird zu Beginn der Prozessausführung gestartet und läuft noch vor dem Lesen von Daten.
 Das Skript kann dabei den Filter, das Abrufen aller Datensätze und den zweiten Filter überschreiben.
 Auch werden alle Parameter aus dem Helper in den Prozess übernommen und stehen dadurch auch in der Quellverbindung beim Lesen von Daten zur Verfügung.
 Mit SkipLoading kann das eigentliche Lesen auch übersprungen werden.
 
-Das "Datensatz Verarbeitung" Skript wird für jeden gelesenen Datensatz einzeln ausgeführt.
+Das "Datensatz Verarbeitung"-Skript wird für jeden gelesenen Datensatz einzeln ausgeführt.
 Die Ausführung findet direkt vor dem Füllen und Schreiben des Zielobjektes statt.
 Transformationen, Konfliktprüfung, Übereinstimmungssuche und die Neuanlagebedingung wurden zu diesem Zeitpunkt bereits ausgeführt.
 Falls der Datensatz dabei übersprungen wurde, wird das Skript nicht ausgeführt.
-Über den Helper stehen das Quellobjekt (GetObject), das Zielobjekt (SetObject) und die Feldzuordnungen (Mappings) zur Verfügung
+Über den SDK-Helper stehen das Quellobjekt (GetObject), das Zielobjekt (SetObject) und die Feldzuordnungen (Mappings) zur Verfügung
 und können verändert werden.
 Die Skript-Methode kann folgende Werte zurückgeben, die dann die weitere Verarbeitung beeinflussen können.
 
@@ -60,6 +60,6 @@ Die Skript-Methode kann folgende Werte zurückgeben, die dann die weitere Verarb
 Für den Universal Sync Prozess für geschachtelte Daten (SDK) bietet das Skript auch Zugriff auf die Positionsliste (GetChildObjects).
 Da die Positionsliste nach der Skript-Ausführung komplett übernommen wird, können so auch Positionen hinzugefügt oder entfernt werden.
 
-Das "Prozess abschließen" Skript wird beim Abschluss der Prozessausführung gestartet.
+Das "Prozess abschließen"-Skript wird beim Abschluss der Prozessausführung gestartet.
 Dieses Skript kann die aktuelle Verarbeitung nicht mehr beeinflussen, aber andere Prozesse starten, oder die Prozessparameter für die Änderungsgrenzwerte verändern.
 
