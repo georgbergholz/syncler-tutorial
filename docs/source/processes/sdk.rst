@@ -31,7 +31,7 @@ Universal Abfrageprozess (SDK)
 Bei diesem Prozess-Plugin handelt es sich um einen klassischen Abfrageprozess für die Verwendung mit einer Universal SDK Verbindung.
 Der Prozess selbst bietet keine zusätzlichen Skript-Möglichkeiten.
 
-SDK Skripte
+SDK-Skripte
 -----------
 
 Für die Prozess-Plugins "Universal Prozess (SDK)" und "Universal Sync Prozess für geschachtelte Daten (SDK)" können
