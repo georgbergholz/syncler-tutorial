@@ -1,5 +1,5 @@
-﻿Universal SDK
-=============
+﻿Universal SDK Verbindung
+========================
 
 Diese Verbindung stellt eine Entwicklungsplattform für die Anbindung von individuellen Systemen bereit.
 Für die grundlegenden Funktionen einer Verbindungen können C# Skripte entwickelt werden, die dann
