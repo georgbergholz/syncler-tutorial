@@ -10,7 +10,7 @@ Es stehen zwei grundlegende Prozess-Plugins zur Verfügung.
 Universal Prozess (SDK)
 -----------------------
 
-Dies ist ein einfache Universalprozess für die Übertragung eines Datenobjektes zwischen zwei Systemen.
+Dies ist ein einfacher Universalprozess für die Übertragung eines Datenobjektes zwischen zwei Systemen.
 Es stehen die Bereiche Transformation und Zuordnungen zur Verfügung.
 Außerdem gibt es drei Skripte, die im Anschluss erläutert werden.
 
@@ -28,13 +28,13 @@ Außerdem gibt es drei Skripte, die im Anschluss erläutert werden.
 Universal Abfrageprozess (SDK)
 ------------------------------
 
-Bei diesem Prozess-Plugin handelt es sich um einen klassischen Abfrageprozess für die Verwendung mit Universal SDK Verbindung.
+Bei diesem Prozess-Plugin handelt es sich um einen klassischen Abfrageprozess für die Verwendung mit einer Universal SDK Verbindung.
 Der Prozess selbst bietet keine zusätzlichen Skript-Möglichkeiten.
 
 SDK Skripte
 -----------
 
-Für die Prozess-Plugins Universal Prozess (SDK) und Universal Sync Prozess für geschachtelte Daten (SDK) können
+Für die Prozess-Plugins "Universal Prozess (SDK)" und "Universal Sync Prozess für geschachtelte Daten (SDK)" können
 zusätzliche Skripte definierte werden, die an bestimmten Punkten der Verarbeitung ausgeführt werden.
 In allen Skripten steht der SDK Helper zur Verfügung, der die Schnittstelle zwischen Prozess, Daten und Skript realisiert.
 
