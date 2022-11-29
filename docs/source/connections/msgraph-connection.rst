@@ -116,6 +116,14 @@ Falls Benutzer aus dieser Menge keine Mailbox-Rechte haben, kann es zu Fehlermel
 Wenn eine Abfrage von Benutzer nicht möglich oder gewünscht ist, können hier auch gezielt Benutzer mit Semikolon 
 getrennt aufgelistet werden. Dabei wird die Emailadresse der Benutzer erwartet.
 
+:Gruppenname für Benutzerauswahl (optional):
+
+Durch die Angabe eines Gruppennamens können die Benutzer aus den Mitgliedern der Gruppe entnommen werden.
+Für diese Funktion wird eine Berechtigung für GroupMember und mindestens User.ReadBasic.All benötigt.
+Mit jeder Prozessausführung werden die Benutzer aus der Gruppe gelesen und deren Kalender synchronisiert.
+Die Benutzerauswahl wird in der Reihenfolge Gruppe, Benutzerliste, Benutzerfilter ausgewertet.
+Die Methoden können nicht kombiniert werden.
+
 :Anzahl vergangener Monate:
 
 Diese Ganzzahl definiert den Anfang des Zeitfensters für Synchronisationsprozesse von Ereignissen.

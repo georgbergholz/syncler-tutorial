@@ -70,7 +70,7 @@ Die Seriendruck-Verbindung hat im Schema 4 neue Parameter für die Ausführungss
 Bei der Verarbeitung von Bildern mit dem Präfix "Picture:" kann im Json auch die Breite in Bildpunkten angegeben werden.
 Die Grafik wird dann entsprechend skaliert. Die unterstützen Eigenschaften im Json sind "FileMethod", "File" und "Width".
 
-Im Syncler Administrator kann eine Adhoc-Ausführung ausgehend vom Änderungsspeicher gestartet werden.
+Im Syncler-Administrator kann eine Adhoc-Ausführung ausgehend vom Änderungsspeicher gestartet werden.
 In der Transformation "Werte abbilden" wurde an den Abbildungen eine Aktualisierungsfunktion ergänzt.
 
 Es gibt neue Vorlagen für die Synchronisation zwischen SpiceCRM und Sage 100. Das SpiceCRM wird dabei über die REST-Verbindung angebunden.
@@ -88,7 +88,7 @@ Die Vorlage wurde ebenfalls angepasst.
 * Das Setzen der Benachrichtigungsfunktion wurde entfernt.
 * Die Positionsübereinstimmung sucht nach Email, Id oder Participant.
 
-Syncler Administrator:
+Syncler-Administrator:
 
 * In der Transformation "Datenabbildung abfragen" wurde das Ändern des Prozesses nicht als Änderung erkannt.
 

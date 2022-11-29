@@ -87,7 +87,7 @@ Das Löschen von Verbindungen und Prozessen löscht auch zugeordnete Parameter a
 
 In der Graph Verbindung hat eine Einzel-Abfrage durch einen Delta-Prozess zu einer fehlerhaften Abfrage geführt.
 
-Im Syncler Administrator konnte das Löschen von Feldzuordnungen zu Positionsdaten einen Fehler erzeugen.
+Im Syncler-Administrator konnte das Löschen von Feldzuordnungen zu Positionsdaten einen Fehler erzeugen.
 
 Die Transformation "Dokument konvertieren" wurde angepasst. 
 Bei einer Konvertierung in das Ausgabeformat "Text" wurden vertikale Tabulatoren erzeugt.

@@ -25,7 +25,7 @@ Die aktuelle Schnittstelle zur Dynamics Business Central unterstützt keine Unte
 Damit einen flexible Unterstützung gewährleistet ist, prüfen die Verbindung und die spezifischen Prozesse das ermittelte
 Datenschema und passen ihre Abfragen dementsprechend an.
 
-Im Syncler Administrator Testlauf einer Transformation wird der Offset zu Datumswerten ausgegeben.
+Im Syncler-Administrator Testlauf einer Transformation wird der Offset zu Datumswerten ausgegeben.
 
 Die Meldungen zu übersprungenen Datensätzen wurden für eine bessere Nachvollziehbarkeit angepasst.
 
@@ -53,7 +53,7 @@ Damit werden Fehler aus paralleler Verarbeitung vermieden.
 Korrekturen
 -----------
 
-Die Sortierung von Listen im Syncler Administrator wurde korrigiert.
+Die Sortierung von Listen im Syncler-Administrator wurde korrigiert.
 
 Das Parsing von Json-Angaben für Picture-Felder im Seriendruck wurde korrigiert.
 

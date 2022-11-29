@@ -14,7 +14,7 @@ Die Sage 100 Verbindung unterstützt die OfficeLine Version 6.2 nicht länger.
 Die Transformation "Daten abfragen" unterstützt untergeordnete Strukturen im Objekt.
 Diese werden mit einem Doppelpunkt notiert in das Ergebnis übernommen.
 
-Im Syncler Administrator wurde das Neu-Menü für Transformationen strukturiert.
+Im Syncler-Administrator wurde das Neu-Menü für Transformationen strukturiert.
 
 Es wurde eine zusätzliche Aktivitätskontrolle für die Warteschlangen-Verarbeitung eingeführt.
 Diese kann ggf. die Verarbeitung reaktivieren, falls diese in Folge eines Fehlers nicht mehr
@@ -116,4 +116,4 @@ Requests aufgeführt wurden.
 
 Die Graph Verbindung konnte ohne ein Schema nicht neu angelegt werden.
 
-Die Sprache des Syncler Administrators richtet sich nach den Einstellungen und nicht nach der Umgebung.
+Die Sprache des Syncler-Administrators richtet sich nach den Einstellungen und nicht nach der Umgebung.
