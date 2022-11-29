@@ -15,14 +15,14 @@ Hier kann nun optional eine dem Auftraggeber zugehörige abweichende Lieferansch
 Wird nichts übermittelt bleibt die A1AdressNummer auf der Adresse des Auftraggebers stehen.
 Der Ansprechpartner der abweichenden Lieferanschrift muss immer in Bezug zur A1AdressNummer stehen. 
 
-Die Universal SDK Prozesse wurden im Verhalten den Universalprozessen angeglichen bzgl. Rückschreiben, Bedingungen und Änderungsspeicher.
+Die Universal SDK-Prozesse wurden im Verhalten den Universalprozessen angeglichen bzgl. Rückschreiben, Bedingungen und Änderungsspeicher.
 
 Es steht eine rudimentäre Verbindung zu EmarSys zur Verfügung. Diese kann Kontakte übertragen oder aktualisieren.
 Außerdem können Events getriggert werden.
 
 Die REST Verbindung unterstützt das Anmeldeverfahren WSSE UsernameToken.
 
-Die SDK Verbindung hat generische Parameter für Zugangsdaten, 
+Die SDK-Verbindung hat generische Parameter für Zugangsdaten, 
 damit diese den Passwortschutz nutzen können und nicht im Skript enthalten sein müssen.
 
 Die REST Verbindung hat einen neuen Parameter "Immer alle Felder senden". 

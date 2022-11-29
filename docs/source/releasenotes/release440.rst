@@ -34,7 +34,7 @@ statt eine Abfrage zu verwenden. Als Wert ist die Emailadresse zu verwenden.
 
 In der REST API Verbindung kann neben der automatischen Schemaerzeugung per Beispielabfrage die Feld- und Listen-Eigenschaften des Objekts 
 auch mit der properties-Eigenschaft definiert werden. In diesem Fall darf keine Beispiel-ID angegeben werden.
-Die Basis der Definition folgt der json-schema.org Konvention, wie sie auch in der SDK Verbindung verwendet wird.
+Die Basis der Definition folgt der json-schema.org Konvention, wie sie auch in der SDK-Verbindung verwendet wird.
 
 Das Schema für die Tabellenkalkulation Verbindung wurde um die Gruppe AppendSheets erweitert.
 Hier kann eine beliebig lange Liste von weiteren Quelldokumenten angegeben werden.

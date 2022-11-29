@@ -1,4 +1,4 @@
-﻿Universal SDK Verbindung
+﻿Universal-SDK-Verbindung
 ========================
 
 Diese Verbindung stellt eine Entwicklungsplattform für die Anbindung von individuellen Systemen bereit.
@@ -7,7 +7,7 @@ zur Ausführungszeit angewendet werden.
 Dazu gehört das Erstellen eines Datenschemas, das Lesen von Daten, das Schreiben von Daten und das Ausführen
 einer Abfrage.
 
-Die Verbindung kann mit den Universalprozessen verwendet werden, es stehen aber auch SDK Prozesse zur Verfügung,
+Die Verbindung kann mit den Universalprozessen verwendet werden, es stehen aber auch SDK-Prozesse zur Verfügung,
 um auch an dieser Stelle zusätzlich Code einbringen zu können.
 
 In einer On-premises Installation unterliegt die Ausführung von Skripten keiner Einschränkung.
@@ -93,7 +93,7 @@ Der Feldname für eine Aktualisierungsinformation wird mit der Eigenschaft "upda
 
 :Lesen von Schema-basierten Daten:
 
-Das Lesen von Schema-basierten Daten wird von dem JSON Daten lesen Skript implementiert.
+Das Lesen von Schema-basierten Daten wird von dem JSON-Daten lesen Skript implementiert.
 Über die Helper-Bibliothek stehen alle Parameter der aktuellen Anfrage zur Verfügung.
 Das aktuelle Schema ist in Helper.TargetObject zu finden.
 Wenn die Seitenweise-Verarbeitung aktiviert ist, wird dieses Skript so oft ausgeführt, bis es keine Daten mehr
@@ -112,7 +112,7 @@ Eine Unterscheidung ist mittels Helper.GetParam\<bool\>("GetQuerySchema") mögli
 
 :Schreiben von Daten:
 
-Das Schreiben von Daten wird von dem JSON Daten schreiben Skript implementiert.
+Das Schreiben von Daten wird von dem JSON-Daten schreiben Skript implementiert.
 Das aktuell zu schreibende Objekt wird in Helper.SetObject bereitgestellt.
 Der Rückgabewert der Methode sollte das Objekt mit ggf. generierte ID oder aktuellem Änderungsdatum sein.
 Diese beiden Informationen werden dann vom Prozess ausgewertet und z.B. für Datenabbildungen verwendet.

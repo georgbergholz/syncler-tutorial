@@ -3,10 +3,10 @@
 
 Die API von SalesViewer (https://salesviewer.github.io/salesviewer-api/definition) verfügt nur über 
 einen Endpunkt, der gebündelt 3 Informationen übermittelt, die Sitzung, der Besuch und die Firma.
-In dieser geschachtelten Konstellation können die Daten durch die REST API Verbindung nicht einzeln 
+In dieser geschachtelten Konstellation können die Daten durch die REST-API-Verbindung nicht einzeln 
 ausgewertet werden.
 Um die Daten voneinander zu trennen und als einzelne Objekte auslesbar zu machen,
-kommt hier die SDK Verbindung zum Einsatz.
+kommt hier die SDK-Verbindung zum Einsatz.
 Folgende Skripte zeigen beispielhaft den Ansatz und die Funktionsweise.
 
 
@@ -113,7 +113,7 @@ Objekte kopiert. Damit ist auch hier eine Abfrage nach Änderungen indirekt mög
         }
     }
 
-:JSON Daten lesen Skript:
+:JSON-Daten lesen Skript:
 
 Dieses Skript liest Daten aus der SalesViewer API.
 Dabei findet eine Unterscheidung nach dem angeforderten Objekttyp statt.

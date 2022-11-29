@@ -1,9 +1,9 @@
-﻿Universal SDK Prozesse
+﻿Universal-SDK-Prozesse
 ======================
 
-Die Universal SDK Verbindung dient der Entwicklung einer Anbindung eines fremden Systems zum Lesen, Schreiben oder Ausführen von Abfragen.
+Die Universal SDK-Verbindung dient der Entwicklung einer Anbindung eines fremden Systems zum Lesen, Schreiben oder Ausführen von Abfragen.
 
-Die Universal SDK Prozesse sind unabhängig von dieser Verbindung und können mit jeder beliebigen Verbindung verwendet werden.
+Die Universal SDK-Prozesse sind unabhängig von dieser Verbindung und können mit jeder beliebigen Verbindung verwendet werden.
 
 Es stehen zwei grundlegende Prozess-Plugins zur Verfügung.
 
@@ -28,7 +28,7 @@ Außerdem gibt es drei Skripte, die im Anschluss erläutert werden.
 Universal Abfrageprozess (SDK)
 ------------------------------
 
-Bei diesem Prozess-Plugin handelt es sich um einen klassischen Abfrageprozess für die Verwendung mit einer Universal SDK Verbindung.
+Bei diesem Prozess-Plugin handelt es sich um einen klassischen Abfrageprozess für die Verwendung mit einer Universal SDK-Verbindung.
 Der Prozess selbst bietet keine zusätzlichen Skript-Möglichkeiten.
 
 SDK-Skripte

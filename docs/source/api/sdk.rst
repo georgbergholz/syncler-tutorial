@@ -20,7 +20,7 @@ Einige werden nur intern vom Helper genutzt oder indirekt über Methoden gesetzt
 
     Die Wert zeigt an, dass das Skript einen Abbruch angefordert hat.
     Der Wert wird auch mit der Methode Cancel gesetzt.
-    Der Wert wird in den SDK Prozessen, der SDK Verbindung und der Transformation ausgewertet.
+    Der Wert wird in den SDK-Prozessen, der SDK-Verbindung und der Transformation ausgewertet.
 
 :Helper.ConnectionId (int):
 
@@ -43,13 +43,13 @@ Einige werden nur intern vom Helper genutzt oder indirekt über Methoden gesetzt
 :Helper.WhereClause (string):
 
     Dies ist der Prozess-Filter für die Abfrage von Quelldaten.
-    In den SDK Prozessen wird der Wert zurück an den Prozess gegeben und kann damit die
+    In den SDK-Prozessen wird der Wert zurück an den Prozess gegeben und kann damit die
     Prozessausführung direkt beeinflussen.
 
 :Helper.ForceQueryAll (bool):
 
     Dies ist der Prozessparameter für die Aktivierung des kompletten Lesens ohne Änderungseinschränkung.    
-    In den SDK Prozessen wird der Wert zurück an den Prozess gegeben und kann damit die
+    In den SDK-Prozessen wird der Wert zurück an den Prozess gegeben und kann damit die
     Prozessausführung direkt beeinflussen.
 
 :Helper.ConflictAction (string):
@@ -85,7 +85,7 @@ Einige werden nur intern vom Helper genutzt oder indirekt über Methoden gesetzt
 :Helper.SecondWhereClause (string):
 
     Dies ist der Prozess-Zweitfilter für die Auswahl von transformierten Quelldaten.
-    In den SDK Prozessen wird der Wert zurück an den Prozess gegeben und kann damit die
+    In den SDK-Prozessen wird der Wert zurück an den Prozess gegeben und kann damit die
     Prozessausführung direkt beeinflussen.
 
 :Helper.SourceObject (string):
@@ -95,7 +95,7 @@ Einige werden nur intern vom Helper genutzt oder indirekt über Methoden gesetzt
 :Helper.TargetObject (string):
 
     Der aktuelle Zielobjekttyp in Prozessskripten.
-    In der SDK Verbindung definiert der Wert das aktuell angeforderte Objekt.
+    In der SDK-Verbindung definiert der Wert das aktuell angeforderte Objekt.
 
 :Helper.SourceType (string):
 
@@ -108,7 +108,7 @@ Einige werden nur intern vom Helper genutzt oder indirekt über Methoden gesetzt
 :Helper.SourceSchemaObject (JObject):
 
     Ein Schemaobjekt zur Beschreibung des aktuellen Quellobjekttyps.
-    In der SDK Verbindung definiert der Wert das aktuell angeforderte Objekt.
+    In der SDK-Verbindung definiert der Wert das aktuell angeforderte Objekt.
 
 :Helper.TargetSchemaObject (JObject):
 
@@ -131,34 +131,34 @@ Einige werden nur intern vom Helper genutzt oder indirekt über Methoden gesetzt
 :Helper.SkipLoading (bool):
 
     Dieser Wert wird von der Methode SkipLoad gesetzt.
-    In den SDK Prozessen führt der Wert true zum Überspringen des Lesens aus der Quelle.
+    In den SDK-Prozessen führt der Wert true zum Überspringen des Lesens aus der Quelle.
 
 :Helper.InnerException (Exception):
 
-    Dieser Wert wird vom Datensatzskript in den SDK Prozessen verwendet.
+    Dieser Wert wird vom Datensatzskript in den SDK-Prozessen verwendet.
     Er wird als Fehlermeldung in den Prozess gegeben, wenn das Ergebnis Failed lautet.
     In diesem Fall muss ein Wert zugewiesen sein.
 
 :Helper.GetObject (JObject):
 
-    In den SDK Prozessen wird hier der aktuelle Datensatz an das Datensatzskript übergeben.
+    In den SDK-Prozessen wird hier der aktuelle Datensatz an das Datensatzskript übergeben.
 
 :Helper.GetChildObjects (JArray):
 
-    Im SDK Prozess für geschachtelte Daten enthält dieses Array die Liste der transformierten 
+    Im SDK-Prozess für geschachtelte Daten enthält dieses Array die Liste der transformierten 
     Positionsdatensätze.
     Der Objektparameter "DELETE" führt je nach Verbindung zum Löschen der Position.
 
 :Helper.SetObject (JObject):
 
     Dieses Objekt repräsentiert das aktuelle Zielobjekt.
-    In den SDK Prozessen wird das Zielobjekt für das Datensatzskript übergeben.
-    In der SDK Verbindung und dem JSON Daten schreiben Skript ist hier das Zielobjekt enthalten. 
+    In den SDK-Prozessen wird das Zielobjekt für das Datensatzskript übergeben.
+    In der SDK-Verbindung und dem JSON-Daten schreiben Skript ist hier das Zielobjekt enthalten. 
 
 :Helper.Mappings (JArray):
 
     Diese Liste enthält alle Feldzuordnungen, die im aktuellen Prozess definiert sind.
-    In den SDK Prozessen werden Änderungen an dieser Liste für das Schreiben übernommen.
+    In den SDK-Prozessen werden Änderungen an dieser Liste für das Schreiben übernommen.
     Die Eigenschaften des einzelen Objektes sind SourcePath (string), SourceColumn (SchemaColumn),
     TargetPath (string) und TargetColumn (SchemaColumn). 
 
@@ -172,13 +172,13 @@ Folgende Methoden stehen im Helper direkt oder über Eigenschaften zur Verfügun
 :Helper.Cancel():
 
 Fordert einen Abbruch der aktuellen Ausführung an.
-Die Anforderung wird in SDK Prozessen, der SDK Verbindung und in Transformationen ausgewertet.
+Die Anforderung wird in SDK-Prozessen, der SDK-Verbindung und in Transformationen ausgewertet.
 
 
 :Helper.SkipLoad():
 
 Fordert das Überspringen der Lese-Operation an.
-Die Anforderung wird in SDK Prozessen ausgewertet und überspringt das Lesen der Quelldaten.
+Die Anforderung wird in SDK-Prozessen ausgewertet und überspringt das Lesen der Quelldaten.
 
 
 :Helper.GetParam:
