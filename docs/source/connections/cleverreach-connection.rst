@@ -16,6 +16,7 @@ Vergeben Sie einen individuellen Namen und wählen Sie die REST API Version 3 au
 Abhängig vom Einsatz der Verbindung müssen Sie noch die erforderlichen Scopes aktivieren.
 Empfänger und Report benötigen Sie für die Empfängerübertragung und das Abrufen von Resultaten.
 Nachdem Sie die App gespeichert haben, rufen Sie erneut den Bearbeitungsdialog mit dem 3-Punkte-Icon auf.
+
 Jetzt stehen Ihnen zusätzliche Registerkarten zur Verfügung, die die benötigten Informationen enthalten.
 Wechseln Sie zu "Oauth2 App Daten".
 Übernehmen Sie die Client ID und das Client Secret in die entsprechenden Felder der Verbindung.
@@ -23,6 +24,7 @@ Um einen Refresh Token zu generieren, müssen Sie die Schaltfläche "Prozess jet
 Es öffnet sich ein neues Fenster, wo Sie sich erneut mit Ihren CleverReach-Zugangsdaten anmelden müssen.
 Nach der erfolgreichen Anmeldung erhalten Sie eine Tabelle, aus der Sie den Refresh Token in das Feld der Verbindung übernehmen müssen.
 Mit dem Speichern der Verbindung haben Sie die Einrichtung abgeschlossen.
+
 Der Refresh Token ist 30 Tage gültig und wird automatisch erneuert, wenn die Verbindung verwendet wird.
 Sollten Sie die Verbindung mehr als 30 Tage nicht benutzen, muss ein neuer Refresh Token mit der Schaltfläche "Prozess jetzt testen" abgerufen werden.
 
