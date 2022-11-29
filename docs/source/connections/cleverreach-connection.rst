@@ -64,7 +64,7 @@ Die Aktualisierung eines Empfängers ändert jedoch das Änderungsdatum der Grup
 Durch die Verbindung wird das Registrierungsdatum des Empfängers als Änderungsdatum herangezogen.
 Dadurch können keine geänderten Empfänger abgerufen, aber kontinuierlich neue Empfänger übertragen werden.
 
-Resultate oder Links können nur mit den spezialisierten Prozessen oder mit SDK-Prozessen abgerufen werden, da hier immer ein übergordneter Datensatz angegeben werden muss
+Resultate oder Links können nur mit den spezialisierten Prozessen oder mit SDK-Prozessen abgerufen werden, da hier immer ein übergordneter Datensatz angegeben werden muss.
 Dies wird mit den Parameter "GETDATA_RELATED" und "GETDATA_RELATED_ID" gesteuert.
 "GETDATA_RELATED" kann dabei die Werte groups, mailings oder reports annehmen.
 
