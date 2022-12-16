@@ -70,6 +70,7 @@ Die folgenden Verbindungen stehen im Syncler zur Verfügung.
     spreadsheet-connection
     sdk-connection
     cleverreach-connection
+    ac-connection
     csv-connection
     fano-connection
     hotfolder-connection
