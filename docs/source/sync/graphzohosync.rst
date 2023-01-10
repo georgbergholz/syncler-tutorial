@@ -18,7 +18,7 @@ Wenn der Teilnehmer in diesen Bereichen nicht gefunden wird, kann er als Emailad
 Für diesen Fall setzt Zoho eine gültige Emailadresse voraus, ansonsten wird das Speichern mit einer Fehlermeldung
 abgebrochen. Dies wird bereits in der Vorlage behandelt.
 Die Vorlage bildet den Organisator auf den Host des Meetings ab. Sollte dies nicht möglich sein, wird der Verbindungsadministrator 
-automatisch von Zoho zugeordnet.
+automatisch von Zoho zugeordnet. In der Vorlage werden diese Termine aber über den zweiten Filter übersprungen.
 Da Zoho keine privaten Termine unterstützt, werden diese in der Vorlage bereits ausgefiltert.
 Die Daten werden von der Graph Verbindung mittels Delta-Funktion gelesen. 
 Siehe :doc:`/connections/msgraph-connection`
@@ -28,27 +28,15 @@ Delta-Datum und Delta-Token werden Prozess-bezogen intern gespeichert.
 
 Serien werden mittels Seriendefinition in Zoho angelegt.
 Eine nachträgliche Änderung der Serie lässt Zoho nicht zu.
-Sollten neue Vorkommen hinzukommen, werden diese als Einzeltermine in Zoho ohne direkten Bezug zur Serie angelegt.
-Dies kann bei unbegrenzten Serien der Fall sein, da Zoho nicht unbegrenzt viele Termine anlegt.
-Sollte die Serie selbst geändert werden, wird die komplette Serie in Zoho gelöscht und neu erzeugt.
+Sollte eine Serie angelegt oder aktualisiert werden, werden alle Serientermine im Zoho gelöscht und die Datensätze neu angelegt.
+Im Anschluss findet ein Abgleich der Serienvorkommen statt, damit ggf. Lücken und Ausnahmen übernommen werden.
+Unbegrenzte Serien werden nicht unterstützt und übersprungen.
+
 Eine Serie mit einer definierten Anzahl wird auf das Maximum von Zoho von 99 begrenzt, da die Serie sonst nicht 
 angelegt werden kann.
 
 Die Delta-Funktion synchronisiert nur ein definiertes Zeitfenster.
-Durch die Serien-Anlage können auch Meetings in Zoho vorhanden sein, die sich außerhalb des Zeitfensters befinden.
-Eine Änderung an Vorkommen wirkt sich aktuell nur auf Termine im Zeitfenster aus.
-Zukünftige Termine außerhalb des Zeitfensters können also noch einen alten Stand aufweisen.
-Wenn dies nicht gewünscht ist, kann explizit das Feld "update_all_future_events" zugeordnet werden.
-Dies beachtet allerdings keine Ausnahmen, weshalb es in der Vorlage nicht zugewiesen wird.
-
-Bei der Anlage einer Serie werden die IDs und das Startdatum der Vorkommen im Änderungsspeicher abgelegt.
-Sobald ein Vorkommen der Serie aus Microsoft 365 verarbeitet wird, wird über den Änderungsspeicher und 
-das Startdatum das Ziel gesucht und verknüpft.
-Dies ermöglich eine Synchronisation der Vorkommen und ggf. einzelner Anpassungen an Vorkommen, sogenannte Ausnahmen.
-
-Bei diesem Verfahren ist zu beachten, dass der Änderungsspeicher ggf. gewartet wird. 
-Ein Vorkommen außerhalb des Zeitfensters wird ggf. erst verzögert verarbeitet und hat dann keine Möglichkeit mehr, 
-ein Ziel zuzuordnen. In diesem Fall wird ein Einzeltermin erzeugt.
+Durch den Abgleich der Serientermine können aber auch Termine bzw. Vorkommen außerhalb des Zeitfensters synchronisiert werden.
 
 Bei einer bidirektionalen Synchronisation ist zu beachten, dass anhand der Zoho CRM Daten nicht unterschieden werden kann, 
 ob es sich um ein Vorkommen oder eine Ausnahme handelt.
@@ -60,13 +48,20 @@ Abgebrochene Termine werden nicht als neue Termine übertragen.
 Der Prozess verfügt nur über einen sekundären Filter, da die Delta-Funktion nicht mit einem Filter 
 kombiniert werden kann.
 
+Ganztägige Termine haben als Endzeit in Microsoft 365 0 Uhr des Folgetages, wohingegen Zoho 23:59 Uhr
+voraussetzt.
+
+Zoho unterstützt keine formatierten Inhalte für die Details. Deshalb wird der Html-Inhalt per 
+Transformation in reinen Text konvertiert. Sollte durch eine Änderung eine Übertragung in der entgegengesetzten
+Richtung ausgelöst werden, wird der Html-Inhalt mit der Textdarstellung überschrieben.
+
 
 Zoho CRM Meeting nach Microsoft Graph Ereignis
 ----------------------------------------------
 
 Dieser Prozess bildet die Richtung Zoho CRM nach Microsoft 365 ab und arbeitet auf der Basis des Änderungsdatums 
 von Meetings. Da bei dieser Art der Abfrage keine gelöschten Datensätze erfasst werden, ist hierfür ein 
-weiterer Prozess erforderlich.
+weiterer Prozess erforderlich, für den ebenfalls eine Vorlage bereitgestellt wird.
 
 Der Owner des Termins wird in der Vorlage als Organisator zugeordnet. Deshalb ist es erforderlich, dass alle 
 im Prozess berücksichtigten Benutzer auch Mitglied des Unternehmens sind, da sonst die Neuanlage nicht 
@@ -77,8 +72,17 @@ Serien in Zoho CRM haben keinen direkt nutzbaren Master, sondern sind über $u_i
 Der Serienmaster in Microsoft 365 erhält eine Datenabbildung zu dieser $u_id, damit bekannt ist, dass eine Serie bereits angelegt wurde.
 Dies wird auch in umgekehrter Richtung vorgenommen.
 Sollte diese Datenabbildung nicht vorliegen, wird eine neue Serie mit dem Muster aus Zoho angelegt.
-Auch hier werden Änderungsdatensätze mit den IDs der Serieninstanzen angelegt, damit die Vorkommen in Zoho eine Verbindung
-herstellen können. Dies beschränkt sich auf Instanzen des aktuell über die Verbindung definierten Zeitfensters.
+Nach der Anlage einer Serie werden die Vorkommen abgeglichen, damit Lücken und Ausnahmen übertragen werden.
+
+Da Serien in Zoho nicht geändert werden können, entfällt das Löschen und Neuanlagen einer kompletten Serie.
+
+:Besonderheiten:
+
+Problematisch ist die Verarbeitung von ganztägigen Terminen.
+Diese werden von Zoho fälschlicherweise mit 0 Uhr UTC zurückgeliefert.
+Der Prozess korrigiert deshalb einen positiven Zeitzonen-Offset, damit der korrekte Tag zugeordnet wird.
+Negative Zeitzonen-Offsets müssen per Transformation ausgeglichen werden, was nicht Teil der Vorlage ist.
+
 
 Zoho CRM gelöschte Meetings nach Microsoft Graph Ereignis
 ---------------------------------------------------------

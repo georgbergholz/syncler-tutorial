@@ -1,8 +1,10 @@
 ﻿Synchronisation zwischen Microsoft 365 und Sage CRM
 ===================================================
 
-Die Microsoft Graph Verbindung stellt das Objekt "Event" für den Zugriff auf Kalendereinträge zur Verfügung.
-Dabei handelt sich um ein geschachteltes Objekt, das die Teilnehmer des Termins als Positionsliste anbietet.
+Die Microsoft Graph Verbindung stellt verschiedene Objekte für den Zugriff auf Microsoft 365 zur Verfügung.
+Dazu gehören z.B. Kalendereinträge (Event), Aufgaben (Todotask) und Kontakte (Contact).
+
+Bei den Kalendereinträgen handelt sich um ein geschachteltes Objekt, das die Teilnehmer des Termins als Positionsliste anbietet.
 Dieses Objekt kann z.B. in Universalprozessen für die Abfrage von Terminen bzw. auch geänderten Terminen genutzt werden.
 Ausgenommen von dieser Art des Zugriffs sind gelöschte Daten und Instanzen einer Serie.
 Für eine vollständige Synchronisation müssen aber auch diese Informationen ausgewertet werden.
@@ -12,8 +14,9 @@ Es stehen ebenfalls Prozesse und Vorlagen für die Objekte "todoTask" und "Conta
 Diese ermöglichen die Synchronisation von Aufgaben und Kontakten.
 Die Synchronisation von Aufgaben beschränkt sich auf die Standardliste des Benutzers.
 
-Für eine optimale Unterstützung sollte im CRM in den Systemparametern die Verwendung einer Exchange-Integration
-auf "Ja" gestellt werden. Dadurch wird der Organisator-Mechanismus für Termine in der Oberfläche aktiviert.
+Für eine optimale Unterstützung sollte in Sage CRM in den Systemparametern die Verwendung einer Exchange-Integration
+auf "Ja" gestellt werden. 
+Dadurch wird der Organisator-Mechanismus für Termine und die Einschränkung der Serien-Schemata in der Oberfläche aktiviert.
 Eine weitere Einrichtung ist im CRM nicht erforderlich.
 
 
@@ -29,14 +32,15 @@ Synchronisation möglich ist.
 Die Daten werden von der Graph Verbindung mittels Delta-Funktion gelesen. 
 Siehe :doc:`/connections/msgraph-connection`
 
-Dabei werden alle Benutzer berücksichtigt, die durch den Benutzerfilter oder -liste in der Verbindung ausgewählt wurden.
+Dabei werden alle Benutzer berücksichtigt, die durch die Benutzerauswahl in der Verbindung festgelegt wurden.
 Delta-Datum und Delta-Token werden Prozess-bezogen gespeichert.
 
-Serien werden mit Recurrence und RecuMaster übertragen. Die Vorkommen legen dabei die einzelnen
-Termine direkt und fortlaufend abhängig vom Zeitfenster an, da die Delta-Funktion nur ein begrenztes Zeitfenster
-bereitstellt. Eine Änderung der Serie löscht alle Vorkommen im CRM und erzeugt eine neue Serie.
+Serien werden mit Recurrence und RecuMaster übertragen. 
+Der Serien-Master wird dabei mit dem nicht sichtbaren Recu-Master verbunden.
+Bei Neuanlage oder Aktualisierung einer Serie werden alle Vorkommen abgeglichen, damit ggf. Lücken und Ausnahmen übernommen werden.
+Eine Änderung der Serie löscht alle Vorkommen im CRM und erzeugt eine neue Serie.
 Eine Seriendefinition ohne Enddatum wird übersprungen, da dies vom CRM nicht unterstützt wird.
-Dazu zählen auch Serien mit einer definierten Anzahl.
+Bei Serien mit einer definierten Anzahl wird das kleinste und größte Datum aus den Vorkommen für die Seriendefinition verwendet.
 
 Ganztägige Termine haben als Endzeit in Microsoft 365 0 Uhr des Folgetages, wohingegen Sage CRM 23:59 Uhr
 voraussetzt. Eine Angabe von 0 Uhr wird von Sage CRM wie ein weiterer Tag interpretiert.
@@ -48,7 +52,7 @@ Abgebrochene Termine werden nicht als neue Termine übertragen.
 Der Prozess verfügt nur über einen sekundären Filter, da die Delta-Funktion nicht mit einem Filter 
 kombiniert werden kann.
 Die Vorlage filtert private Termine aus. Sollte dies nicht gewünscht sein, muss der Filter angepasst werden.
-In diesem Fall sollte das Privat-Kennzeichen gesetzt werden.
+In diesem Fall sollte das Privat-Kennzeichen in Sage CRM gesetzt werden.
 Sage CRM unterstützt keine formatierten Inhalte für die Details. Deshalb wird der Html-Inhalt per 
 Transformation in reinen Text konvertiert. Sollte durch eine Änderung eine Übertragung in der entgegengesetzten
 Richtung ausgelöst werden, wird der Html-Inhalt mit der Textdarstellung überschrieben.
@@ -59,7 +63,7 @@ Microsoft Graph Aufgabe nach Sage CRM Kommunikation
 
 Für Aufgaben werden in Microsoft 365 keine Anwendungsberechtigungen unterstützt.
 Aus diesem Grund können Aufgaben nur für Benutzer synchronisiert werden, wenn diese dem Zugriff mit ihren Zugangsdaten
-zustimmen oder eine Benutzeranmeldung in der Verbindung genutzt wird. 
+zustimmen oder ein Administrator Refresh-Token in der Verbindung genutzt wird. 
 Für die Zustimmung steht in Sage CRM unter Mein CRM eine Registerkarte zur Verfügung, worüber die Zustimmung erteilt 
 oder entfernt werden kann.
 
@@ -88,15 +92,13 @@ steht für die Übertragung von Löschungen eigene Prozesse zur Verfügung, die 
 in der Sage CRM Verbindung voraussetzen.
 
 Sollte eine Serie in Sage CRM geändert werden, wird die Serie in Microsoft 365 gelöscht und neu angelegt.
-Sobald eine Serie angelegt wurde, werden die Vorkommen Änderungsspeicher
-vorgehalten, damit die Einzeltermine bei der Verarbeitung darüber ihr Ziel identifizieren können.
-Die Vorkommen werden dabei über das Startdatum und das Enddatum der Serie abgerufen.
+Sobald eine Serie angelegt wurde, werden die Vorkommen abgeglichen, damit ggf. Lücken und Ausnahmen übernommen werden.
 
 Da ganztägige Termine in Sage CRM auf 23:59 Uhr enden und Microsft 365 Mitternacht voraussetzt,
 wird das Enddatum durch den Prozess um eine Minute erhöht.
 
-Damit der Organisator nicht als Teilnehmer dem Termin hinzugefügt wird, wird dieser Link-Eintrag per
-Vorlagenfilter übersprungen. Dafür steht extra das Feld Organisator in den Link-Einträgen zur
+Damit der Organisator nicht als Teilnehmer dem Termin hinzugefügt wird, wird dieser Kommunikation-Link-Eintrag per
+Vorlagenfilter übersprungen. Dafür steht extra das Feld Organisator in den Kommunikation-Link-Einträgen zur
 Verfügung.
 
 
