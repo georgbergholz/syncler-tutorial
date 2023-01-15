@@ -30,83 +30,84 @@ Folgende Parameter werden unter "Allgemein" konfiguriert.
 
 :Name:
 
-	Ist eine administrative Bezeichnung.
+Ist eine administrative Bezeichnung.
 
 :Ist aktiv:
 
-	Nur aktive Webhooks können aufgerufen werden.
-	Inaktive Webhooks liefern einen 410-Fehler beim Aufruf.
+Nur aktive Webhooks können aufgerufen werden.
+Inaktive Webhooks liefern einen 410-Fehler beim Aufruf.
 
 :Webhook:
 
-	Das ist die generierte Webhook ID. Das Feld ist schreibgeschützt und bei der Neuanlage noch leer.
+Das ist die generierte Webhook ID. Das Feld ist schreibgeschützt und bei der Neuanlage noch leer.
 
 :Webhook Url:
 
-	Mit dieser URL kann der Webhook aufgerufen werden. Die URL der API muss noch als Präfix ergänzt werden.
+Mit dieser URL kann der Webhook aufgerufen werden. Die URL der API muss noch als Präfix ergänzt werden.
 
 :Geheimnis:
 
-	Dieser Geheimschlüssel muss als Header "syncler_webhooksecret" im Aufruf übergeben werden.
-	Wenn das Feld leer bleibt, wird diese Prüfung übersprungen.
+Dieser Geheimschlüssel muss als Header "syncler_webhooksecret" im Aufruf übergeben werden.
+Wenn das Feld leer bleibt, wird diese Prüfung übersprungen.
 
 :Ausführungsbedingung:
 
-	Die in SQL formulierte Wahrheitsbedingung wird mit Quelldaten über Raute-Platzhalter gefüllt und geprüft.
-	Ein negatives Ergebnis überspringt die Ausführung.
+Die in SQL formulierte Wahrheitsbedingung wird mit Quelldaten über Raute-Platzhalter gefüllt und geprüft.
+Ein negatives Ergebnis überspringt die Ausführung.
 
 :Aktion ausführen:
 
-	Dieser Wert definiert die Funktion, die beim Aufruf ausgeführt werden soll.
-	Eine Detailbeschreibung finden Sie unter "Aktionen".
+Dieser Wert definiert die Funktion, die beim Aufruf ausgeführt werden soll.
+Eine Detailbeschreibung finden Sie unter "Aktionen".
 
 :Prozess für Aktion:
 
-	Mit diesem Wert wählen Sie den vorhandenen Prozess aus, der von der Aktion verwendet wird.
-	Für das Starten kann jeder beliebige Prozess verwendet werden.
-	Lesen und Schreiben mit einem Prozess erfordern die Verwendung eines Webhook Prozesses.
+Mit diesem Wert wählen Sie den vorhandenen Prozess aus, der von der Aktion verwendet wird.
+Für das Starten kann jeder beliebige Prozess verwendet werden.
+Lesen und Schreiben mit einem Prozess erfordern die Verwendung eines Webhook Prozesses.
 
 :Verbindung für Aktion:
 
-	Mit diesem Wert wählen Sie die vorhandene Verbindung aus, die für Lesen oder Schreiben verwendet werden soll.
-	Zusätzlich muss ein Schema von dieser Verbindung festgelegt werden.
+Mit diesem Wert wählen Sie die vorhandene Verbindung aus, die für Lesen oder Schreiben verwendet werden soll.
+Zusätzlich muss ein Schema von dieser Verbindung festgelegt werden.
 
 :Schema-Objekt für Verbindung:
 
-	Dieses Schema-Objekt stammt von der ausgewählten Verbindung und wird für das Lesen oder Schreiben mit einer Verbindung genutzt.
+Dieses Schema-Objekt stammt von der ausgewählten Verbindung und wird für das Lesen oder Schreiben mit einer Verbindung genutzt.
 
 :Suche nach Quelldatensatz für Prozess und Verbindung:
 
-	Diese Where-Clause wird mit Raute-Platzhaltern gefüllt und für das Lesen von Daten über einen Prozess oder eine Verbindung verwendet.
-	Die Formulierung muss für das Zielsystem passend erfolgen (SQL oder OData usw.).
+Diese Where-Clause wird mit Raute-Platzhaltern gefüllt und für das Lesen von Daten über einen Prozess oder eine Verbindung verwendet.
+Die Formulierung muss für das Zielsystem passend erfolgen (SQL oder OData usw.).
 
 :Sortierung:
 
-	Sofern die Verbindung, die das Lesen direkt oder indirekt über den Prozess ausführt, das Sortieren des Ergebnisses ermöglicht,
-	wird dieser optionales Wert dafür verwendet.
-	Auch hier werden Raute-Platzhalter mit den Quelldaten gefüllt.
+Sofern die Verbindung, die das Lesen direkt oder indirekt über den Prozess ausführt, das Sortieren des Ergebnisses ermöglicht,
+wird dieser optionales Wert dafür verwendet.
+Auch hier werden Raute-Platzhalter mit den Quelldaten gefüllt.
 
 :Nur den ersten Datensatz zurückgeben:
 
-	Abhängig vom aufrufenden System kann die Antwort mit einem Array von Daten nicht gewünscht oder verwendbar sein.
-	Für diesen Fall kann mit diesem Parameter nur der erste Datensatz als JSON Objekt zurückgegeben werden.
-	Ansonsten erfolgt die Antwort immer als Array, sobald ein Resultat gefunden wurde.
+Abhängig vom aufrufenden System kann die Antwort mit einem Array von Daten nicht gewünscht oder verwendbar sein.
+Für diesen Fall kann mit diesem Parameter nur der erste Datensatz als JSON Objekt zurückgegeben werden.
+Ansonsten erfolgt die Antwort immer als Array, sobald ein Resultat gefunden wurde.
 
 :Suche nach Zieldatensatz für Verbindung:
 
-	Wenn das Schreiben mit einer Verbindung einen Datensatz aktualisieren soll, muss eine Suchanfrage formuliert werden.
-	Diese Where-Clause wird mit Raute-Platzhaltern gefüllt und für das Suchen des Zieldatensatzes über eine Verbindung verwendet.
-	Die Formulierung muss für das Zielsystem passend erfolgen (SQL oder OData usw.).
+Wenn das Schreiben mit einer Verbindung einen Datensatz aktualisieren soll, muss eine Suchanfrage formuliert werden.
+Diese Where-Clause wird mit Raute-Platzhaltern gefüllt und für das Suchen des Zieldatensatzes über eine Verbindung verwendet.
+Die Formulierung muss für das Zielsystem passend erfolgen (SQL oder OData usw.).
 
 :Verhalten bei keiner Übereinstimmung für Schreiben mit Verbindung:
 
-	Sollte keine Suche formuliert sein oder diese kein Ergebnis geliefert haben, steuert dieser Parameter das weitere Vorgehen.
-	Der aktuelle Aufruf kann übersprungen werden oder es kann ein neuer Datensatz angelegt werden.
+Sollte keine Suche formuliert sein oder diese kein Ergebnis geliefert haben, steuert dieser Parameter das weitere Vorgehen.
+Der aktuelle Aufruf kann übersprungen werden oder es kann ein neuer Datensatz angelegt werden.
 
 :Verhalten bei exakter Übereinstimmung für Schreiben mit Verbindung:
 
-	Sollte eine Suche formuliert sein und diese exakte einen Zieldatensatz gefunden haben, steuert dieser Parameter das weitere Vorgehen.
-	Der aktuelle Aufruf kann übersprungen werden oder der gefundene Datensatz kann aktualisiert werden.
+Sollte eine Suche formuliert sein und diese exakte einen Zieldatensatz gefunden haben, steuert dieser Parameter das weitere Vorgehen.
+Der aktuelle Aufruf kann übersprungen werden oder der gefundene Datensatz kann aktualisiert werden.
+
 
 
 Neben den allgemeinen Einstellungen stehen auch noch weitere Registerkarten zur Verfügung, die je nach Aktion konfiguriert werden müssen.
