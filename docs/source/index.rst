@@ -28,6 +28,7 @@ Daneben gibt es noch weitere Elemente für die Koordination, Überwachung und Au
     changeddata
     locks
     mailmerge
+    webhooks
     bestpractices/index
     editions
     releasenotes/index
