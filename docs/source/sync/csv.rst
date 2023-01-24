@@ -21,6 +21,7 @@ Für CSV-Prozesse stehen Prozess-Parameter zur Konfiguration der Datei zur Verf�
 
 	Die CSV-Erzeugung basiert in der Regel auf einer Abfrage.
 	Falls nicht alle Felder des Resultats exportiert werden sollen, kann hier die gewünschte Feldliste definiert werden.
+	Dieser Parameter kann außerdem die Reihenfolge der Spalten festlegen.
 
 :Zeichenkodierung:
 
