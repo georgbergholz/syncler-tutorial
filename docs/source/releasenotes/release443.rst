@@ -98,6 +98,13 @@ Die CSV-Prozesse
 * Neue Felder aus der Transformation werden dem Export hinzugefügt.
 * Der Parameter "Export-Feldliste" kann neben der Feldauswahl auch die Feldreihenfolge steuern.
 
+Die Sage b7-Prozesse
+
+* Durch einen neuen Parameter kann das Auslesen des Änderungsspeichers ohne Berücksichtigung des Datums erfolgen. Dadurch gehen keine Daten verloren.
+
+Die Sage b7-Verbindung
+
+* Durch einen internen Parameter wird verhindert, dass unterschiedliche Prozesse zeitgleich aus dem Service Bus Nachrichten abrufen.
 
 Korrekturen
 -----------
