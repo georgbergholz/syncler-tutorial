@@ -144,6 +144,4 @@ Der Bulk-Abfrage-Prozess
 
 Behandlung von Nachfolgeprozessen durch Abfrageprozesse
 
-In der Release 4.4.2 ist ein Fehler entstanden, wodurch der Änderungsdatensatz nicht dem Nachfolgeprozess zugeordnet wurde.
-Der erste Prozess hat den Datensatz ein zweites Mal verarbeitet und erst dann an den Nachfolger übergeben.
-Sollten ID-Felder definiert sein, hat der Nachfolger bereits bei der ersten Ausführung den Datensatz verarbeitet.
+* In der Release 4.4.2 ist ein Fehler entstanden, wodurch der Änderungsdatensatz nicht dem Nachfolgeprozess zugeordnet wurde. Der erste Prozess hat den Datensatz ein zweites Mal verarbeitet und erst dann an den Nachfolger übergeben. Sollten ID-Felder definiert sein, hat der Nachfolger bereits bei der ersten Ausführung den Datensatz verarbeitet.
