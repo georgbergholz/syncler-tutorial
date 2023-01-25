@@ -141,3 +141,9 @@ Die ID-Werte in den Datenabbildungen zu Microsoft 365 Objekten werden case-sensi
 Der Bulk-Abfrage-Prozess
 
 * Für die Fehlerbehandlung "Fehler ignorieren" werden keine Änderungsdatensätze mehr angelegt.
+
+Behandlung von Nachfolgeprozessen durch Abfrageprozesse
+
+In der Release 4.4.2 ist ein Fehler entstanden, wodurch der Änderungsdatensatz nicht dem Nachfolgeprozess zugeordnet wurde.
+Der erste Prozess hat den Datensatz ein zweites Mal verarbeitet und erst dann an den Nachfolger übergeben.
+Sollten ID-Felder definiert sein, hat der Nachfolger bereits bei der ersten Ausführung den Datensatz verarbeitet.
