@@ -33,9 +33,9 @@ Folgende Vergleichsoperatoren können verwendet werden.
 
 Folgende arithmetische Operatoren können verwendet werden.
 
-	+ (addition)
+	\+ (addition)
 
-	- (subtraction)
+	\- (subtraction)
 
 	* (multiplication)
 
