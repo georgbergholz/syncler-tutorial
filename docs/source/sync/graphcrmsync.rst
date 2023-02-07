@@ -114,6 +114,10 @@ Dieser Benutzer muss eine Zustimmung für den Zugriff erteilt haben oder an der 
 hinterlegt sein. Ansonsten wird das Speichern mit einer Fehlermeldung abgebrochen.
 Sollte nur ein Teil der Benutzer synchronisiert werden, empfiehlt sich ein Prozessfilter auf diese
 Benutzer.
+Der Prozess unterstützt auch das Verschieben von Aufgaben zwischen Benutzern.
+Sollte in Sage CRM der Benutzer an der Aufgabe geändert werden, wird die Aufgabe im ersten Postfach gelöscht und im zweiten ggf. neu angelegt.
+Dabei werden auch die vorhandenen Datenabbildungen entfernt und ggf. neu erzeugt.
+Damit ist sichergestellt, dass die Aufgabe nicht in Sage CRM gelöscht wird, wenn die Delta-Abfrage im ersten Postfach die Löschung ermittelt.
 
 
 Sage CRM Kontakte nach Microsoft Graph Kontakt

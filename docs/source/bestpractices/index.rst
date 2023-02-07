@@ -6,7 +6,7 @@ Für häufige Anwendungsfälle finden Sie hier Anleitungen, die die Einrichtung 
 .. toctree::
     :titlesonly:
 
-    dependencies
+    linked_objects
     email_cas
     mailmerge
     postprocess
