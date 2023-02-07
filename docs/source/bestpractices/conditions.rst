@@ -9,9 +9,6 @@ Im Folgenden wird der Syntax und seine Funktion erläutert.
 Eine formulierte Bedingung muss einen Wahrheitswert zurückliefern.
 Eine Formel kann aber auch andere Werte, wie Zahlen oder Zeichenketten generieren.
 
-
-
-
 Folgende Vergleichsoperatoren können verwendet werden.
 
 	<
@@ -26,27 +23,27 @@ Folgende Vergleichsoperatoren können verwendet werden.
 
 	=
 
-	IN
+	IN (Auflistung)
 
 	LIKE
 
 
 Folgende arithmetische Operatoren können verwendet werden.
 
-	\+ (addition)
+	\+ (Addition)
 
-	\- (subtraction)
+	\- (Subtraktion)
 
-	\* (multiplication)
+	\* (Multiplikation)
 
-	/ (division)
+	/ (Division)
 
-	% (modulus)
+	% (Modulo)
 
 
-Für die Verbindung von Zeichenketten wird + verwendet.
+Für die Verbindung von Zeichenketten wird \+ verwendet.
 
-Als Platzhalterzeichen wird * verwendet.
+Als Platzhalterzeichen in LIKE-Vergleichen wird \* verwendet.
 
 	\'#ItemName#\' LIKE \'\*product\*\'
 
@@ -55,3 +52,12 @@ Als Platzhalterzeichen wird * verwendet.
 	\'#ItemName#\' LIKE \'product\*\'
 
 
+Folgende Funktionen stehen zur Verfügung.
+
+	LEN(\'#ItemName#\')
+
+	IIF(\'#ItemName#\' <> \'\', \'nicht leer\', \'leer\')
+
+	TRIM(\'#ItemName#\')
+
+	SUBSTRING(\'#ItemName#\', start, length)

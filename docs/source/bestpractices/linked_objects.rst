@@ -87,7 +87,7 @@ Diese steht für die meisten Universal- und Abfrageprozesse zur Verfügung.
 In diesem Feld wird eine logische Bedingung im SQL-Syntax formuliert, die Platzhalter für Quelldaten beinhalten kann und für jeden Datensatz einzeln ausgewertet wird.
 Diese Bedingung prüft das abgerufene Feld auf einen vorhandenen Wert.
 
-	'#GDM_TargetId#' <> ''
+	\'#GDM_TargetId#\' <> \'\'
 
 Sollte die Transformation keine Daten ermitteln können, ist das Feld leer und die Bedingung nicht erfüllt.
 In diesem Fall wird der Datensatz zurückgestellt und in der nächsten Ausführung wiederholt.
