@@ -37,7 +37,7 @@ Folgende arithmetische Operatoren können verwendet werden.
 
 	\- (subtraction)
 
-	* (multiplication)
+	\* (multiplication)
 
 	/ (division)
 
