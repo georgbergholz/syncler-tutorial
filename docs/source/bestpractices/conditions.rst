@@ -48,10 +48,10 @@ Für die Verbindung von Zeichenketten wird + verwendet.
 
 Als Platzhalterzeichen wird * verwendet.
 
-	"ItemName LIKE '*product*'"
+	\'#ItemName#\' LIKE \'\*product\*\'
 
-	"ItemName LIKE '*product'"
+	\'#ItemName#\' LIKE \'*product\'
 
-	"ItemName LIKE 'product*'"
+	\'#ItemName#\' LIKE \'product\*\'
 
 
