@@ -8,15 +8,14 @@ Hier finden Sie verschiedene Szenarien im Detail beschrieben.
 .. toctree::
     :titlesonly:
     
-    casbcsync
-    sapsfsync
-    inxmailcassync
     graphzohosync
     graphcrmsync
     b7_belege
-    other
     csv
-    zohocontactroles
+    casbcsync
+    sapsfsync
+    inxmailcassync
+    other
 
 
 
