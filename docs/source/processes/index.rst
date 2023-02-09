@@ -88,3 +88,12 @@ Eine genaue Beschreibung, was der spezifische Prozess automatisch vorsieht, kann
 Siehe :doc:`/sync/index`
 
 
+Hier finden Sie eine Beschreibung zu den Universalprozessen.
+
+.. toctree::
+    :titlesonly:
+    
+    syncbase
+    syncmultichildbase
+    deletebase
+
