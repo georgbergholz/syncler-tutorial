@@ -11,28 +11,21 @@ Für einen Überblick können Sie die Projektseite https://www.syncler.de besuch
 
    Die Dokumentation wird gerade entwickelt.
 
-Verbindungen, Prozesse und Datendienste sind die grundlegenden Elemente im Syncler für die Realisierung Ihrer Aufgaben.
-Daneben gibt es noch weitere Elemente für die Koordination, Überwachung und Ausführung.
+Verbindungen, Prozesse und Datendienste sind Elemente im Syncler für die Realisierung Ihrer Aufgaben.
+Daneben gibt es noch allgemeine Elemente für die Koordination, Überwachung und Ausführung.
 
 .. toctree::
     :titlesonly:
     
     connections/index
     processes/index
-    sync/index
     dataservices/index
-    configuration
-    queues
-    logs
-    datamappings
-    changeddata
-    locks
-    mailmerge
-    webhooks
+    common/index
+    sync/index
     bestpractices/index
-    editions
-    releasenotes/index
     onpremises/index
     api/index
+    releasenotes/index
+    editions
     faq
     glossary
