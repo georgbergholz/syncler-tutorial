@@ -8,11 +8,9 @@ Die Anwendung kann aber auch in einer Linux-Umgebung eingesetzt werden.
 Damit die installierte Version verwendet werden kann, wird eine Lizenz benötigt.
 Diese kann bei Sellmore erworben werden.
 
+Diese Version unterscheidet sich in folgenden Punkten von der Cloud-Version.
 
-Version 4.3.5
--------------
-
-Release Notes: :doc:`/releasenotes/release435`
-
-
-
+.. toctree::
+    :titlesonly:
+    
+    configuration
