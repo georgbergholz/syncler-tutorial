@@ -18,12 +18,14 @@ Automatische Emails umfassen:
 :Mandant ID:
 Die Mandant ID wird für den Zugriff auf die API für die Authentifizierung benötigt.
 Dort wird sie als Client ID bei der Anforderung eines Tokens angegeben.
+
 Siehe :doc:`/api/index`
 
 :Mandant Schlüssel:
 
 Der Mandanten-Schlüssel wird für den Zugriff auf die API für die Authentifizierung benötigt.
 Dort wird sie als Client Secret bei der Anforderung eines Tokens angegeben.
+
 Siehe :doc:`/api/index`
 
 :Abweichende E-Mailadressen für Fehlermeldungen:
@@ -84,6 +86,7 @@ Dies ist eine Option der Konfliktbehandlung.
 
 Das ist Ihre aktuelle Datenbankgröße.
 Die Synchronisations- und eine ggf. vorhandene Hilfsdatenbanken werden summiert.
+
 Siehe :doc:`/processes/maintenance`
 
 :Kontingent:
@@ -103,6 +106,7 @@ Es wird jede Ausführung gezählt, unabhängig von der Anzahl der Datensätze.
 
 Sobald die maximale Datenbankgröße erreicht wird, kann kein Prozess ausgeführt werden. 
 Es wird beim Versuch einen Prozess zu starten eine Fehlermeldung generiert und ggf. versendet.
+
 Siehe :doc:`/processes/maintenance`
 
 :Sprache:

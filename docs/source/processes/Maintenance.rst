@@ -1,5 +1,5 @@
 ﻿Wartungsprozess
----------------
+===============
 
 Der Wartungsprozess dient dazu, den Inhalt der Syncler Datenbank von alten Daten zu bereinigen.
 Es werden Warteschlangeneinträge, Protokolle, Sicherungen und Änderungsdatensätze abhängig vom Alter entfernt.
