@@ -87,7 +87,7 @@ Dies ist eine Option der Konfliktbehandlung.
 Das ist Ihre aktuelle Datenbankgröße.
 Die Synchronisations- und eine ggf. vorhandene Hilfsdatenbanken werden summiert.
 
-Siehe :doc:`/processes/maintenance`
+Siehe :doc:`/processes/wartung`
 
 :Kontingent:
 
@@ -107,7 +107,7 @@ Es wird jede Ausführung gezählt, unabhängig von der Anzahl der Datensätze.
 Sobald die maximale Datenbankgröße erreicht wird, kann kein Prozess ausgeführt werden. 
 Es wird beim Versuch einen Prozess zu starten eine Fehlermeldung generiert und ggf. versendet.
 
-Siehe :doc:`/processes/maintenance`
+Siehe :doc:`/processes/wartung`
 
 :Sprache:
 

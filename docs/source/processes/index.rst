@@ -20,7 +20,7 @@ Es gibt auch noch weitere Prozesse, die nicht zu diesen Typen passen.
 .. toctree::
     :titlesonly:
     
-    maintenance
+    wartung
     msteams
 
 
