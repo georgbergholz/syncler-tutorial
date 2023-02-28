@@ -14,3 +14,4 @@ Diese allgemeinen Elemente sind Bestandteile im Syncler f√ºr die Koordination, √
     locks
     mailmerge
     webhooks
+    supportdatabase
