@@ -71,6 +71,7 @@ Die folgenden Verbindungen stehen im Syncler zur Verfügung.
     sdk-connection
     cleverreach-connection
     ac-connection
+    support-connection
     csv-connection
     fano-connection
     hotfolder-connection
