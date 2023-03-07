@@ -42,6 +42,8 @@ Der Scope offline_access wird automatisch hinzugefügt.
 Für den Zugriff auf Kalendereinträge wird der Scope Calendars.ReadWrite benötigt.
 Mehrere Scope-Werte werden durch ein Leerzeichen getrennt.
 
+Ein Refresh-Token muss bei Änderung des Benutzerpassworts aktualisiert werden.
+
 :Benutzer Refresh-Token:
 
 Auch dieses Verfahren ist eine benutzerbezogene Anmeldung, benötigt aber die Unterstützung durch ein externes Portal.
@@ -55,6 +57,8 @@ ein gültiger Access-Token angefordert werden kann.
 Die vorhandenen Refresh-Token können in verschlüsselter Form im Bereich "Parameter" eingesehen und gelöscht werden.
 Außerdem kann das externe Portal das Löschen der Freigabe auslösen.
 Bei diesem Verfahren werden nur delegierte API Berechtigungen unterstützt.
+
+Ein Refresh-Token muss bei Änderung des Benutzerpassworts aktualisiert werden.
 
 
 Konfigurieren Sie als nächstes die API-Berechtigungen.

@@ -26,6 +26,8 @@ Die erste Zeile in der Datei wird für die Spaltenbezeichnung verwendet.
 Besonders muss hier auf Ganz- und Kommazahlen geachtet werden. Eine Ganzzahl wird eine entsprechende Spalte in der Tabelle anlegen.
 Sollte in weiteren Zeilen dann Kommazahlen folgen, werden diese nicht importiert.
 Es wird automatisch eine ID-Spalte der Import-Tabelle hinzugefügt, damit diese optimal eingesetzt werden kann.
+Mit zusätzlichen Parametern kann erreicht werden, dass eine vorhandene Tabelle gleichen Names geleert oder ersetzt wird.
+
 
 Eine nachträgliche Bearbeitung der Tabellenstruktur wird nicht unterstützt.
 
