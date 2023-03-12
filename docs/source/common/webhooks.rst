@@ -170,7 +170,7 @@ Die Antwort erfolgt mit einem JSON Array und dem am Prozess definierten Zielsche
 Per Parameter kann die Antwort auf das erste Objekt des Ergebnisses beschränkt werden.
 In diesem Fall erfolgt die Antwort als JSON Objekt.
 
-:Lese Abfrage mit Prozess
+:Lese Abfrage mit Prozess:
 
 Hierfür muss ein Webhook Prozess zum Lesen einer Abfrage konfiguriert werden.
 Der Abfrage-Filter wir mit den Quelldaten erzeugt und der Platzhalter in der Abfrage damit ersetzt.
