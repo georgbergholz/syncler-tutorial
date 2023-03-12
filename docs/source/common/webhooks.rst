@@ -11,7 +11,9 @@ an die Bedürfnisse und Vorgaben externer Systeme anpassbar.
 
 Webhooks können mit einem GET oder POST Aufruf angesprochen werden.
 Bei einem GET Aufruf werden die URL-Parameter für die Quelldaten der Ausführung verwendet.
-Der POST Aufruf erwartet ein JSON Objekt im Nachrichten-Body.
+Der POST Aufruf erwartet entweder ein JSON Objekt im Nachrichten-Body oder Formulardaten.
+Aus Formulardaten wird ein Json-Objekt für die interne Verarbeitung erzeugt. 
+Aus den Feldnamen werden dabei die Namen der Eigenschaften erzeugt.
 
 Die komplexe Webhook ID, die für die URL verwendet wird, wird automatisch generiert und kann den Eigenschaften entnommen werden.
 Um die Sicherheit zu verbessern, kann zusätzlich ein Geheimschlüssel manuell angegeben werden.
@@ -75,6 +77,21 @@ Zusätzlich muss ein Schema von dieser Verbindung festgelegt werden.
 
 Dieses Schema-Objekt stammt von der ausgewählten Verbindung und wird für das Lesen oder Schreiben mit einer Verbindung genutzt.
 
+:Weiterleitungs-Url nach dem Ausführen:
+
+Speziell für das Schreiben von Daten kann dieser Parameter genutzt werden, um einer Weiterleitungs-Url zu definieren, die dann nach der Ausführung 
+als Weiterleitungsaufforderung zurückgemeldet wird.
+Damit ist es möglich, den Webhook als Empfänger eines Formulars zu definieren, welches nach dem Speichern eine LandingPage anzeigen soll.
+
+:Daten im Änderungsspeicher für den Prozess ablegen:
+
+Hier kann ein Prozess definiert werden, für den ein Datensatz im Änderungsspeicher abgestellt werden soll.
+Speziell hierfür gibt es den Prozesstyp "Universal Ablauf - Daten aus Änderungsspeicher lesen".
+Dieser Prozesstyp dient zum Einlesen der Daten aus dem Änderungsspeicher für eine anschließende Verarbeitung in einem Ablauf.
+Sobald hier ein Prozess ausgewählt wird, wird mit den übergebenen Daten ein Änderungsdatensatz gespeichert.
+Das Objekt erhält dabei den Names des Quellobjektes aus dem ausgewählten Prozess.
+Sobald dieser Parameter definiert wird, erhält der Adhoc-Prozessstart nur die Guid des Änderungsdatensatzes und nicht mehr die Daten selbst.
+
 :Suche nach Quelldatensatz für Prozess und Verbindung:
 
 Diese Where-Clause wird mit Raute-Platzhaltern gefüllt und für das Lesen von Daten über einen Prozess oder eine Verbindung verwendet.
@@ -91,6 +108,11 @@ Auch hier werden Raute-Platzhalter mit den Quelldaten gefüllt.
 Abhängig vom aufrufenden System kann die Antwort mit einem Array von Daten nicht gewünscht oder verwendbar sein.
 Für diesen Fall kann mit diesem Parameter nur der erste Datensatz als JSON Objekt zurückgegeben werden.
 Ansonsten erfolgt die Antwort immer als Array, sobald ein Resultat gefunden wurde.
+
+:Abfrage-Filter für Lesen einer Abfrage:
+
+Dieses Filterfragment ersetzt den Plathalter FlowFilter in der Abfrage des Prozesses.
+Dabei werden Platzhalter im Fragment mit den Daten des Aufrufs ersetzt.
 
 :Suche nach Zieldatensatz für Verbindung:
 
@@ -148,6 +170,16 @@ Die Antwort erfolgt mit einem JSON Array und dem am Prozess definierten Zielsche
 Per Parameter kann die Antwort auf das erste Objekt des Ergebnisses beschränkt werden.
 In diesem Fall erfolgt die Antwort als JSON Objekt.
 
+:Lese Abfrage mit Prozess
+
+Hierfür muss ein Webhook Prozess zum Lesen einer Abfrage konfiguriert werden.
+Der Abfrage-Filter wir mit den Quelldaten erzeugt und der Platzhalter in der Abfrage damit ersetzt.
+Dann wird die resultierende Abfrage direkt ausgegeben.
+Das Ergebnis wird durch den Prozess transformiert und zugeordnet.
+Die Antwort erfolgt mit einem JSON Array und dem am Prozess definierten Zielschema.
+Per Parameter kann die Antwort auf das erste Objekt des Ergebnisses beschränkt werden.
+In diesem Fall erfolgt die Antwort als JSON Objekt.
+
 :Speichere Daten mit Prozess:
 
 Hierfür muss ein Webhook Prozess zum Schreiben von Daten konfiguriert werden.
@@ -186,3 +218,37 @@ Im Prozess wird die Zielverbindung und das Zielobjekt definiert.
 Außerdem stehen Registerkarten für die Definition des Quellschemas in JSON und die Feldzuordnungen zur Verfügung.
 Eine Vorbedingung für die Neuanlage und die Übereinstimmungssuche für eine Aktualisierung wird im Prozess definiert.
 Die übergebenen Quelldaten durchlaufen die Transformation und den zweiten Filter, bevor das Zielobjekt geschrieben wird.
+
+
+Webhook Prozess zum Lesen einer Abfrage
+---------------------------------------
+
+Für das Lesen einer Abfrage mit einem Prozess muss dieser spezielle Prozesstyp verwendet werden.
+Im Prozess wird die Quellverbindung und die Abfrage definiert.
+Dabei kann der Platzhalter FlowFilter mit einem durch den Webhook erzeugten Filter ersetzt werden.
+Außerdem stehen Registerkarten für die Definition des Zielschemas in JSON und die Feldzuordnungen zur Verfügung.
+Das gelesene Ergebnis aus der Quellverbindung durchläuft die Transformation und den zweiten Filter, bevor es an den Webhook übergeben wird.
+
+Starten eines Ablaufs
+---------------------
+
+Ein Universal-Ablauf kann auch für die Aktion "Starte Prozess" genutzt werden, allerdings muss dabei eine bestimmte Konfiguration eingehalten werden.
+Abläufe führen keine direkte Datensatzverarbeitung aus, weshalb eine Übergabe an den Ablauf keine Ausführung erzeugt.
+Hierfür muss ein Lese-Prozess für das Lesen aus dem Änderungsspeicher eingerichtet werden.
+Für diesen Prozesstyp kann eine Quellverbindung und ein Quellobjekt definiert werden.
+Dies soll ermöglichen, dass die Daten innerhalb des Ablaufs auch an andere Prozesse übergeben werden können.
+Das Json-Schema für die Quelldaten am Prozess kann definiert werden, damit eine Transformation und ein zweiter Filter eingerichtet werden können.
+Die Übernahme in den Änderungsspeicher durch den Webhook erfordert aber auch ein Json-Schema für die Quelldaten.
+Dieser Lese-Prozess wird nun in den Ablauf eingefügt und liefert die Daten für die weitere Verarbeitung.
+Nach der erfolgreichen Verarbeitung wird der Datensatz im Änderungsspeicher gelöscht.
+
+Formulare
+---------
+
+Ein Webhook kann auch als Empfänger für ein Web-Formular genutzt werden.
+Dabei erkennt die API selbstständig am Content-Type, ob ein Json-Objekt in der Nachricht übergeben wurde, oder ob es sich um Formulardaten handelt.
+Aus dem Formulardaten wird ein Json-Objekt erzeugt, wobei die Feldnamen für die Eigenschaften verwendet werden.
+Da Formular vorrangig durch Benutzer verwendet werden, ist eine LandingPage nach dem Empfang der Daten notwendig.
+Die Url für diese Weiterleitung wird am Webhook definiert.
+Nachdem die Verarbeitung abgeschlossen wurde, wird an diese Url weitergeleitet.
+So kann der Webhook Daten eines Formlars annehmen, damit diverse Prozesse starten oder Daten direkt schreiben und im Anschluss eine Folgeseite aufrufen.
