@@ -91,6 +91,7 @@ Die folgenden Verbindungen stehen im Syncler zur Verfügung.
     x3-connection
     zoho-connection
     emarsys-connection
+    wica-connection
     bridgeservice
     oauth2
 

@@ -14,6 +14,7 @@ Diese Typen lassen sich grundlegend unterscheiden.
     querybulkbase
     multichild
     flowbase
+    converting/index
 
 Es gibt auch noch weitere Prozesse, die nicht zu diesen Typen passen.
 

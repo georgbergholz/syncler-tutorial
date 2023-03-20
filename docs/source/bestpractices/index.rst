@@ -11,6 +11,7 @@ Für häufige Anwendungsfälle finden Sie hier Anleitungen, die die Einrichtung 
     email_cas
     flow_examples
     zohocontactroles
+    s100_belegservice
     mailmerge
     postprocess
     zoho_deleted
