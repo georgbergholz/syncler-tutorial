@@ -11,7 +11,6 @@ Unter "Daten senden" wird ein Json definiert, welches als Nachricht versendet wi
 Diese Vorlage kann mit Platzhaltern aus dem aktuellen Datensatz gefüllt werden.
 Das Json sollte mit einfachen Hochkommas definiert werden, da diese automatisch in den Platzhaltern escaped werden.
 Bei der Verwendung von doppelten Anführungszeichen und doppelten Anführungszeichen im Datensatz kann es zu einem fehlerhaften Json kommen.
-Wird die Methode "GET" verwendet, werden die Json-Felder der obersten Ebene als GET-Parameter übergeben.
 
 Die Ausführung kann Datensatz-spezifisch mit der Ausführungsbedingung übersprungen werden.
 Die logische Bedingung in SQL-Notation kann Platzhalter enthalten und wird für jedenDatensatz ausgewertet.
