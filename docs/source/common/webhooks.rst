@@ -131,7 +131,6 @@ Sollte eine Suche formuliert sein und diese exakte einen Zieldatensatz gefunden 
 Der aktuelle Aufruf kann übersprungen werden oder der gefundene Datensatz kann aktualisiert werden.
 
 
-
 Neben den allgemeinen Einstellungen stehen auch noch weitere Registerkarten zur Verfügung, die je nach Aktion konfiguriert werden müssen.
 
 Für das Lesen von Daten mit einer Verbindung wird bereits im Webhook das Antwortschema definiert und die Felder aus dem Schemaobjekt den
@@ -147,6 +146,8 @@ Unter "Json-Schema Quelldaten" definieren Sie ein JSON Objekt, dessen Eigenschaf
 Es können auch geschachtelte Strukturen definiert werden. Die Verwendung von Arrays ist durch die Feldzuordnung nicht möglich.
 Unter "Zuordnung Schreiben" verbinden Sie die definierten Quellfelder mit den Zielfeldern der Verbindung.
 Wenn das Schreiben mit einem Prozess erfolgt, müssen die Registerkarten nicht konfiguriert werden.
+Zusätzlich können auch Zieldaten und eine Abbildung dafür definiert werden.
+Dies ermöglich eine direkte Antwort mit dem gespeicherten Datensatz, um z.B. eine generierte ID zuerhalten.
 
 
 Aktionen

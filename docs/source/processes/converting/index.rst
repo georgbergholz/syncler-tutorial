@@ -15,6 +15,7 @@ Folgende Aktionstypen stehen zur Verfügung.
     :titlesonly:
 
     jsontocolumn
+    webhook
     
 Außerdem enthält die Transformation eine Testfunktion, mit der die Ausführung kontrolliert und auch die Zielzuordnung überprüft werden kann.
 
