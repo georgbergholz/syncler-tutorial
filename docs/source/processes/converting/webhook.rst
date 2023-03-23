@@ -5,7 +5,7 @@ Diese Transformation ermöglich den Aufruf eines Webhooks.
 Der Einsatz kann für lesende oder schreibende Aktionen genutzt werden.
 
 Basis ist eine Url, die für jeden Datensatz aufgerufen wird.
-Zusätzlich kann der Aufruf mit einem Header "Geheimschlüssel" erweitert werden.
+Zusätzlich kann der Aufruf mit einem Header erweitert werden.
 Die Methode legt die HTTP-Methode des Aufrufes fest.
 Unter "Daten senden" wird ein Json definiert, welches als Nachricht versendet wird.
 Diese Vorlage kann mit Platzhaltern aus dem aktuellen Datensatz gefüllt werden.
@@ -16,7 +16,7 @@ Die Ausführung kann Datensatz-spezifisch mit der Ausführungsbedingung überspr
 Die logische Bedingung in SQL-Notation kann Platzhalter enthalten und wird für jedenDatensatz ausgewertet.
 Damit kann z.B. gesteuert werden, ob ein neuer Datensatz erzeugt werden muss.
 
-Die Antwort des Webhooks wird in ein neues Feld gespeichert, dessen Name unter "Daten empfangen" festgelegt wird.
+Die Antwort des Webhooks wird in ein neues Feld gespeichert, dessen Name unter "Zielfeld für Antwort" festgelegt wird.
 Sollte die Antwort ein Json-Objekt sein, kann der Inhalt mit der Transformation "Json in Spalten" (:doc:`/processes/converting/jsontocolumn`)
 ausgewertet werden.
 
@@ -35,12 +35,13 @@ Ist eine administrative Bezeichnung.
 :Url:
 
 Url des Webhooks.
+Enthaltene Platzhalter werden ersetzt.
 
-:Geheimnisname:
+:Optionaler Header:
 
 Name des zusätzlichen Headers.
 
-:Geheimnis:
+:Wert für Header:
 
 Wert des zusätzlichen Headers.
 
@@ -59,7 +60,7 @@ Logische Bedingung in SQL-Notation.
 Inhalte des Datensatzes werden mit Platzhaltern übernommen.
 Ein negatives Resultat überspringt den aktuellen Datensatz.
 
-:Daten empfangen:
+:Zielfeld für Antwort:
 
 Feldname für die Ablage der Antwort des Aufrufs.
 Das Feld wird ggf. neu hinzugefügt.
