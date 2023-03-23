@@ -22,6 +22,7 @@ Die Zoho CRM-Verbindung
 
 * Es werden Contact-Roles zwischen Abschlüssen und Kontakten unterstützt. Siehe :doc:`/bestpractices/zohocontactroles`
 * Es werden Notes für andere Module unterstützt. Für Notes steht ein eigenes Schema-Objekt zur Verfügung.
+* Per Filter können Datensätze aus einer Beziehung abgefragt werden. Die Formulierung erfolgt in Feldnotation mit den Parametern "Related" und "RelatedId". Der Filter "Related|:|Accounts|;|RelatedId|:|1234|;|" ruft nur die Datensätze zu diesem Account ab.
 
 Der Universal-Löschprozess
 
