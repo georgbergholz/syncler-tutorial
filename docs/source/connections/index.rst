@@ -72,6 +72,7 @@ Die folgenden Verbindungen stehen im Syncler zur Verfügung.
     cleverreach-connection
     ac-connection
     support-connection
+    dynamicsce-connection
     csv-connection
     fano-connection
     hotfolder-connection

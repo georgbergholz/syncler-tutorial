@@ -15,6 +15,7 @@ Hier finden Sie verschiedene Szenarien im Detail beschrieben.
     casbcsync
     sapsfsync
     inxmailcassync
+    s100dynamicscesync
     other
 
 
