@@ -132,6 +132,8 @@ Die Anforderungen werden durch die Verbindung weitestgehend kompensiert, damit i
 Werte werden beim Lesen durch die Web-API in einem Feld "_entityid_value" bereitgestellt. Die Verbindung übernimmt diesen Wert in das eigentlich Feld.
 Dies ist nur beim Schema-basierten Lesen möglich.
 Im Abfrage-basierten Lesen werden alle Daten des Resultats direkt übergeben. In diesem Fall steht der Wert nicht unter der eigentlichen Feldbezeichnung zur Verfügung.
+Wenn nach Werten in diesen Feldern gefiltert werden soll, muss die Variante "_entityid_value" verwendet werden.
+
 
 Wenn ein Feld ein oder mehrere Lookup-Ziele hat, werden diese in der Feldbeschreibung im Schema dargestellt.
 Einfache Ziele werden durch die Verbindung automatisch behandelt, solange es sich um eine bekannte Zielentität handelt.
