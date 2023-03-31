@@ -16,6 +16,7 @@ Folgende Aktionstypen stehen zur Verfügung.
 
     jsontocolumn
     webhook
+    picklist
     
 Außerdem enthält die Transformation eine Testfunktion, mit der die Ausführung kontrolliert und auch die Zielzuordnung überprüft werden kann.
 
