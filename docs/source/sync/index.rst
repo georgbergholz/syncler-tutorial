@@ -12,10 +12,10 @@ Hier finden Sie verschiedene Szenarien im Detail beschrieben.
     graphcrmsync
     b7_belege
     csv
+    s100dynamicscesync
     casbcsync
     sapsfsync
     inxmailcassync
-    s100dynamicscesync
     other
 
 
