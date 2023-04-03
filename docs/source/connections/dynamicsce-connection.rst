@@ -20,12 +20,17 @@ Für die Verbindung benötigen Sie die Anwendungs-ID (Client) und die Verzeichni
 Konfigurieren Sie als nächstes die API-Berechtigungen.
 Fügen Sie die Berechtigung "Dynamics CRM - user_impersonation" zur App hinzu.
 
-Nun legen Sie noch eine Umleitungs-URI fest.
+Sollten Sie die Client-Anmeldeinformationen nutzen wollen, müssen Sie einen Geheimschlüssel anlegen und übernehmen.
+In diesem Fall muss "Client-Anmeldeinformationen verwenden" auf "Ja" gestellt werden.
+Eine Umleitungs-URI und die OAuth 2.0 Anmeldung entfallen hier.
+
+Ohne Client-Anmeldeinformationen legen Sie nun noch eine Umleitungs-URI fest.
 Für On-premises Installation oder die Konfiguration mit dem Syncler Administrator können Sie eine beliebige URL angeben.
 
 Zum Beispiel: https://localhost/myapp
 
 Tragen Sie die URL in das Feld "Redirect URI" ein.
+
 Als nächstes müssen Sie den Web-API-Endpunkt ermitteln.
 Melden Sie sich dazu in Dynamics 365 an und rufen Sie die Einstellungen auf.
 Wechseln Sie zu Anpassungen und rufen Sie die Entwicklerressourcen auf.
@@ -33,7 +38,7 @@ Unter Instanz-Web-API finden Sie die spezifische URL für Ihre Instanz.
 Kopieren Sie den Wert in das Feld "Web-API-Endpunkt" und das Feld "Scopes".
 Im Feld "Scopes" ergänzen Sie am Ende der URL noch "/.default".
 
-Als nächstes können Sie die OAuth 2.0 Anmeldung durchführen.
+Ohne Client-Anmeldeinformationen können Sie jetzt die OAuth 2.0 Anmeldung durchführen.
 Rufen Sie die Seite an der Verbindung dafür auf und starten Sie den Anmeldeprozess.
 Als nächstes müssen Sie die Microsoft Anmeldung ausführen und der App den Zugriff gestatten.
 Mit dem Speichern der Verbindung wird ein Langzeit-Token ermittelt und gespeichert.
@@ -90,11 +95,11 @@ Die Anwendungs-ID der registrierten Anwendung.
 
 :Client-Geheimschlüssel:
 
-Ein geheimer Schlüssel der registrierten Anwendung.
+Ein geheimer Schlüssel der registrierten Anwendung. Dieser wird für das Client-Anmeldeverfahren benötigt.
 
 :Redirect URI:
 
-Für die Authentifizierung mit OAuth 2.0 muss eine Weiterleitungs-URI konfiguriert werden.
+Für die Authentifizierung mit OAuth 2.0 ohne Client-Anmeldeinformationen muss eine Weiterleitungs-URI konfiguriert werden.
 Bei der Freigabe über den Syncler Administrator kann eine beliebige URI angegeben werden.
 Für die Freigabe über das Web-Frontend ist folgender Wert notwendig.
 Die Weiterleitungs-URI muss bei der registrierten Anwendung festgelegt werden.
@@ -109,6 +114,11 @@ Der offline_access wird automatisch ergänzt.
 
 Diese URL ist die Basis für alle lesenden und schreibenden Zugriffe auf die Web-API.
 Sie ist spezifisch für Ihre Instanz und kann den Entwicklerressourcen entnommen werden.
+
+:Client-Anmeldeinformationen verwenden:
+
+Mit "Ja" erfolgt die Anmeldung mit Client-ID und dem Geheimschlüssel. Dieses Verfahren setzt einen Anwendungsbenutzer voraus.
+Diesen können Sie im PowerApps Admin Center anlegen. Er muss der registrierten App zugeordnet sein und über ausreichende Berechtigungen für die Synchronisation verfügen.
 
 :Auswahllisten abrufen und speichern:
 
