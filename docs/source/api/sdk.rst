@@ -18,149 +18,149 @@ Einige werden nur intern vom Helper genutzt oder indirekt über Methoden gesetzt
 
 :Helper.IsCancelled (bool):
 
-    Die Wert zeigt an, dass das Skript einen Abbruch angefordert hat.
-    Der Wert wird auch mit der Methode Cancel gesetzt.
-    Der Wert wird in den SDK-Prozessen, der SDK-Verbindung und der Transformation ausgewertet.
+Die Wert zeigt an, dass das Skript einen Abbruch angefordert hat.
+Der Wert wird auch mit der Methode Cancel gesetzt.
+Der Wert wird in den SDK-Prozessen, der SDK-Verbindung und der Transformation ausgewertet.
 
 :Helper.ConnectionId (int):
 
-    Die ID der aktuellen Verbindung.
-    Dieser Wert kann für API-Aufrufe verwendet werden.
+Die ID der aktuellen Verbindung.
+Dieser Wert kann für API-Aufrufe verwendet werden.
 
 :Helper.ProcessId (int):
 
-    Die ID des aktuellen Prozesses.
-    Dieser Wert kann für API-Aufrufe verwendet werden.
-    Wird von den Methoden IncreaseComplementaryMappings, IncreaseParallelMappings und InsertLog verwendet.
+Die ID des aktuellen Prozesses.
+Dieser Wert kann für API-Aufrufe verwendet werden.
+Wird von den Methoden IncreaseComplementaryMappings, IncreaseParallelMappings und InsertLog verwendet.
 
 :Helper.ClientNumber (int):
 
-    Die Client-Number des aktuellen Prozesses.
-    Dies ist ein Prozessparameter, der für die Datenstrukturierung genutzt werden kann.
-    Die Methoden GetDataMappingComplementaryBySourceId und GetDataMappingParallelByTargetId schränken
-    das Ergebnis mit diesem Wert ein, realisieren das aber mittels Abfrage direkt.
+Die Client-Number des aktuellen Prozesses.
+Dies ist ein Prozessparameter, der für die Datenstrukturierung genutzt werden kann.
+Die Methoden GetDataMappingComplementaryBySourceId und GetDataMappingParallelByTargetId schränken
+das Ergebnis mit diesem Wert ein, realisieren das aber mittels Abfrage direkt.
 
 :Helper.WhereClause (string):
 
-    Dies ist der Prozess-Filter für die Abfrage von Quelldaten.
-    In den SDK-Prozessen wird der Wert zurück an den Prozess gegeben und kann damit die
-    Prozessausführung direkt beeinflussen.
+Dies ist der Prozess-Filter für die Abfrage von Quelldaten.
+In den SDK-Prozessen wird der Wert zurück an den Prozess gegeben und kann damit die
+Prozessausführung direkt beeinflussen.
 
 :Helper.ForceQueryAll (bool):
 
-    Dies ist der Prozessparameter für die Aktivierung des kompletten Lesens ohne Änderungseinschränkung.    
-    In den SDK-Prozessen wird der Wert zurück an den Prozess gegeben und kann damit die
-    Prozessausführung direkt beeinflussen.
+Dies ist der Prozessparameter für die Aktivierung des kompletten Lesens ohne Änderungseinschränkung.    
+In den SDK-Prozessen wird der Wert zurück an den Prozess gegeben und kann damit die
+Prozessausführung direkt beeinflussen.
 
 :Helper.ConflictAction (string):
 
-    Dies ist der Prozessparameter für die Behandlung von Konflikten.
-    Die möglichen Werte sind USE_SOURCE, USE_TARGET, SKIP, IGNORE und SOURCE_CHANGES.
+Dies ist der Prozessparameter für die Behandlung von Konflikten.
+Die möglichen Werte sind USE_SOURCE, USE_TARGET, SKIP, IGNORE und SOURCE_CHANGES.
 
 :Helper.ErrorAction (string):
 
-    Dies ist der Prozessparameter für die Behandlung von Fehlern.
-    Die möglichen Werte sind REPEAT_ALL, REPEAT_DIFFERENCES, QUERY_NEXT, IGNORE und STOP.
+Dies ist der Prozessparameter für die Behandlung von Fehlern.
+Die möglichen Werte sind REPEAT_ALL, REPEAT_DIFFERENCES, QUERY_NEXT, IGNORE und STOP.
 
 :Helper.ClientWhereClause (string):
 
-    Dies ist der Prozessparameter für die Suche nach Übereinstimmungen bei unbekannten Datensätzen.
+Dies ist der Prozessparameter für die Suche nach Übereinstimmungen bei unbekannten Datensätzen.
 
 :Helper.DublettActionNoMatch (string):
 
-    Dies ist der Prozessparameter für die Behandlung von keinem Treffer bei der Übereinstimmungssuche.
-    Die möglichen Werte sind SKIP, SKIP_WITH_WARNING, WRITE, REPEAT und REPEAT_WRITE.
+Dies ist der Prozessparameter für die Behandlung von keinem Treffer bei der Übereinstimmungssuche.
+Die möglichen Werte sind SKIP, SKIP_WITH_WARNING, WRITE, REPEAT und REPEAT_WRITE.
 
 :Helper.DublettActionOneMatch (string):
 
-    Dies ist der Prozessparameter für die Behandlung von einem Treffer bei der Übereinstimmungssuche.
-    Die möglichen Werte sind SKIP, SKIP_WITH_WARNING, MAPPING_ONLY, MAPPING_AND_SYNCH und WRITE_NEW.
+Dies ist der Prozessparameter für die Behandlung von einem Treffer bei der Übereinstimmungssuche.
+Die möglichen Werte sind SKIP, SKIP_WITH_WARNING, MAPPING_ONLY, MAPPING_AND_SYNCH und WRITE_NEW.
 
 :Helper.DublettActionMultipleMatches (string):
 
-    Dies ist der Prozessparameter für die Behandlung von mehreren Treffern bei der Übereinstimmungssuche.
-    Die möglichen Werte sind SKIP, SKIP_WITH_WARNING, MAPPING_ONLY_FIRST, MAPPING_AND_SYNCH_FIRST und 
-    WRITE_NEW.
+Dies ist der Prozessparameter für die Behandlung von mehreren Treffern bei der Übereinstimmungssuche.
+Die möglichen Werte sind SKIP, SKIP_WITH_WARNING, MAPPING_ONLY_FIRST, MAPPING_AND_SYNCH_FIRST und 
+WRITE_NEW.
 
 :Helper.SecondWhereClause (string):
 
-    Dies ist der Prozess-Zweitfilter für die Auswahl von transformierten Quelldaten.
-    In den SDK-Prozessen wird der Wert zurück an den Prozess gegeben und kann damit die
-    Prozessausführung direkt beeinflussen.
+Dies ist der Prozess-Zweitfilter für die Auswahl von transformierten Quelldaten.
+In den SDK-Prozessen wird der Wert zurück an den Prozess gegeben und kann damit die
+Prozessausführung direkt beeinflussen.
 
 :Helper.SourceObject (string):
 
-    Der aktuelle Quellobjekttyp in Prozessskripten.
+Der aktuelle Quellobjekttyp in Prozessskripten.
 
 :Helper.TargetObject (string):
 
-    Der aktuelle Zielobjekttyp in Prozessskripten.
-    In der SDK-Verbindung definiert der Wert das aktuell angeforderte Objekt.
+Der aktuelle Zielobjekttyp in Prozessskripten.
+In der SDK-Verbindung definiert der Wert das aktuell angeforderte Objekt.
 
 :Helper.SourceType (string):
 
-    Der Typ der Quellverbindung in Prozessskripten.
+Der Typ der Quellverbindung in Prozessskripten.
 
 :Helper.TargetType (string):
 
-    Der Typ der Zielverbindung in Prozessskripten.
+Der Typ der Zielverbindung in Prozessskripten.
 
 :Helper.SourceSchemaObject (JObject):
 
-    Ein Schemaobjekt zur Beschreibung des aktuellen Quellobjekttyps.
-    In der SDK-Verbindung definiert der Wert das aktuell angeforderte Objekt.
+Ein Schemaobjekt zur Beschreibung des aktuellen Quellobjekttyps.
+In der SDK-Verbindung definiert der Wert das aktuell angeforderte Objekt.
 
 :Helper.TargetSchemaObject (JObject):
 
-    Ein Schemaobjekt zur Beschreibung des aktuellen Zielobjekttyps.
+Ein Schemaobjekt zur Beschreibung des aktuellen Zielobjekttyps.
 
 :Helper.Statement (string):
 
-    Die Abfrage der aktuellen Abfrageanforderung.
-    Dies wird in JSON Abfrage Skript übergeben. 
+Die Abfrage der aktuellen Abfrageanforderung.
+Dies wird in JSON Abfrage Skript übergeben. 
 
 :Helper.Action (JObject):
 
-    Dieses Objekt beschreibt die aktuellen Ausführungsparameter.
+Dieses Objekt beschreibt die aktuellen Ausführungsparameter.
 
 :Helper.Page (int):
 
-    Dieser Wert wird beim Lesen mit Paging mit jeder Ausführung erhöht.
-    Der Startwert ist 0.
+Dieser Wert wird beim Lesen mit Paging mit jeder Ausführung erhöht.
+Der Startwert ist 0.
 
 :Helper.SkipLoading (bool):
 
-    Dieser Wert wird von der Methode SkipLoad gesetzt.
-    In den SDK-Prozessen führt der Wert true zum Überspringen des Lesens aus der Quelle.
+Dieser Wert wird von der Methode SkipLoad gesetzt.
+In den SDK-Prozessen führt der Wert true zum Überspringen des Lesens aus der Quelle.
 
 :Helper.InnerException (Exception):
 
-    Dieser Wert wird vom Datensatzskript in den SDK-Prozessen verwendet.
-    Er wird als Fehlermeldung in den Prozess gegeben, wenn das Ergebnis Failed lautet.
-    In diesem Fall muss ein Wert zugewiesen sein.
+Dieser Wert wird vom Datensatzskript in den SDK-Prozessen verwendet.
+Er wird als Fehlermeldung in den Prozess gegeben, wenn das Ergebnis Failed lautet.
+In diesem Fall muss ein Wert zugewiesen sein.
 
 :Helper.GetObject (JObject):
 
-    In den SDK-Prozessen wird hier der aktuelle Datensatz an das Datensatzskript übergeben.
+In den SDK-Prozessen wird hier der aktuelle Datensatz an das Datensatzskript übergeben.
 
 :Helper.GetChildObjects (JArray):
 
-    Im SDK-Prozess für geschachtelte Daten enthält dieses Array die Liste der transformierten 
-    Positionsdatensätze.
-    Der Objektparameter "DELETE" führt je nach Verbindung zum Löschen der Position.
+Im SDK-Prozess für geschachtelte Daten enthält dieses Array die Liste der transformierten 
+Positionsdatensätze.
+Der Objektparameter "DELETE" führt je nach Verbindung zum Löschen der Position.
 
 :Helper.SetObject (JObject):
 
-    Dieses Objekt repräsentiert das aktuelle Zielobjekt.
-    In den SDK-Prozessen wird das Zielobjekt für das Datensatzskript übergeben.
-    In der SDK-Verbindung und dem JSON-Daten schreiben Skript ist hier das Zielobjekt enthalten. 
+Dieses Objekt repräsentiert das aktuelle Zielobjekt.
+In den SDK-Prozessen wird das Zielobjekt für das Datensatzskript übergeben.
+In der SDK-Verbindung und dem JSON-Daten schreiben Skript ist hier das Zielobjekt enthalten. 
 
 :Helper.Mappings (JArray):
 
-    Diese Liste enthält alle Feldzuordnungen, die im aktuellen Prozess definiert sind.
-    In den SDK-Prozessen werden Änderungen an dieser Liste für das Schreiben übernommen.
-    Die Eigenschaften des einzelen Objektes sind SourcePath (string), SourceColumn (SchemaColumn),
-    TargetPath (string) und TargetColumn (SchemaColumn). 
+Diese Liste enthält alle Feldzuordnungen, die im aktuellen Prozess definiert sind.
+In den SDK-Prozessen werden Änderungen an dieser Liste für das Schreiben übernommen.
+Die Eigenschaften des einzelen Objektes sind SourcePath (string), SourceColumn (SchemaColumn),
+TargetPath (string) und TargetColumn (SchemaColumn). 
 
 
 Methoden
