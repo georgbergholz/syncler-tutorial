@@ -108,11 +108,11 @@ Der Typ der Zielverbindung in Prozessskripten.
 :Helper.SourceSchemaObject (JObject):
 
 Ein Schemaobjekt zur Beschreibung des aktuellen Quellobjekttyps.
-In der SDK-Verbindung definiert der Wert das aktuell angeforderte Objekt.
 
 :Helper.TargetSchemaObject (JObject):
 
 Ein Schemaobjekt zur Beschreibung des aktuellen Zielobjekttyps.
+In der SDK-Verbindung definiert der Wert das aktuell angeforderte Objekt.
 
 :Helper.Statement (string):
 
