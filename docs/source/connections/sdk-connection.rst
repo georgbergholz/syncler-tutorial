@@ -78,6 +78,29 @@ Der Feldname für eine Aktualisierungsinformation wird mit der Eigenschaft "upda
 							"type": "number"
 						}
 					}
+				},
+				"floors": {
+					"title": "Floors",
+					"type": "array",
+					"ischildlist": false,
+					"items": {
+						"title": "Floors",
+						"type": "object",
+						"properties": {
+							"appartments": {
+								"title": "Appartments",
+								"type": "number"
+							},
+							"renter": {
+								"title": "Renter",
+								"type": "number"
+							}
+						}
+					}
+				},
+				"colors": {
+					"title": "Colors",
+					"type": "array"
 				}
 			},
 			"required": [
