@@ -150,16 +150,31 @@ Werte, die dann in den Helper-Parametern zur Verfügung stehen.
 
 :Authentifizierung URL:
 
-Platzhalter für eine URL.
+Platzhalter für eine URL. Parameter 'Url'
 
 :Benutzername:
 
-Platzhalter für einen Benutzernamen.
+Platzhalter für einen Benutzernamen. Parameter 'Username'
 
 :Passwort:
 
 Platzhalter für ein Passwort, welches besonders geschützt wird.
 Das externe Auslesen oder Kopieren des Wertes wird nicht unterstützt.
+Parameter 'Password'
+
+:RefreshToken:
+
+Kann frei verwendet, um z.B. einen initialen Token zu übergeben.
+Parameter 'RefreshToken'
+
+:API URL:
+
+Damit zur Authentifizierung eine abweichende URL gepflegt werden kann.
+Parameter 'ApiUrl'
+
+:API Key:
+
+Parameter 'ApiKey'
 
 
 Beispiele
