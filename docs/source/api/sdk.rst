@@ -410,12 +410,14 @@ Parameter:
 * string Method
 * JObject Header
 * string Data
+* bool Base64 (default: false)
 
 Rückgabewert: string
 
 Diese Methode führt einen HTTP-Request aus und liefert die Antwort als Zeichenkette zurück.
 Zusätzliche Header können als JObject übergeben werden. 
 Einzelne Properties werden als einzelner Header-Parameter übernommen.
+Mit dem Parameter Base64 werden die abgerufenen Daten binär in Base64 konvertiert und zurückgegeben.
 
 
 :Helper.GetParameterList:
