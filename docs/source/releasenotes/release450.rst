@@ -22,8 +22,7 @@ Der Syncler Administrator
 * Ein Abfrage-Dialog kann für die Support-Datenbank geöffnet werden, um beliebige Abfragen mit Ergebnisausgabe auszuführen.
 * Einzelne Spalten einer Tabelle in der Support-Datenbank können als Index definiert werden, um Abfragen zu optimieren.
 * An einer Verbindung können Auswahllisten eingesehen, bearbeiten und angelegt werden. Diese können in Transformation oder dem DQM eingesetzt werden.
-* Im Testlauf wird nicht ausschließlich das Objektschema für Quell- und transformierte Daten verwendet, sondern zusätzlich vorhandene Daten werden ergänzt. 
-Dies kann z.B. in untergeordneten Listen der Fall sein.
+* Im Testlauf wird nicht ausschließlich das Objektschema für Quell- und transformierte Daten verwendet, sondern zusätzlich vorhandene Daten werden ergänzt. Dies kann z.B. in untergeordneten Listen der Fall sein.
 * An Verbindungen steht die Funktion "Abfrage ausführen" zur Verfügung. Der folgende Abfrage-Dialog kann beliebige Abfragen ausführen und das Ergebnis darstellen.
 * Der Neustart eines Warteschlangeneintrags leert die Liste der fehlgeschlagenen Datensätze, was sonst das neue Resultat beeinträchtigt hat.
 
@@ -113,11 +112,8 @@ Die Sage b7 Verbindung
 
 Die Json zu Datenobjekt Konvertierung
 
-* Bei der Behandlung von primitiven Arrays werden Objektgruppen mit Value-Feldern gebildet. Bei der Konvertierung zu Json wurde daraus keine primitiven Arrays erzeugt. 
-Dadurch gelangt eine Json-Notation in das Datenobjekt. 
-Dies passiert in SDK-Prozessen, da dort die Objekte in den Helper als JObject gegeben werden und nach Skriptausführung wieder in ein Datenobjekt konvertiert werden.
-* Die Konvertierung hat keinen Verknüpfungstyp für Unterobjekte definiert, wenn der Wertvorrat des Schemas erschöpft war. Dadurch wurden diese Daten in der Transformation verworfen.
-Jetzt wird ein fortlaufender Index verwendet.
+* Bei der Behandlung von primitiven Arrays werden Objektgruppen mit Value-Feldern gebildet. Bei der Konvertierung zu Json wurde daraus keine primitiven Arrays erzeugt. Dadurch gelangt eine Json-Notation in das Datenobjekt. Dies passiert in SDK-Prozessen, da dort die Objekte in den Helper als JObject gegeben werden und nach Skriptausführung wieder in ein Datenobjekt konvertiert werden.
+* Die Konvertierung hat keinen Verknüpfungstyp für Unterobjekte definiert, wenn der Wertvorrat des Schemas erschöpft war. Dadurch wurden diese Daten in der Transformation verworfen. Jetzt wird ein fortlaufender Index verwendet.
 
 Abfrage-Prozesse
 
