@@ -73,6 +73,7 @@ Die folgenden Verbindungen stehen im Syncler zur Verfügung.
     ac-connection
     support-connection
     dynamicsce-connection
+    evalanche-connection
     csv-connection
     fano-connection
     hotfolder-connection
