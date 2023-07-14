@@ -117,8 +117,7 @@ Die Json zu Datenobjekt Konvertierung
 
 Abfrage-Prozesse
 
-* Wenn in Abfrage-Prozessen mit Datenabbildungen gearbeitet wird, hat die Übereinstimmungssuche keine bereits zugeordneten Suchergebisse ausgeschlossen. 
-Dadurch konnten mehrere Quelldatensätze auf einen Zieldatensatz abgebildet werden.
+* Wenn in Abfrage-Prozessen mit Datenabbildungen gearbeitet wird, hat die Übereinstimmungssuche keine bereits zugeordneten Suchergebisse ausgeschlossen. Dadurch konnten mehrere Quelldatensätze auf einen Zieldatensatz abgebildet werden.
 
 Die Microsoft-Graph-Verbindung
 
@@ -147,7 +146,7 @@ CAS Adresse nach Cleverreach oder InxMai
 Die SQL-Bridge
 
 * Beim Schreiben wurde versucht die Transaktion im entfernten System zu zählen, was einen Verbindungsfehler auslöst.
-* Einzeln gelesene Datensätze hatten durch die Json-Serialisierung bereits als geändert markeirte Felder.
+* Einzeln gelesene Datensätze hatten durch die Json-Serialisierung bereits als geändert markierte Felder.
 
 Die Sage 100 Belegübertragung
 
