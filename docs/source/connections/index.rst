@@ -74,6 +74,7 @@ Die folgenden Verbindungen stehen im Syncler zur Verfügung.
     support-connection
     dynamicsce-connection
     evalanche-connection
+    salesviewer-connection
     csv-connection
     fano-connection
     hotfolder-connection
