@@ -17,6 +17,11 @@ Sollte das Skript die Limits überschreiten, wird es mit einer Fehlermeldung abg
 Die verfügbaren Bibliotheken sind identisch zur Transformation "C# Code Script".
 Siehe :doc:`/api/sdk`
 
+Die Verbindung unterstützt einen generischen code-based OAuth-Grant-Flow.
+Der erzeugte Code steht in Skripten als Parameter "OAuthCode" zur Verfügung.
+Nach der Ausführung des Schema-Skriptes wird er wieder in der Verbindung gespeichert.
+Damit kann der Code für das Abrufen eines Refresh-Token verwendet und nachträglich entfernt werden.
+
 Funktionen
 ----------
 
@@ -162,10 +167,27 @@ Platzhalter für ein Passwort, welches besonders geschützt wird.
 Das externe Auslesen oder Kopieren des Wertes wird nicht unterstützt.
 Parameter 'Password'
 
-:RefreshToken:
+:Authorization Url:
 
-Kann frei verwendet, um z.B. einen initialen Token zu übergeben.
-Parameter 'RefreshToken'
+Platzhalter für eine URL. Parameter 'OAuthUrl'
+Diese Url wird für die OAuth-Authorization verwendet.
+
+:Account ID:
+
+Platzhalter für eine Account ID. Parameter 'OAuthAccountId'
+
+:Client ID:
+
+Platzhalter für eine Client ID. Parameter 'OAuthClientId'
+
+:Secret:
+
+Platzhalter für ein Secret. Parameter 'OAuthSecret'
+
+:Redirect Url:
+
+Platzhalter für eine Redirect Url. Parameter 'OAuthRedirectUrl'
+Diese Url wird für die OAuth-Authorization verwendet und automatisch an die Authorization Url in kodierter Form angehängt.
 
 :API URL:
 
