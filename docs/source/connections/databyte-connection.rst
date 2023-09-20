@@ -40,6 +40,67 @@ Ein Lösch-Operation leert die Liste.
 Mit diesem Objekt kann eine vorhandene Firmenliste geleert werden. 
 Dazu wird der Wert "fls" mit der ID der Liste geschrieben.
 
+:datamatch:
+
+Mit diesem Objekt können vorhandene Projekte abgerufen oder neue Projekte angelegt werden.
+Außerdem können vorhandene Projekte gelöscht werden.
+
+:datamatch_data:
+
+Mit diesem Objekt werden Vergleichsdatensätze zu einem Projekt hinzugefügt.
+Dieses Objekt kann mit Prozessen für die Massenverarbeitung eingesetzt werden.
+Damit können bis zu 500 Datensätze mit einem Aufruf übertragen werden.
+
+Wird dieses Objekt gelesen, ist eine Projekt-ID als Filter erforderlich.
+Sollte das Projekt noch nicht gestartet sein, wird das Lesen mit einer Fehlermeldung abgebrochen.
+Sollte das Projekt bereits gestartet, aber noch nicht abgeschlossen sein, 
+wird der Projektstatus alle 10 Sekunden geprüft, bis das Projekt abgeschlossen und das Ergebnis abgerufen werden kann.
+Dies kann manuell abgebrochen werden.
+
+Ein vorhandenes Resultat kann nur einmalig abgerufen werden. 
+Danach wird das Projekt automatisch entfernt.
+Damit die Daten möglichst flexibel zur Verfügung stehen, wird das Resultat in einzelnen Datensätzen im Änderungsspeicher abgelegt.
+Jeder Datensatz enthält dabei das Match-Ergebnis und ggf. eine Ziel-ID für die weitere Verarbeitung.
+
+Das kunde_id sollte mit Ihrer externen ID gefüllt werden, damit eine Ergebniszuordnung sichergestellt ist.
+
+:datamatch_start:
+
+Dieses Objekt startet die Projektverarbeitung.
+Durch das Speichern der Projekt-ID beginnt die Verarbeitung.
+
+:datamatch_abort:
+
+Dieses Objekt stoppt die Projektverarbeitung.
+Durch das Speichern der Projekt-ID wird die Verarbeitung abgebrochen.
+
+:searchrequest:
+
+Mit diesem Schema wird eine Suchanfrage formuliert und übertragen.
+Die Suche wird durch das Schreiben des Objektes ausgelöst.
+Das Ergebnis wird im Änderungsspeicher abgelegt und kann über die generierte ID "ssid" wieder abgerufen werden.
+Hierfür wird das Schmea mit einem Filter gelesen.
+
+:exportrequest:
+
+
+
+
+
+:exporterw:
+
+:exportstd:
+
+:exportpro:
+
+
+:monitoringrequest:
+
+:postbox:
+
+
+
+
 Die Suche nach Firmen
 ---------------------
 
