@@ -76,6 +76,7 @@ Die folgenden Verbindungen stehen im Syncler zur Verfügung.
     evalanche-connection
     salesviewer-connection
     kn-connection
+    databyte-connection
     csv-connection
     fano-connection
     hotfolder-connection
