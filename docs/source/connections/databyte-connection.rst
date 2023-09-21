@@ -23,6 +23,7 @@ Dazu wird der Wert "fls" mit der ID der Quelle geschrieben und die Antwort enth�
 Mit diesem Objekt wird auf den Inhalt einer Firmenliste zugegriffen.
 Für das Lesen muss die ID einer Firmenliste als Filter übergeben werden.
 Als Antwort wird eine Liste der Firmen-IDs im Feld "data" zurückgegeben.
+Der Inhalt einer Firmenliste kann für die Überwachung von Änderungen verwendet werden.
 
 Dieses Objekt kann auch zum hinzufügen von Firmen zu einer Liste genutzt werden.
 Dafür wird das Objekt zum Schreiben verwendet.
@@ -134,8 +135,11 @@ Zusätzlich muss eine Firmenliste, ein Intervall und das Aktiv-Kennzeichen geset
 :postbox:
 
 Alle Überwachungen senden ggf. eine Nachricht in die Postbox, sobald eine Änderung zu einem Merkmal erkannt wurde.
+Jede Nachricht kann eine Liste von Merkmalen und Firmen enthalten.
+Diese Daten werden geschachtelt bereitgestellt.
+Außerdem steht eine Zusammenstellung aller betroffenen Firmen-IDs bereit.
 
-
+Wenn eine Nachricht mit dem Parameter "confirm" gespeichert wird, gilt sie als bestätigt und wird nicht erneut gelesen.
 
 
 Die Suche nach Firmen
@@ -159,4 +163,38 @@ Das Ergebnis der Suche wird im Änderungsspeicher abgelegt und kann von dort dur
 Es wird ein geschachteltes Objekt gespeichert, mit den gekürzten Firmendaten als Liste.
 Mit der "ssid" kann das Suchergebnis für Firmenlisten oder Exporte verwendet werden.
 Außerdem werden alle IDs der gefundenen Firmen als Feld bereitgestellt.
+
+
+Hinzufügen von Firmen zu einer Liste
+------------------------------------
+
+Um Firmen einer Firmenliste hinzuzufügen wird das Schemaobjekt "companylist_data" schreibend verwendet.
+Die Quelle der Daten kann eine vorangegangene Suche oder eine vorhandene Auflistung von Firmen-IDs sein.
+
+Mit dem Feld "ssid" können Sie sich auf eine vorherige Suchanfrage beziehen.
+Mit dem Feld "umfang" steuern Sie, welche Firmen hinzugefügt werden sollen.
+Der Wert "2" erwartet einen Bereich mit "von" - "bis" aus dem Suchergebnis.
+Der Wert "3" erwartet einen Bereich mit "bereich" für jeden x-ten Datensatz.
+Der Wert "4" arbeitet unabhängig von einer Suche und fügt alle Firmen aus dem Feld "firmen" der Liste hinzu.
+Alle anderen Werte fügen das gesamte Suchergebnis der Liste hinzu.
+
+Kombinieren Sie zwei Prozesse innerhalb eines Ablaufes.
+Der erste Prozess führt eine Suche aus. (siehe "Die Suche nach Firmen"")
+Es kann sich um einen Universalprozess mit individueller Datenquelle oder um einen reinen Schreibprozess handelt, 
+wo die Suchkriterien im Prozess definiert werden.
+
+Der zweite Prozess ist ein Universalprozess mit "searchrequest" als Quelle und "companylist_data" als Ziel.
+Mittels Parameter und Feldzuordnungen können Sie die gewünschte Datenübernahme definieren.
+
+Der Ablauf führt den ersten Prozess manuell aus.
+Der zweite Prozess wird mit den Zieldaten des Vorgängers ausgeführt. Diese entsprechen dem Ergebnis der Suchanfrage.
+Nach Abschluss des Ablaufs ist die Suche der Firmenliste hinzugefügt worden.
+
+Zur Auswahl der Firmenliste ist die ID einer Liste erforderlich.
+Diese kann fest per Transformation oder durch andere Vorgängerprozesse bereitgestellt werden.
+
+
+Der Export von Firmen und Übertragung in ein externes System
+------------------------------------------------------------
+
 
