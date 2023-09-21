@@ -60,7 +60,9 @@ Dies kann manuell abgebrochen werden.
 Ein vorhandenes Resultat kann nur einmalig abgerufen werden. 
 Danach wird das Projekt automatisch entfernt.
 Damit die Daten möglichst flexibel zur Verfügung stehen, wird das Resultat in einzelnen Datensätzen im Änderungsspeicher abgelegt.
+Dies ermöglicht ein wiederholtes Lesen durch den Prozess.
 Jeder Datensatz enthält dabei das Match-Ergebnis und ggf. eine Ziel-ID für die weitere Verarbeitung.
+Die Datensätze werden dem aktuellem Prozess zugeordnet und zurückgegeben.
 
 Das kunde_id sollte mit Ihrer externen ID gefüllt werden, damit eine Ergebniszuordnung sichergestellt ist.
 
@@ -83,20 +85,55 @@ Hierfür wird das Schmea mit einem Filter gelesen.
 
 :exportrequest:
 
+Dieses Objekt fordert durch das Schreiben einen Export an.
+Dieser Export wird vom Kontingent der Download-Einheiten abgezogen.
+Ähnlich dem Hinzufügen von Daten zu einer Firmenliste, stehen verschiedene Optionen für die Auswahl der Exportdaten zur Verfügung.
 
+Der Parameter "export" steuert die Informationstiefe des Exports. Abhängig von dem übergebenen Wert werden die exportierten Daten unter einem
+anderen Zielschema im Änderungsspeicher abgelegt. Gültige Werte sind std, erw und pro.
 
+Mit dem Feld "ssid" können Sie sich auf eine vorherige Suchanfrage beziehen.
+Mit dem Feld "umfang" steuern Sie, welche Firmen exportiert werden sollen.
+Der Wert "2" erwartet einen Bereich mit "von" - "bis" aus dem Suchergebnis.
+Der Wert "3" erwartet einen Bereich mit "bereich" für jeden x-ten Datensatz.
+Der Wert "4" arbeitet unabhängig von einer Suche und fügt alle Firmen aus dem Feld "firmen" der Liste hinzu.
+Alle anderen Werte fügen das gesamte Suchergebnis der Liste hinzu.
 
+Weitere Parameter sind:
 
-:exporterw:
+* person: Anzahl Personen die pro Datensatz exportiert werden sollen (z.B. 0,1)
+* zusatz: z.B. passive und schwebende Firmen mit exportieren
 
 :exportstd:
 
+Ein angeforderter Export mit dem Typ "std" wird unter diesem Schema im Änderungsspeicher abgelegt.
+Das Lesen des Typs greift auf den Änderungsspeicher zu und liest einzelne oder alle Datensätze.
+Der Prozess wird dabei nicht eingeschränkt.
+
+:exporterw:
+
+Ein angeforderter Export mit dem Typ "erw" wird unter diesem Schema im Änderungsspeicher abgelegt.
+Das Lesen des Typs greift auf den Änderungsspeicher zu und liest einzelne oder alle Datensätze.
+Der Prozess wird dabei nicht eingeschränkt.
+
 :exportpro:
 
+Ein angeforderter Export mit dem Typ "pro" wird unter diesem Schema im Änderungsspeicher abgelegt.
+Das Lesen des Typs greift auf den Änderungsspeicher zu und liest einzelne oder alle Datensätze.
+Der Prozess wird dabei nicht eingeschränkt.
 
 :monitoringrequest:
 
+Zum Anfordern oder Abbestellen einer Überwachung wird dieses Schema schreibend verwendet.
+Überwachungen stehen im Zusammenhang zu Firmenlisten.
+Beim Einlesen des Verbindungsschemas kann eine Firmenliste angegeben werden oder es wird eine bestimmt.
+Zu dieser Liste werden die verfügbaren Monitor-Eigenschaften ermittelt und als Auswahlliste abgespeichert.
+Die Werte dieser Auswahlliste werden als Liste mit dem Parameter "merkmale" übergeben.
+Zusätzlich muss eine Firmenliste, ein Intervall und das Aktiv-Kennzeichen gesetzt werden.
+
 :postbox:
+
+Alle Überwachungen senden ggf. eine Nachricht in die Postbox, sobald eine Änderung zu einem Merkmal erkannt wurde.
 
 
 
