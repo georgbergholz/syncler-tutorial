@@ -270,4 +270,17 @@ Sie können den Prozess aber auch mit den Vorgängerdaten als Filter nutzen, um 
 Der Projektstart kann direkt die Daten des ersten Prozesses wiederverwenden.
 Der letzte Prozess verwendet die Daten des ersten als Filter, damit das Projekt gezielt abgerufen werden kann.
 
+Das Überwachen von Merkmalsänderungen
+-------------------------------------
+
+Die Basis dieser Überwachung ist eine gefüllte Firmenliste. Der Weg dorthin ist oben bereits beschrieben.
+Als nächstes müssen die Merkmale einmalig abonniert werden.
+Verwenden Sie dafür die Angaben aus der Auswahlliste "Monitoring" und das Schema "monitoringrequest".
+Sobald die gewünschten Merkmale aktiviert wurden, kann ein Prozess für das Abrufen der Nachrichten eingerichtet werden.
+Das kleinste Intervall der Überwachung ist ein Tag.
+
+Verwenden Sie als Quellschema "postbox". Da die Nachricht bereits eine vollständige ID-Liste enthält, kann als Zielschema bereits ein "exportrequest" eingestellt werden.
+Damit eine Nachricht nur einmal verarbeitet wird, nutzen Sie die Rückschreiben-Funktion und übergeben ein "true" für das Feld "confirm".
+Das Schreiben des "exportrequest" füllt wieder den Änderungsspeicher, welcher dann mit einem weiteren Prozess abgearbeitet wird.
+
 
