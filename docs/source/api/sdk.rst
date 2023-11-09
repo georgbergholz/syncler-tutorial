@@ -402,6 +402,19 @@ Mit dem Level wird der Typ des Eintrags festgelegt.
 0 = Meldung, 1 = Fehler, 2 = Warnung, 3 = Nachricht, 4 = Rückmeldung, 5 = Debug
 
 
+:Helper.InsertMessage:
+
+Parameter:
+
+* string Message
+* int Level
+
+Speichert eine Nachricht in der Broadcast-Datenbank des aktuellen Accounts.
+Diese Nachrichten werden in der Benutzeroberfläche angezeigt, aber nicht dauerhaft vorgehalten.
+Mit dem Level wird der Typ des Eintrags festgelegt. 
+0 = Meldung, 1 = Fehler, 2 = Warnung, 3 = Nachricht, 4 = Rückmeldung, 5 = Debug
+
+
 :Helper.InvokeUrl:
 
 Parameter:
