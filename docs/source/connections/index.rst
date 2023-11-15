@@ -77,6 +77,7 @@ Die folgenden Verbindungen stehen im Syncler zur Verfügung.
     salesviewer-connection
     kn-connection
     databyte-connection
+    hubspot-connection
     csv-connection
     fano-connection
     hotfolder-connection
