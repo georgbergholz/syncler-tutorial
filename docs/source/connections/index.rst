@@ -78,6 +78,7 @@ Die folgenden Verbindungen stehen im Syncler zur Verfügung.
     kn-connection
     databyte-connection
     hubspot-connection
+    klicktipp-connection
     csv-connection
     fano-connection
     hotfolder-connection
