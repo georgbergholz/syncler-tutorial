@@ -133,7 +133,7 @@ Der Startwert ist 0.
 Dieser Wert wird von der Methode SkipLoad gesetzt.
 In den SDK-Prozessen führt der Wert true zum Überspringen des Lesens aus der Quelle.
 
-:Helper.InnerException (Exception):
+:Helper.InnerException (string):
 
 Dieser Wert wird vom Datensatzskript in den SDK-Prozessen verwendet.
 Er wird als Fehlermeldung in den Prozess gegeben, wenn das Ergebnis Failed lautet.
@@ -219,7 +219,7 @@ Rückgabewert: T
 Liefert einen Parameterwert aus der Parameterliste über den Namen des Parameter in einem bestimmten Typ.
 Wenn der Parameter nicht vorhanden ist, wird Null verwendet.
 Diese Notation kann für explizites Nullable verwendet werden. z.B. DateTime?
-                
+
 
 :Helper.SetParam\<T\>:
 
@@ -231,6 +231,17 @@ Parameter:
 Speichert einen Parameter in der Parameterliste. Sollte der Parameter bereits vorhanden sein, wird der Wert
 aktualisiert.
 Die Typangabe kann bei typisierten Value auch weggelassen werden.
+
+
+:Helper.FieldStringToColumnObject:
+
+Parameter:
+
+* string FieldString
+
+Rückgabewert: JObject
+
+Mit dieser Methode kann eine Zeichenkette, z.B. aus einem Filter, die in Feldnotation übergeben wird, in ein JObject mit ansprechbaren Eigenschaften umgewandelt werden.
 
 
 :Helper.GetDataMappingBySourceId:
