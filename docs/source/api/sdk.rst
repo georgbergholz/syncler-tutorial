@@ -155,6 +155,11 @@ Dieses Objekt repräsentiert das aktuelle Zielobjekt.
 In den SDK-Prozessen wird das Zielobjekt für das Datensatzskript übergeben.
 In der SDK-Verbindung und dem JSON-Daten schreiben Skript ist hier das Zielobjekt enthalten. 
 
+:Helper.SetObject (JObject):
+
+Dieses Objekt repräsentiert die Änderungen des aktuellen Zielobjektes und steht in der SDK-Verbindung zur Verfügung.
+Sobald der Datensatz über einen Primärschlüssel verfügt können so die tatsächlichen Änderungen in den Daten ermittelt werden.
+
 :Helper.Mappings (JArray):
 
 Diese Liste enthält alle Feldzuordnungen, die im aktuellen Prozess definiert sind.
