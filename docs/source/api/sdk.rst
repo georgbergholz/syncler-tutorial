@@ -160,6 +160,10 @@ In der SDK-Verbindung und dem JSON-Daten schreiben Skript ist hier das Zielobjek
 Dieses Objekt repräsentiert die Änderungen des aktuellen Zielobjektes und steht in der SDK-Verbindung zur Verfügung.
 Sobald der Datensatz über einen Primärschlüssel verfügt können so die tatsächlichen Änderungen in den Daten ermittelt werden.
 
+:Helper.DeleteSetObject (bool):
+
+Dieses Objekt soll von der Verbindung gelöscht werden.
+
 :Helper.Mappings (JArray):
 
 Diese Liste enthält alle Feldzuordnungen, die im aktuellen Prozess definiert sind.
