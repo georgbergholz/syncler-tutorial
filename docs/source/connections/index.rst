@@ -79,6 +79,7 @@ Die folgenden Verbindungen stehen im Syncler zur Verfügung.
     databyte-connection
     hubspot-connection
     klicktipp-connection
+    bios-connection
     csv-connection
     fano-connection
     hotfolder-connection

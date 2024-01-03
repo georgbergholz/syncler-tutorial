@@ -11,4 +11,5 @@ Damit können eigene Lösung außerhalb der bereitgestellten Szenarien entwickel
     serviceapi
     /connections/sdk-connection
     /processes/sdk
-
+    dev_guide_connection
+    dev_guide_sdkconnection

@@ -1,7 +1,7 @@
 ﻿Databyte
 ========
 
-Databyte ist eine Informationsplattform für detailierte Firmendaten.
+Databyte ist eine Informationsplattform für detaillierte Firmendaten.
 Mit dieser Verbindung stehen verschiedene Funktionen der Plattform zur Verfügung, die im Folgenden beschrieben werden.
 
 Die Verbindung erzeugt Auswahllisten und Schemaobjekte für die Bedienung.
