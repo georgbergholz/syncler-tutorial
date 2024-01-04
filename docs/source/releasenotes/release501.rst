@@ -16,4 +16,8 @@ Eine on-premises Version sollte nicht aktualisiert, sondern ausgetauscht werden.
 CAS-Verbindung
 
 * Die Verbindung wurde für die Webservice-Version 7.0 angepasst.
-* 
+* Das Schemaobjekt Tag wurde ergänzt.
+* Abhängig von der Version wird zwischen dossier und link unterschieden.
+* Mit dem neuen Schema "recyclebin" können Datensätze aus dem Papierkorb abgerufen werden. Der Filter mit in Feldnotation im Wert "deleted" den Objekttyp enthalten.
+* Mit dem neuen Prozess "CAS gelöschte Daten" können gezielt gelöschte Datensätze verarbeitet werden.
+
