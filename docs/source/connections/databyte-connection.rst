@@ -45,6 +45,9 @@ Dazu wird der Wert "fls" mit der ID der Liste geschrieben.
 
 Mit diesem Objekt können vorhandene Projekte abgerufen oder neue Projekte angelegt werden.
 Außerdem können vorhandene Projekte gelöscht werden.
+Wird das Filtern oder Suchen mit den Standard-Prozessfeldern ausgelöst, wird der Wert direkt mit dem Names des
+Projektes verglichen und alle Übereinstimmungen werden zurückgegeben.
+
 
 :datamatch_data:
 
