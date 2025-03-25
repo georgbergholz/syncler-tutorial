@@ -10,7 +10,7 @@ In der Basisklasse werden virtuelle Methoden definiert, die in den Verbindungspl
 Diese Methoden dienen der Steuerung des Verbindungsplugins.
 Bei der Planung eines Verbindungsplugins müssen diese Berührungspunkte mit der Syncler Umgebung berücksichtigt werden.
 
-Auch stehen Eigenschaften bereit, die verwendet werden könnnen.
+Auch stehen Eigenschaften bereit, die verwendet werden können.
 Unter anderen werden Objekte für den Zugriff auf die Konfiguration der Instanz, die aktuelle Datenbank und Übersetzungen bereitgestellt.
 
 * SisDatabaseWrapper Database: Datenbank-Instanz
@@ -28,7 +28,7 @@ Für alle Texte können Übersetzungscodes aus den erweiterbaren XML-Übersetzun
 * LocalizedDisplayName: übersetzte Beschriftung
 * LocalizedDescription: übersetzte Anleitung
 
-Mit weiteren Attributen kann die Konfiguration noch detailierter definiert werden.
+Mit weiteren Attributen kann die Konfiguration noch detaillierter definiert werden.
 
 * CommaSeparatedValues: komma-separierte Daten
 * JsonFormat: Legt ein Schema für JSON-Daten fest
@@ -53,7 +53,7 @@ Geänderte Informationen in der Verbindung gehen dabei verloren bzw. werden zur�
 Planen einer Verbindung
 -----------------------
 
-Wenn Sie eine Verbindung planen, muss die Funktion mit den Berühungspunkten zum Syncler abgestimmt werden.
+Wenn Sie eine Verbindung planen, muss die Funktion mit den Berührungspunkten zum Syncler abgestimmt werden.
 Daraus ergeben sich dann Vorgehensweisen für die Implementierung.
 
 Nutzung der Verbindung
